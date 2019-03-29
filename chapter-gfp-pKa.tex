@@ -12,7 +12,7 @@ We discuss some of the limitations of this continuum-based model in this system 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Introduction} \label{introduction}
+\section{Introduction} \label{pKa-intro}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -91,7 +91,7 @@ In addition to providing confidence in our ability to measure electrostatic effe
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Experimental methods} \label{methods}
+\section{Experimental methods} \label{pKa-methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -157,7 +157,7 @@ For free energy calculations on the crystal structures, the protein region and a
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Results and Discussion} \label{results}
+\section{Results and Discussion} \label{pKa-results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -242,7 +242,7 @@ This is likely a reflection of the environmental complexity of the interior of G
 \begin{figure}
     \center
     \includegraphics[width=6.0in]{figures-gfp-pKa/abs_spectra.png}
-    \caption{Representative absorption spectra for all GFP mutants recorded at pH 7.4. Panels A, B, and C show the visible absorption of the GFP fluorophore normalized to the absorbance at 280 nm for proteins that have no nitrile probe (A), \pCNF{} at position 145 (B), and \pCNF{} at position 165 (C). Different colors represent the different amino acid side chains at position 203 based on the one-letter code in panel A. Panel D shows the FTIR absorption of the \pCNF{} residue at either position 145 (solid) or 165 (dashed) with the same colors to denote different amino acids at position 203. All spectra have been offset on the y-axis for clarity.}
+    \caption{Representative absorption spectra for all GFP mutants recorded at pH 7.4. Panels A, B, and C show the visible absorption of the GFP fluorophore normalized to the absorbance at 280 nm for proteins that have no nitrile probe (A), \pCNF{} at position 145 (B), and \pCNF{} at position 165 (C). Different colors represent the different amino acid side chains at position 203 based on the one-letter code in panel A. Panel D shows the FTIR absorption of the \pCNF{} residue at either position 145 (solid) or 165 (dashed) with the same colors to denote different amino acids at position 203. All spectra have been offset on the $y$-axis for clarity.}
     \label{fig:abs_spectra}
 \end{figure}
 
@@ -266,7 +266,7 @@ The observation that the Stark effect shifts and \pKa{} shifts of the fluorophor
 \begin{figure}
     \center
     \includegraphics[width=6.0in]{figures-gfp-pKa/pKa_vs_elec_stark.png}
-    \caption{Changes in the measured fluorophore pKa plotted against changes in the electric field experienced by the B state of the fluorophore for GFP mutants with (A) no nitrile probe present, (B) \pCNF{} at position 145, and (C) \pCNF{} at position 165. Different colors represent the type of mutation that was made to position 203 based on the key in panel A. Gray squares represent position 203 mutations that involved changes to or from histidine or cysteine and are omitted from the best fit lines and correlation constants. Error bars on the x-axis represent uncertainty in the published Stark tuning rate of the deprotonated GFP fluorophore. Error bars on the y-axis represent standard deviations in the inflection points of at least three \pKa{} titration curves.}
+    \caption{Changes in the measured fluorophore pKa plotted against changes in the electric field experienced by the B state of the fluorophore for GFP mutants with (A) no nitrile probe present, (B) \pCNF{} at position 145, and (C) \pCNF{} at position 165. Different colors represent the type of mutation that was made to position 203 based on the key in panel A. Gray squares represent position 203 mutations that involved changes to or from histidine or cysteine and are omitted from the best fit lines and correlation constants. Error bars on the $x$-axis represent uncertainty in the published Stark tuning rate of the deprotonated GFP fluorophore. Error bars on the $y$-axis represent standard deviations in the inflection points of at least three \pKa{} titration curves.}
     \label{fig:pKa_vs_stark}
 \end{figure}
 
@@ -284,7 +284,7 @@ In the sections that follow, we address the electrostatic perturbations induced 
 One of the principal criticisms of using nitrile vibrational probes in biological molecules is that the inclusion of the nitrile itself, an oscillator with a large ground state dipole moment and hydrogen bond accepting ability, will inherently perturb the biomolecule, and is not a reliably benign reporter of the molecular environment of interest \cite{Adhikary2014}.
 The observation discussed above, that mutations to C or H deviate from the otherwise strong correlation between \pKa{} and Stark effect shift when a nitrile probe is present, may indeed be evidence of this effect.
 To investigate this, we examined the ability of the nitrile probes to perturb the fluorophore \pKa{} values, relative to the values with no nitrile probe present.
-This is shown in Figure \ref{fig:pKa_sidechain}, where the change in fluorophore \pKa{} of all position 203 mutants (indicated by the one letter code on the x-axis) is plotted as a function of a nitrile located at either position 145 (black) or 165 (red).
+This is shown in Figure \ref{fig:pKa_sidechain}, where the change in fluorophore \pKa{} of all position 203 mutants (indicated by the one letter code on the $x$-axis) is plotted as a function of a nitrile located at either position 145 (black) or 165 (red).
 For most of the mutants, we saw that the insertion of a \pCNF{} residue at either position induced a \pKa{} change of at least $\pm$ 0.2 pH units, which represents a significant electrostatic perturbation due to the nitrile probe.
 Because the nitrile moiety can accept a hydrogen bond from either water or a nearby amino acid residue, inserting \pCNF{} into the $\beta$-barrel of GFP has the potential to disrupt the hydrogen bonding network around the fluorophore, which could explain the significant \pKa{} changes in Figure \ref{fig:pKa_sidechain}.
 C203 mutants with either nitrile probe clearly exhibit the largest observed \pKa{} shifts, up to 1 pH unit, which further supports our decision to remove C203 from the trends in Figure \ref{fig:pKa_vs_stark}.
@@ -293,8 +293,8 @@ This highlights the care that should be taken when using nitriles as electrostat
 \begin{figure}
     \center
     \includegraphics[width=3.25in]{figures-gfp-pKa/pKa_by_side_chain.png}
+    \caption{\pKa{} shift of the GFP fluorophore caused by the insertion of \pCNF{} at position 145 (black) or 165 (red) for each amino acid at position 203 (one letter code on the $x$-axis). Error bars represent the standard deviation of at least three titrations.}
     \label{fig:pKa_sidechain}
-    \caption{\pKa{} shift of the GFP fluorophore caused by the insertion of \pCNF{} at position 145 (black) or 165 (red) for each amino acid at position 203 (one letter code on the x-axis). Error bars represent the standard deviation of at least three titrations.}
 \end{figure}
 
 In contrast, the \pCNF{} residues appear to perturb the chromophore environment the least when Y or F is at position 203.
@@ -322,8 +322,8 @@ Because \pCNF{} 145 and 165 are spatially removed from each other and oriented i
 \begin{figure}
     \center
     \includegraphics[width=6.0in]{figures-gfp-pKa/pKa_vs_cnf.png}
+    \caption{Changes in the fluorophore \pKa{} plotted against the electric field changes measured from \pCNF{} 145 (A) and 165 (B) for all unique pairs of the seven position 203 mutants. Colors represent the type of mutation made to position 203 based on the key in panel B. Gray squares represent position 203 mutations that involved changes to or from histidine or cysteine and are omitted from the best fit lines and correlation constants. Error bars on the $x$-axis represent uncertainty in the published Stark tuning rate of \pCNF{}. Error bars on the $y$-axis represent standard deviations in the inflection points of at least three titration curves.}
     \label{fig:pKa_vs_cnf}
-    \caption{Changes in the fluorophore \pKa{} plotted against the electric field changes measured from \pCNF{} 145 (A) and 165 (B) for all unique pairs of the seven position 203 mutants. Colors represent the type of mutation made to position 203 based on the key in panel B. Gray squares represent position 203 mutations that involved changes to or from histidine or cysteine and are omitted from the best fit lines and correlation constants. Error bars on the x-axis represent uncertainty in the published Stark tuning rate of \pCNF{}. Error bars on the y-axis represent standard deviations in the inflection points of at least three titration curves.}
 \end{figure}
 
 The observed linear correlation between VSE shifts of these inserted nitriles and the corresponding fluorophore \pKa{} shifts is remarkable.
@@ -388,8 +388,8 @@ In Equation \ref{eq:PB}, $\epsilon(\vec{r})$ is the dielectric constant as a fun
 \begin{figure}
     \center
     \includegraphics[width=3.25in]{figures-gfp-pKa/thermocycle.png}
-    \label{fig:thermocycle}
     \caption{Cartoon representation of the thermodynamic cycle used for \pKa{} calculations. The A and B states of the fluorophore are shown in blue and red, respectively. The GFP structure is shown as a cyan cartoon.}
+    \label{fig:thermocycle}
 \end{figure}
 
 Specifically, we wanted to evaluate the performance of APBS to reproduce the fluorophore \pKa{} values using minimal optimization to the commercially-available software package. 
@@ -397,7 +397,7 @@ We first performed the free energy calculations on the static starting structure
 The solvent was treated implicitly with a dielectric constant of 78.54 and the crystallized atoms were treated with a dielectric constant of 20, which is thought to be an effective protein dielectric in static structure calculations \cite{Mehler1999}.
 While removing all explicit water molecules and replacing them with a continuum dielectric has been shown to be an accurate approximation in the continuum treatment of compact globular proteins \cite{Kukic2013, Simonson1996}, it may not necessarily hold for the $\beta$-barrel of GFP, which contains many confined water molecules that form intricate hydrogen bonded networks with other waters and protein residue side chains. These confined waters near the fluorophore likely play a large role in determining the \pKa{} through both structural and electrostatic effects.
 Therefore, any crystallized waters within a 5 \si{\angstrom} sphere around the fluorophore phenol (or phenolate) oxygen were treated explicitly.
-The results from these calculations are shown in Figure \ref{fig:calc_pKas}A, where we observed a poor correlation between the calculated and experimental \pKa{} values (r = 0.27).
+The results from these calculations are shown in Figure \ref{fig:calc_pKas}A, where we observed a poor correlation between the calculated and experimental \pKa{} values ($r = 0.27$).
 We hypothesized that this was due to insufficient protein relaxation around the residue of mutation.
 For example, inserting a nitrile probe at either position 145 or 165 often caused steric clash with nearby residues.
 MD would add the protein relaxation into the model and eliminate this concern.
@@ -406,8 +406,8 @@ Additionally, we wanted to model protein fluctuations because PB-based calculati
 \begin{figure}
     \center
     \includegraphics[width=6.0in]{figures-gfp-pKa/calc_pKas.png}
+    \caption{Correlations between experimentally measured \pKa{} values and those calculated in APBS. In both cases, the calculated \pKa{} is shown on the $y$-axis and the experimental \pKa{} is on the $x$-axis. Data points shown as circles represent the mutant constructs with no nitrile probe, squares are the mutants with \pCNF{} at position 145, and diamonds are the mutants with \pCNF{} at position 165. Error bars on the $x$-axis are small relative to the size of the data points. (A) Correlation between experimental and calculated \pKa{} for APBS calculations performed on the modeled starting structures with the inclusion of explicit water molecules within a 5 \si{\angstrom} radius of the phenolic oxygen of the fluorophore as described in the main text. (B) Correlation between experimental and calculated \pKa{} for APBS calculations performed on snapshots of 50 ns of MD simulation with the inclusion of explicit water molecules within a 5 \si{\angstrom} radius of the phenolic oxygen of the fluorophore.}
     \label{fig:calc_pKas}
-    \caption{Correlations between experimentally measured \pKa{} values and those calculated in APBS. In both cases, the calculated \pKa{} is shown on the y-axis and the experimental \pKa{} is on the x-axis. Data points shown as circles represent the mutant constructs with no nitrile probe, squares are the mutants with \pCNF{} at position 145, and diamonds are the mutants with \pCNF{} at position 165. Error bars on the x-axis are small relative to the size of the data points. (A) Correlation between experimental and calculated \pKa{} for APBS calculations performed on the modeled starting structures with the inclusion of explicit water molecules within a 5 \si{\angstrom} radius of the phenolic oxygen of the fluorophore as described in the main text. (B) Correlation between experimental and calculated \pKa{} for APBS calculations performed on snapshots of 50 ns of MD simulation with the inclusion of explicit water molecules within a 5 \si{\angstrom} radius of the phenolic oxygen of the fluorophore.}
 \end{figure}
 
 To account for the sensitivity of the calculation to the protein configuration, we performed MD simulations on the protein structures (including explicit solvation with TIP3P water) to generate an ensemble of reasonable structures that might exist during the course of a room temperature steady-state experiment.
@@ -438,11 +438,11 @@ We performed our \pKa{} calculations on each extracted frame and where we explic
 The explicit atoms (protein and water) were treated with a dielectric of 6, and any waters outside of this sphere were removed and replaced with a continuum dielectric of 78.54.
 Thus, our calculations were insensitive to the location of origin of any particular water molecules, because they were allowed to move into and out of the 5 \si{\angstrom} sphere throughout the MD simulation.
 The reduction of the dielectric constant to 6 for the explicit atom region (as opposed to 20 in the static structure calculation) accounts for the inclusion of protein dynamics in the model.
-The results of these calculations are shown in Figure \ref{fig:calc_pKas}B, where we still observed a poor correlation to the experimental values (r = 0.48).
+The results of these calculations are shown in Figure \ref{fig:calc_pKas}B, where we still observed a poor correlation to the experimental values ($r = 0.48$).
 We explored the effect of different dielectric constants (between 2-8) for the explicit atom region, and observed that the value of the protein dielectric constant did not substantially affect the correlation to experiment (data not shown).
 We decided 6 was the most appropriate dielectric constant for these calculations, as it best recreated a one-to-one correlation to the experimental \pKa{} values, and could account for the polarizability and other electronic properties of the protein.
 
-The results of these calculations are shown in Figure \ref{fig:calc_pKas}B, where we observed still a poor correlation to the experimental values (r = 0.48).
+The results of these calculations are shown in Figure \ref{fig:calc_pKas}B, where we observed still a poor correlation to the experimental values ($r = 0.48$).
 Overall, our results suggest that simple continuum models, such as the one used here, are inadequate to describe the electrostatic heterogeneity of the interior of GFP.
 Additionally, even when combined with expensive all-atom simulations with explicit water, the correlation to experiment does not significantly improve.
 One potential shortcoming of this calculation method is that we have ignored any coupling between the titration states of the fluorophore and the surrounding titratable residues (most notably E222 and H148).
@@ -476,13 +476,13 @@ We are currently expanding our studies of these nitrile probes to locations othe
 \begin{figure}
     \center
     \includegraphics[width=6.0in]{figures-gfp-pKa/calc_forces.png}
+    \caption{Comparison of the experimentally measured nitrile frequencies to calculated electric fields along the nitrile bond of \pCNF{} 145 and 165. Error bars on the $y$-axis have been omitted for clarity; in general, the distributions of fields calculated for each data point from the ensemble of MD structures are large relative to the shifts in average field ($\pm100\%$). (A) Calculated field using the APBS-based RF method along the bond vector of \pCNF{} 145 compared to the experimentally measured vibrational frequency. (B) Calculated field using the APBS-based RF method along the bond vector of \pCNF{} 165 compared to the experimentally measured vibrational frequency.}
     \label{fig:calc_forces}
-    \caption{Comparison of the experimentally measured nitrile frequencies to calculated electric fields along the nitrile bond of \pCNF{} 145 and 165. Error bars on the y-axis have been omitted for clarity; in general, the distributions of fields calculated for each data point from the ensemble of MD structures are large relative to the shifts in average field ($\pm100\%$). (A) Calculated field using the APBS-based RF method along the bond vector of \pCNF{} 145 compared to the experimentally measured vibrational frequency. (B) Calculated field using the APBS-based RF method along the bond vector of \pCNF{} 165 compared to the experimentally measured vibrational frequency.}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusions}\label{conclusion}
+\section{Conclusions}\label{pKa-conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
