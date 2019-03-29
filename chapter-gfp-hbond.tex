@@ -13,7 +13,7 @@ Meanwhile, the experimental measurement of the FTLS of the nitrile is an excelle
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Inroduction}\label{intro}
+\section{Introduction}\index{hbond-intro}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -65,10 +65,10 @@ Instead, the FTLS can be used to differentiate a range of solvent exposure and e
 This makes the FTLS a powerful diagnostic tool for interpreting any nitrile spectrum, as it allows for the rapid comparison of hydrogen bonding interactions of different states.
 In the context of a VSE experiment, the FTLS could confirm that the hydrogen bonding interactions have not changed from the initial to perturbed state. 
 
-To evaluate the FTLS of nitriles as a diagnostic tool of hydrogen bonding environment, we biosynthetically incorporated p-cyanophenylalanine (CNF) at nine locations in GFP.
+To evaluate the FTLS of nitriles as a diagnostic tool of hydrogen bonding environment, we biosynthetically incorporated \emph{p}-cyanophenylalanine (CNF) at nine locations in GFP.
 The locations were chosen based on the PDB crystal structure 2b3p\cite{Pedelacq2006} to sample a broad range of solvent accessibility and hydrogen bonding environments.
-Using the crystal structure, we classified a priori the locations as solvent exposed or buried based on the crude assessment of whether or not the side chain was pointed into the interior of the $\beta$-barrel.
-The nine locations chosen are shown in Figure 1, where the colored spheres indicate a residue that was independently mutated to CNF.
+Using the crystal structure, we classified \emph{a priori} the locations as solvent exposed or buried based on the crude assessment of whether or not the side chain was pointed into the interior of the $\beta$-barrel.
+The nine locations chosen are shown in Figure \ref{fig:hbond-system}, where the colored spheres indicate a residue that was independently mutated to CNF.
 We collected temperature dependent Fourier transform infrared (FTIR) spectra and performed MD simulations of each nitrile-containing protein variant.
 We found that there is a strong correlation between the FTLS and the solvent accessible surface area (SASA) of the CNF (determined from MD simulations) despite the diverse hydrogen bonding profiles.
 This indicates that FTLS can be used reliably and rapidly to test differences in hydrogen bonding interactions of nitrile probes.
@@ -77,9 +77,16 @@ We found that the observed vibrational shifts of the nitrile in each location ca
 Although acetonitrile and CNF are structurally different, we expect them to behave similarly in this regard, as they have been shown to respond similarly to other spectroscopic perturbations \cite{Getahun2003}.
 This observation confirms the predictions by Choi et al. and underlines the importance of understanding the molecular-level details of the hydrogen bonding interactions to the nitrile  before interpreting its vibrational spectrum.
 
+\begin{figure}
+    \center
+    \includegraphics[width=3.25in]{figures-gfp-hbond/system.png}
+    \caption{Locations of the nitrile probes in green fluorescent protein (GFP) shown on the crystal structure 2b3p. Each location shown in the spherical representations was independently mutated to \emph{p}-cyanophenylalanine (CNF). The first letter indicates the one-letter amino acid code of the residue that was replaced by CNF, denoted by ``X".}
+    \label{fig:hbond-system}
+\end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Methods}\label{methods}
+\section{Methods}\index{hbond-methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -115,13 +122,13 @@ The first 10 ns was discarded as equilibration time, and only the last 40 ns are
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Results}\label{results}
+\section{Results}\index{hbond-results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Vibrational Absorption Measurements}
 
 We measured the nitrile stretching frequencies of biosynthetically incorporated CNF probes at nine positions in GFP, as well as CNF in water and \emph{p}-tolunitrile in THF.
-The resulting spectra at 25 \si{\celsius} are shown in Figure 2, where the number to the right of each spectrum indicates the position of the probe according to Figure 1.
+The resulting spectra at 25 \si{\celsius} are shown in Figure \ref{fig:hbond-spectra}, where the number to the right of each spectrum indicates the position of the probe according to Figure \ref{fig:hbond-system}.
 Each spectrum was fit to a gaussian curve using an in-house fitting program described elsewhere \cite{Ragain2012}.
 The mean vibrational frequency and FWHM of each spectrum are found in the Supporting Information (Table S1).
 Most of the probe locations (114, 117, 143, 198 and 212) had mean vibrational frequencies that were centered around the value of CNF in water ($\sim$2238 \si{\wn}).
@@ -133,19 +140,33 @@ The final probe location (92) had a mean vibrational frequency higher (2243 \si{
 The range of measured frequencies of the nitrile in these locations is larger than the range for the small CNF analogs in THF (2228 \si{\wn}) and water (2238 \si{\wn}), which are the two solvents commonly used to represent the extremes of potential solvent hydrogen bonding for CNF.
 Clearly, the broad range of hydrogen bonding environments available within a complex protein system is not adequately recapitulated by the solvatochromism of small nitrile derivatives. 
 
+\begin{figure}
+    \center
+    \includegraphics[width=3.00in]{figures-gfp-hbond/spectra_colors.pdf}
+    \caption{Representative FTIR absorption spectra of CNF in each of the nine locations at 25 \si{\celsius}, arranged from the lowest to highest mean frequency. Each spectrum is normalized to a maximum absorbance of 1. The nitrile location for each spectrum is indicated by the number to the right, according to Figure \ref{fig:hbond-system}. The spectra are offset from the $x$-axis for clarity. The color of the background indicates our \emph{a priori} classification of the solvent accessibility of the nitrile location based on the crystal structure. Blue indicates a position where the wild type side chain is pointed away from the interior of the barrel, and thus the nitrile was expected to be solvent exposed. Green indicates a position where the wild type side chain is pointed into the interior of the barrel, and thus the nitrile was expected to be buried. At the bottom are representative spectra of \emph{p}-tolunitrile in THF at 25 \si{\celsius} (black) and CNF in water at 25 \si{\celsius} (light blue).}
+    \label{fig:hbond-spectra}
+\end{figure}
+
 Next, we measured the temperature dependence of the nitrile stretching frequencies for each of the nine positions in GFP, as well as the CNF in water and \emph{p}-tolunitrile in THF, over the range of 5-35 \si{\celsius}.
 Over this temperature range, GFP has been shown be to remain stably folded \cite{Slocum2016, Pedelacq2006}.
 The mean vibrational frequency and FWHM of each spectrum at each temperature are also found in the Supporting Information (Table S1).
-Figure 3 shows the change in nitrile center frequency (relative to the frequency at 5 \si{\celsius}) as a function of temperature.
+Figure \ref{fig:hbond-ftls} shows the change in nitrile center frequency (relative to the frequency at 5 \si{\celsius}) as a function of temperature.
 Similar to the work of Adhikary et al. \cite{Adhikary2015}, we measured a linear response over this temperature range for each of the probe locations, as well as for the small molecules.
-For the aprotic solvent THF, we did not measure any change in the nitrile stretching frequency over this temperature range (Figure 3, black).
-Conversely, for CNF in water we measured a large change in frequency as a function of temperature (Figure 3, light blue).
+For the aprotic solvent THF, we did not measure any change in the nitrile stretching frequency over this temperature range (Figure \ref{fig:hbond-ftls}, black).
+Conversely, for CNF in water we measured a large change in frequency as a function of temperature (Figure \ref{fig:hbond-ftls}, light blue).
 Interestingly, each nitrile location in our nine systems had a unique and distinct FTLS, showing that our nine protein systems sampled a broad range of different hydrogen bonding interactions.
 Most of the CNF probes in GFP gave temperature responses that were in between the extremes of THF and water, which suggests that these probes all experience varying amounts of hydrogen bonding that are not as strong as the well-solvated CNF in water.
 However, for the nitriles at positions 212 and 92, we measured a temperature dependent frequency response greater than that for CNF in water, possibly suggesting that these two probe locations experience either more frequent, or stronger, hydrogen bonds than CNF in water.
-This is not surprising for position 212, which is on a solvent exposed loop in GFP (Figure 1).
+This is not surprising for position 212, which is on a solvent exposed loop in GFP (Figure \ref{fig:hbond-system}).
 However, position 92 is pointed into the GFP barrel, where we do not expect much interaction between the nitrile and water.
 To interpret the differences in the FTLS of the nitrile in different locations, we turned to MD simulations to investigate the microscopic hydrogen bonding interactions around each probe, including to the nitrile itself. 
+
+\begin{figure}
+    \center
+    \includegraphics[width=3.25in]{figures-gfp-hbond/FTLS.pdf}
+    \caption{Mean vibrational frequencies of CNF at each location as a function of temperature. The number to the right indicates the CNF location according to Figure \ref{fig:hbond-system}. Linear regression was used to fit a line to each data set. The slope of each trend line is the FTLS for that particular probe location. The temperature dependencies of the mean vibrational frequency of CNF in water (light blue) and \emph{p}-tolunitrile in THF (black) are also shown.}
+    \label{fig:hbond-ftls}
+\end{figure}
 
 \subsection{SASA calculations}
 
@@ -158,57 +179,85 @@ We calculated the SASA of several subsets of the atoms within the CNF residue of
 Specifically, we calculated the SASA of the nitrile alone, the nitrile plus the C$_{\beta}$, two H$_{\beta}$'s and the phenyl ring, and the entire CNF residue including the backbone atoms.
 These subsets for these calculations are illustrated in the Supporting Information (Figure S1), and the results are shown in Figure S2.
 We found that the SASA of just the nitrile with its low total surface area was very sensitive to small changes in the surrounding protein structure, giving large fluctuations in SASA over the course of the simulation.
-The SASA of the entire residue, shown in Figure 4, gave the broadest range of values with the smallest standard deviations.
+The SASA of the entire residue, shown in Figure \ref{fig:hbond-sasa}, gave the broadest range of values with the smallest standard deviations.
 We have therefore chosen to focus on these values for that analysis that follows.
 Across each of the nine CNF locations, there was a continuum of SASA possibilities ranging from completely solvent exposed to completely inaccessible.
 SASA calculations revealed that two probes (positions 117 and 212) were highly solvent exposed and had SASAs that approached the calculated maximum of CNF by itself in solvent ($\sim$2.5 nm$^2$).
 Three probes, at positions 114, 143 and 198, had intermediate SASAs ($\sim$0.5 nm$^2$ to 1.5 nm$^2$) relative to free CNF.
 Two probes (positions 145 and 165) had a low SASA ($\sim$0.25 nm$^2$ to 0.5 nm$^2$) relative to free CNF.
-Finally, two probes (positions 92 and 218) showed nearly zero SASA throughout the simulation, though these two had quite different FTLS values, shown in Figure 3.
+Finally, two probes (positions 92 and 218) showed nearly zero SASA throughout the simulation, though these two had quite different FTLS values, shown in Figure \ref{fig:hbond-ftls}.
 This discrepancy between the SASA and the measured FTLS suggests that the nitriles in these nine positions experienced differences in local environment more complex than could be captured by SASA calculations.
+
+\begin{figure}
+    \center
+    \includegraphics[width=3.25in]{figures-gfp-hbond/sasa_v_time.png}
+    \caption{SASA of the CNF residue as a function of simulation time in 50 ns of production MD simulation for the nine GFP mutants containing the nitrile group.}
+    \label{fig:hbond-sasa}
+\end{figure}
 
 \subsection{Hydrogen bonding calculations}
 
 The MD simulations provide molecular level information about the hydrogen bonds around each nitrile probe that is significantly more detailed than the SASA.
 For each of the nine systems, we analyzed the MD trajectories for the presence and geometry of hydrogen bonding using an in-house code to characterize hydrogen bonds to a nitrile probe in each frame of the simulation.
 All nearby O, N, S, and C$_{\alpha}$ atoms were considered to be potential donors.
-A hydrogen bond donor was determined to be hydrogen bonding if three conditions were satisfied: 1) the C--N$\cdots$H angle was greater than \ang{99} ($\theta_1$ in Figure 5); 2) the N$\cdots$H--R$_{\text{donor}}$ angle ($\theta_2$ in Figure 5) was greater than \ang{120}; and 3) the N$\cdots$H distance was less than 2.45 \si{\angstrom} ($d_{\text{NH}}$ in Figure 5).
+A hydrogen bond donor was determined to be hydrogen bonding if three conditions were satisfied: 1) the C--N$\cdots$H angle was greater than \ang{99} ($\theta_1$ in Figure \ref{fig:hbond-scheme}); 2) the N$\cdots$H--R$_{\text{donor}}$ angle ($\theta_2$ in Figure \ref{fig:hbond-scheme}) was greater than \ang{120}; and 3) the N$\cdots$H distance was less than 2.45 \si{\angstrom} ($d_{\text{NH}}$ in Figure \ref{fig:hbond-scheme}).
 These cutoff values were chosen to accept hydrogen bonds that fall within 2 standard deviations of a typical hydrogen bond to nitriles, as defined by Le Questel et al \cite{LeQuestel2000}.
 The code was implemented in C++ for use with the Gromacs package.  
+
+\begin{figure}
+    \center
+    \includegraphics[width=3.25in]{figures-gfp-hbond/hbonding_scheme.png}
+    \caption{Schematic of the hydrogen bonding geometric criteria. $\theta_1$ is the C--N$\cdots$H angle. $\theta_2$ is the N$\cdots$H--R$_{\text{donor}}$ angle, where R$_{\text{donor}}$ represents any hydrogen bond donor. $d_{\text{NH}}$ is the distance between the hydrogen and the acceptor nitrogen. In this analysis, any S, N, O, C$_{\alpha}$ atom was considered to be a potential hydrogen bond donor. To be considered a hydrogen bond, $\theta_1$ must be greater than \ang{99}, $\theta_2$ must be greater than \ang{120}, and $d_{\text{NH}}$ must be less than 2.45 \si{\angstrom}.}
+    \label{fig:hbond-scheme}
+\end{figure}
 
 \subsection{Hydrogen bonds donated from water}
 
 Hydrogen bond geometries between the nitrile and water were calculated for each snapshot for each of the nine MD simulations of CNF containing variants.
 For each hydrogen bond, the geometry was calculated, and the different geometries were binned by $\theta_1$ and $d_{\text{NH}}$.
-These results are plotted as heat maps in Figure 6a.
+These results are plotted as heat maps in Figure \ref{fig:hbond-heatmap}A.
 Hydrogen bonding geometries were also binned according to $\theta_2$ and $d_{\text{NH}}$.
-However, the $\theta_2$ (data not shown) and $d_{\text{NH}}$ distributions (Figure 6) did not vary greatly across the nine systems (data not shown), and therefore contained less information.
+However, the $\theta_2$ (data not shown) and $d_{\text{NH}}$ distributions (Figure \ref{fig:hbond-heatmap}) did not vary greatly across the nine systems (data not shown), and therefore contained less information.
 For the rest of these analyses, we will focus primarily on $\theta_1$ as the determinant angle.
-Figure 6a shows that several different hydrogen bonding geometries between the nitrile probes and water were present in our MD simulations.
+Figure \ref{fig:hbond-heatmap}A shows that several different hydrogen bonding geometries between the nitrile probes and water were present in our MD simulations.
 The nitriles at positions 114, 117, 198, and 212 experienced broad distributions of hydrogen bonding angles, with each distribution covering the entire range of allowed angles (\ang{99} to \ang{180}).
 This type of hydrogen bonding profile is consistent with a large degree of solvent exposure, where the hydrogen bonds are free to take on many orientations.
-A representative snapshot of CNF in a solvent exposed position is shown in Figure 7a.
-In contrast, Figure 6a shows the nitriles at position 145 and 218 experienced a much narrower distribution of hydrogen bonds, with hydrogen bonding angles localized between \ang{110} and \ang{150}.
-A representative snapshot of a hydrogen bond between water and CNF 145 is shown in Figure 7b, and a representative snapshot of a hydrogen bond between water and CNF 218 is shown in Figure 7c.
+A representative snapshot of CNF in a solvent exposed position is shown in Figure \ref{fig:hbond-snapshot}A.
+In contrast, Figure \ref{fig:hbond-heatmap}A shows the nitriles at position 145 and 218 experienced a much narrower distribution of hydrogen bonds, with hydrogen bonding angles localized between \ang{110} and \ang{150}.
+A representative snapshot of a hydrogen bond between water and CNF 145 is shown in Figure \ref{fig:hbond-snapshot}B, and a representative snapshot of a hydrogen bond between water and CNF 218 is shown in Figure \ref{fig:hbond-snapshot}C.
 These specific hydrogen bond geometries will be discussed in more detail below.
-The nitriles at positions 92 and 143 experienced very few hydrogen bonds from water throughout the simulation (Figure 6a).
-The nitrile at position 165 experienced slightly more hydrogen bonding from water than position 92 and 143, with two distinct geometries, one centered near \ang{150} and one centered near \ang{100} (Figure 6a).
+The nitriles at positions 92 and 143 experienced very few hydrogen bonds from water throughout the simulation (Figure \ref{fig:hbond-heatmap}A).
+The nitrile at position 165 experienced slightly more hydrogen bonding from water than position 92 and 143, with two distinct geometries, one centered near \ang{150} and one centered near \ang{100} (Figure \ref{fig:hbond-heatmap}A).
 Even using only three geometric parameters and considering only hydrogen bonds from water, we observed that CNF at these nine locations experienced a wide variety of possible hydrogen bonding interactions within these constraints.
 Clearly, a Boolean classification of hydrogen bonding is insufficient to describe the individual positions of each nitrile vibrational probe used in this work. 
+
+\begin{figure}
+    \center
+    \includegraphics[width=6.5in]{figures-gfp-hbond/Figure6_combined.png}
+    \caption{Heat maps of the hydrogen bonding geometries to CNF at each probe location. The titles are colored to correspond to the color codes used elsewhere in the paper. The hydrogen bonding geometries to CNF were calculated at each snapshot (every 4 ps) of the last 40 ns of a 50 ns MD simulation. Contour lines are drawn to guide the eye. $d_{\text{NH}}$ ($x$-axis) and $\theta_1$ ($y$-axis) are defined in Figure \ref{fig:hbond-scheme}. (A) Hydrogen bonds that are donated specifically from water, where R$_{\text{donor}}$ is the oxygen atom of a water molecule. (B) Hydrogen bonds that are donated from protein, where R$_{\text{donor}}$ may be any S, N, O, C$_{\alpha}$ atom on the protein.}
+    \label{fig:hbond-heatmap}
+\end{figure}
+
+\begin{figure}
+    \center
+    \includegraphics[width=3.25in]{figures-gfp-hbond/snapshots.png}
+    \caption{Representative snapshots of select hydrogen bonding configurations observed in simulation. (A) The nitrile at position 117 was solvent exposed and involved in multiple simultaneous hydrogen bonds that exchanged frequently throughout the simulation. (B) The nitrile at position 145 was involved with a $\pi$-hydrogen bond with a confined water molecule, where $\theta_1$ was approximately \ang{120}. (C) The nitrile at position 218 was involved in a hydrogen bond with a confined water molecule, which is also hydrogen bound to the OH group of Ser205. The Connolly surface computed with gmx sasa is shown in pink lines to emphasize how a small available SASA can still have significant hydrogen bonding. (D) The nitrile at position 92 was involved in a linear hydrogen bond with the amide hydrogen of Gln69, where $\theta_1$ was approximately \ang{180}.}
+    \label{fig:hbond-snapshot}
+\end{figure}
 
 \subsection{Hydrogen bonds donated from protein}
 
 In addition to hydrogen bonds from water, we also investigated possible hydrogen bonds formed between the nitrile and donors from protein moieties.
 Specifically, any O, N, S, or C$_{\alpha}$ atom in the protein was considered to be a possible hydrogen bond donor.
-For each hydrogen bond between the nitrile and a protein donor, the geometry of the interaction was calculated and binned, and the results are shown as a heat map in Figure 6b.
+For each hydrogen bond between the nitrile and a protein donor, the geometry of the interaction was calculated and binned, and the results are shown as a heat map in Figure \ref{fig:hbond-heatmap}B.
 Most nitrile locations (114, 117, 145, 198, 212, and 218) did not experience significant hydrogen bonding to donors from the protein.
 However, the nitriles at positions 143 and 165 experienced some hydrogen bonding from the protein, and the nitrile at position 92 experienced extensive hydrogen bonding from a protein donor.
 To investigate these protein-donated hydrogen bonding populations, we inspected the trajectories of each nitrile location.
-For the nitrile at location 165, we found that the nitrile accepted transient hydrogen bonds from nitrogen atoms on two different nearby side chains (Arg96 and Gln183), leading to the two distinct populations shown in Figure 6b.
+For the nitrile at location 165, we found that the nitrile accepted transient hydrogen bonds from nitrogen atoms on two different nearby side chains (Arg96 and Gln183), leading to the two distinct populations shown in Figure \ref{fig:hbond-heatmap}B.
 For the nitrile at position 143, we found that the nitrile accepted hydrogen bonds from a nitrogen on nearby Lys207, and interestingly the nitrile also accepted transient hydrogen bonds from the C$_{\alpha}$ of nearby Met218.
 Carbon donated hydrogen bonds, especially from C$_{\alpha}$ atoms to nearby oxygen atoms, are common in proteins and have been under investigation for some time \cite{Wahl1997, Scheiner2011, Horowitz2012}, but this is the first evidence to our knowledge of a carbon-nitrile hydrogen bond.
 Finally, at position 92, we found that the nitrile had a high probability of accepting a linear hydrogen bond from the amide hydrogen of Gln69.
-A representative snapshot of this interaction is shown in Figure 7d and will be discussed in more detail below.
+A representative snapshot of this interaction is shown in Figure \ref{fig:hbond-snapshot}D and will be discussed in more detail below.
 The observation that several of these CNF probes in the interior of GFP were engaged in hydrogen bonds with protein donors leads us to believe that because hydrogen bonds to the nitrile are so energetically favorable, the nitrile will accept weak hydrogen bonds from unconventional donors rather than remain isolated.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -219,7 +268,7 @@ The observation that several of these CNF probes in the interior of GFP were eng
 
 \subsection{Relationship between FTLS and SASA}
 
-To assess if the FTLS is a good measure of hydrogen bonding interactions, we plotted the measured FTLS values against the ensemble averaged SASA of the CNF residues from simulation in Figure 8a.
+To assess if the FTLS is a good measure of hydrogen bonding interactions, we plotted the measured FTLS values against the ensemble averaged SASA of the CNF residues from simulation in Figure \ref{fig:hbond-comparison}A.
 Our results show that there is a strong correlation between FTLS and SASA ($r = -0.920$), with two outliers (positions 92 and 218) that are not included in the regression fit.
 We also performed this analysis using the SASA calculations of the aromatic sidechain atoms and the nitrile alone (from Figure S2).
 The resulting comparisons can be in Figure S3 in the Supporting Information.
@@ -233,7 +282,7 @@ These two examples of complex dynamic behavior of the CNF side chain indicate th
 
 It is important to note that not all hydrogen bonding environments are captured by a calculation of the SASA.
 For the two outliers discussed previously, CNF 92 and 218, we saw that the nitriles in these two locations experienced hydrogen bonding interactions that were not well described by SASA.
-The data in Figure 6 clearly demonstrate that CNF 92 was involved in a strong linear hydrogen bond with the amide hydrogen of Gln69, a representative snapshot of which is shown in Figure 7d.
+The data in Figure \ref{fig:hbond-heatmap} clearly demonstrate that CNF 92 was involved in a strong linear hydrogen bond with the amide hydrogen of Gln69, a representative snapshot of which is shown in Figure \ref{fig:hbond-snapshot}D.
 Since this interaction was not due to solvent, it was not captured by the SASA.
 In this case, relying only on the SASA calculation would have resulted in the incorrect conclusion that this nitrile was in an environment free from hydrogen bonding.
 The FTLS, however, was the largest of any of the probe locations.
@@ -241,8 +290,15 @@ This leads us to believe that nitriles in buried locations as predicted by the c
 Further, we believe that this shows that in such cases the FTLS still provides a good experimental measure of hydrogen bonding interactions of the nitrile.
 Because the FTLS was large over the temperature range measured in this particular case, we hypothesize that at increased temperatures, the thermal fluctuations of the protein backbone will increase and break the linear hydrogen bond between CNF 92 and the protein backbone, resulting in a large FTLS. 
 
-Additionally, CNF 218 had a very low SASA, but the data in Figure 6a clearly show extensive hydrogen bonding to the solvent.
-While the entire residue was surrounded by protein, leading to low SASA values, the nitrile group itself pointed directly to a single confined water stabilized by a hydrogen bond to Ser205, a representative snapshot of which is shown in Figure 7c.
+\begin{figure}
+    \center
+    \includegraphics[width=6.5in]{figures-gfp-hbond/Figure8_combined.pdf}
+    \caption{(A) The ensemble averaged SASA of the CNF residue plotted against the measured FTLS. The error bars on the $x$-axis are the standard deviations of the calculated SASAs. The regression line (black) does not include the nitrile at position 92 (purple) or 218 (red). These outliers are discussed in the main text. (B) For each of the nine nitrile locations, the average angle of hydrogen bonding from simulation is plotted against the experimental mean vibrational frequency. For reference, the mean vibrational frequency of CNF in water is shown as a light-blue dashed line, and the mean vibrational frequency of \emph{p}-tolunitrile in THF is shown as a black dashed line. All vibrational frequencies shown here were measured at 25\si{\celsius}.}
+    \label{fig:hbond-comparison}
+\end{figure}
+
+Additionally, CNF 218 had a very low SASA, but the data in Figure \ref{fig:hbond-heatmap}A clearly show extensive hydrogen bonding to the solvent.
+While the entire residue was surrounded by protein, leading to low SASA values, the nitrile group itself pointed directly to a single confined water stabilized by a hydrogen bond to Ser205, a representative snapshot of which is shown in Figure \ref{fig:hbond-snapshot}C.
 This water formed hydrogen bonds with CNF 218 and could not easily diffuse away from the nitrile when the hydrogen bond was broken.
 While the water molecule exchanged throughout the simulation, it did so rarely.
 Because the small SASA was occupied with a hydrogen bonding water molecule, the calculated SASA value did not capture the hydrogen bonding interactions.
@@ -250,7 +306,7 @@ In this case again, relying solely upon the calculated SASA would have led to th
 We interpret the FTLS of CNF 218 to indicate that this water is more likely to exchange with increased temperature, weakening the hydrogen bonding interaction to the nitrile and shifting the frequency.
 We are currently investigating both of these hypothesized interpretations of the FTLS with additional simulations at varying temperatures.
 
-These two observations from the MD trajectories of CNF 92 and 218 provide clear and direct explanations as to why they are outliers of the otherwise strong correlation between SASA and FTLS shown in Figure 8a.
+These two observations from the MD trajectories of CNF 92 and 218 provide clear and direct explanations as to why they are outliers of the otherwise strong correlation between SASA and FTLS shown in Figure \ref{fig:hbond-comparison}A.
 When the collection of nitrile locations is taken together, it is apparent that the temperature dependence of the nitrile frequencies is directly related to their respective hydrogen bonding environments in a quantitative manner.
 These measurements demonstrate that the FTLS may be used to assess whether or not a particular nitrile location experiences a change in specific hydrogen bonding interactions as a result of some perturbation, such as an amino acid mutation or ligand docking event.
 This would therefore allow the change in nitrile frequency to be attributed to that particular perturbation, and not to a change in specific hydrogen bonding environment.
@@ -259,40 +315,41 @@ This would therefore allow the change in nitrile frequency to be attributed to t
 
 With the MD simulations of CNF containing GFP mutants and the predicted effects of hydrogen bond angle on the nitrile frequency reported by Choi et al. \cite{Choi2008}, we now have a straightforward way to interpret the relative frequency of our nitrile absorption spectra that would not have otherwise been possible.
 The solvent exposed probes at positions 114, 117, 198, and 212 all had very similar FTIR absorption spectra, with frequencies centered on $\sim$2238 \si{\wn} and peak widths of 10 \si{\wn}.
-Accordingly, the MD simulations showed that all four had similar water hydrogen bonding geometry profiles (Figure 6) and the four largest SASA values (Figure 4).
+Accordingly, the MD simulations showed that all four had similar water hydrogen bonding geometry profiles (Figure \ref{fig:hbond-heatmap}) and the four largest SASA values (Figure \ref{fig:hbond-sasa}).
 
 To see whether the Cho group's theoretical predictions of the frequency changes due to hydrogen bonding orientation could be used in other cases, we extended this analysis to the CNF probe locations that experienced different hydrogen bonding geometries.
 For example, the mean vibrational frequency of the nitrile at position 145 was the most red-shifted of any of the spectra and had the narrowest FWHM.
-In simulation, CNF 145 was involved frequently in a hydrogen bond to water at $\sim$\ang{125} (Figure 7b).
+In simulation, CNF 145 was involved frequently in a hydrogen bond to water at $\sim$\ang{125} (Figure \ref{fig:hbond-snapshot}B).
 In agreement with our experimental observations, the Cho group predicted that these $\pi$-hydrogen bonds to nitriles red-shift the stretching frequency.
 Additionally, hydrogen bonds to CNF 145 were more constrained with a smaller angle distribution than any other probe, corresponding to the narrow FWHM of the measured FTIR spectrum. 
 
-Similarly, we found that the nitrile at position 218 was also involved in $\pi$-hydrogen bonding (Figure 7c) but with a larger maximum angle probability than that of CNF 145 by $\sim$\ang{10}.
-Consistent with the predictions from the Cho group for $\pi$-hydrogen bonding, the frequency of the nitrile at position 218 was blue-shifted relative to the nitrile at position 145, but also red-shifted relative to all the other probe locations (Figure 2).
+Similarly, we found that the nitrile at position 218 was also involved in $\pi$-hydrogen bonding (Figure \ref{fig:hbond-snapshot}C) but with a larger maximum angle probability than that of CNF 145 by $\sim$\ang{10}.
+Consistent with the predictions from the Cho group for $\pi$-hydrogen bonding, the frequency of the nitrile at position 218 was blue-shifted relative to the nitrile at position 145, but also red-shifted relative to all the other probe locations (Figure \ref{fig:hbond-spectra}).
 This spectrum was again quite narrow, consistent with the MD simulation information of a constricted hydrogen bond. 
 
 The two nitrile locations (143 and 165) that experienced the fewest hydrogen bonds of any of the locations are more difficult to interpret in this manner.
 Nevertheless, the few hydrogen bonds experienced by the nitrile at position 143 are of similar $\theta_1$ (centered around \ang{145}) to the solvent exposed residues.
 Experimentally, its mean vibrational frequency was also similar to the solvent exposed residues.
-The nitrile at position 165 experienced a small population of hydrogen bonds from protein at sharp angles ($\sim$\ang{100}, Figure 6b), and while this angle should red-shift the frequency, the effect is small due to the size of the population.
+The nitrile at position 165 experienced a small population of hydrogen bonds from protein at sharp angles ($\sim$\ang{100}, Figure \ref{fig:hbond-heatmap}B), and while this angle should red-shift the frequency, the effect is small due to the size of the population.
 Correspondingly, the absorbance frequency of the nitrile at position 165 is red-shifted relative to the solvent exposed residues, but not as red-shifted as positions 92 and 218. 
 
 Finally, we found a direct interpretation of the far blue-shifted spectrum of the nitrile at position 92.
 In the absence of any molecular level information, the interpretation of this spectrum would be very difficult, because this location is in the interior of the $\beta$-barrel, removed from potential bulk water hydrogen bonds.
-However, the simulations revealed that the nitrile at this location was involved in a strong linear hydrogen bond (Figure 7d) to the amide backbone of Gln69.
+However, the simulations revealed that the nitrile at this location was involved in a strong linear hydrogen bond (Figure \ref{fig:hbond-snapshot}D) to the amide backbone of Gln69.
 Such $\sigma$-hydrogen bonds are predicted by the Cho group to blue-shift the spectra by withdrawing electron density from the antibonding molecular orbital of the nitrile, increasing the overall bond order of the group and shortening the bond, leading to higher frequency \cite{Getahun2003, Adhikary2014, Eaton1988}.
 Additionally, we found that there were two distinct hydrogen bonding populations for the nitrile at this location.
 While the dominant population was linear ($\sim$160-\ang{180}) and blue-shifting, there was a smaller population at a smaller $\theta_1$ ($\sim$\ang{100}).
 This smaller population caused a lowering of the nitrile frequency relative to the linear hydrogen bonded population and resulted in a broadening of the experimental FTIR spectrum.
 Indeed, the nitrile at position 92 had the highest FWHM, and was the only mutant from the MD trajectories that had two significant hydrogen bonding populations that occurred at sharply different angles. 
-To quantify the effect of hydrogen bonding geometry on the measured nitrile frequencies, we binned all of the hydrogen bonding geometries observed for each probe by angle and fit a polynomial to smooth the noise of the histogram (Figure S4a).
+To quantify the effect of hydrogen bonding geometry on the measured nitrile frequencies, we binned all of the hydrogen bonding geometries observed for each probe by angle and fit a polynomial to smooth the noise of the histogram (Figure S4A).
 Because of the geometric considerations of the hydrogen bonding probability \cite{Kroon1975}, we calculated the probability density for each angle for $\theta_1$ by normalizing the angles by the volume element of each angular bin, calculated via Equation \ref{eq:angnorm}: 
 \begin{equation}
     V = \frac{2\pi d^3_{\text{NH}}}{3}(\cos(\pi-\theta_1') - \cos(\pi - \theta_1'')) 
+    \label{eq:angnorm}
 \end{equation}
 Here, $V$ is the volume element of the bin, $\theta_1'$ and $\theta_2''$ are the bin edges of $\theta_1$, and $d_{\text{NH}}$ is the maximum hydrogen bond distance.
-The normalized probability densities are shown in Figure S4b.
-ne then took the weighted average of all the hydrogen bonds by probability (black vertical line in Figure S4b) and plotted this average angle against the mean vibrational frequency of each nitrile in Figure 8b. 
+The normalized probability densities are shown in Figure S4B.
+ne then took the weighted average of all the hydrogen bonds by probability (black vertical line in Figure S4B) and plotted this average angle against the mean vibrational frequency of each nitrile in Figure \ref{fig:hbond-comparison}B. 
 
 For all nine probe locations investigated, we observed a strong correlation ($r = 0.944$) between the hydrogen bonding angle and the mean vibrational frequency, as Choi et al. predicted in their quantum mechanical calculations \cite{Choi2008}.
 The strength of the correlation is somewhat surprising given the well-known inaccuracies of hydrogen bonding geometries in the Amber03 force field \cite{Paton2009}, and that we have not accounted for electrochromic effects contributing to the measured frequencies or for exchange-repulsion interaction-induced frequency shift.
@@ -308,7 +365,7 @@ Thus, the average hydrogen bond distances are not well correlated to the experim
 Because of the strong correlation of the hydrogen bonding angle, the lack of correlation of the calculated Coulombic field, and the lack of correlation of the average hydrogen bonding distance, we believe that the hydrogen bonding angle is the dominant contribution to the frequency in these cases.
 
 In order to contribute to the line shape of the nitrile spectra, a given hydrogen bond would need to have a lifetime longer than the vibrational lifetime of the nitrile probe.
-To determine whether or not that was the case for the hydrogen bond populations in Figure 6, we tracked each hydrogen bond in all nine trajectories.
+To determine whether or not that was the case for the hydrogen bond populations in Figure \ref{fig:hbond-heatmap}, we tracked each hydrogen bond in all nine trajectories.
 As a function of simulation time, we plotted the number of hydrogen bonds that persisted for at least that length of time.
 These plots were fit to an exponential decay function and are shown in the Supporting Information (Figure S8).
 The lifetimes were calculated from the decay rate and are reported in Table S2.
@@ -329,11 +386,11 @@ Certainly, we have shown that a Boolean classification of the existence of hydro
 There is a broad range of hydrogen bonding interactions available to a nitrile probe, and each circumstance contributes differently to the nitrile frequency.
 This means that there is not a constant change in frequency that can universally be applied to all hydrogen bonding interactions.
 However, the ability of nitriles to accept hydrogen bonds should not be interpreted as a disadvantage for its use as a vibrational probe.
-The strength of the correlation in Figure 8b demonstrates that is possible to decouple the hydrogen bonding shift from other spectroscopic effects, such as the VSE, when there is sufficient molecular information about the hydrogen bonding geometry and FTLS.
+The strength of the correlation in Figure \ref{fig:hbond-comparison}B demonstrates that is possible to decouple the hydrogen bonding shift from other spectroscopic effects, such as the VSE, when there is sufficient molecular information about the hydrogen bonding geometry and FTLS.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusions}\label{conclusion}
+\section{Conclusions}\index{hbond-conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
