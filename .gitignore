@@ -1,0 +1,13 @@
+*.aux 
+*.toc 
+*.bbl
+*.blg 
+*.idx 
+*.swp
+*.lof 
+*.log 
+*.lot 
+clean_preview
+make 
+Dissertation-JTF.pdf
+
