@@ -16,7 +16,7 @@ We discuss the implications of such a mechanism on future strategies for combati
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Introduction} \label{pKa-intro}
+\section{Introduction} \label{ras-intro}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -40,13 +40,19 @@ However, the affinity of RasGAP for Ras is 3 orders of magnitude lower than that
 Because of this, therapeutic strategies for RasQ61X mutations must consider the protein when it is bound to its downstream effector, and thus GTP hydrolysis mostly occurs through an intrinsic, not assisted, mechanism. 
 However, the molecular level details of this intrinsic mechanism of hydrolysis have remained elusive.
 
-In 2010, Buhrman et al. proposed a new mechanism for intrinsic hydrolysis involving two water molecules, in which the catalytic water shuttles a proton to a bridging water molecule that is stabilized by hydrogen bonds to Q61 and Y32\cite{Buhrman2010}, as illustrated in Figure 1A. 
+In 2010, Buhrman et al. proposed a new mechanism for intrinsic hydrolysis involving two water molecules, in which the catalytic water shuttles a proton to a bridging water molecule that is stabilized by hydrogen bonds to Q61 and Y32\cite{Buhrman2010}, as illustrated in Figure \ref{fig:ras-mech}A. 
 This positively charged hydronium ion stabilizes the transition state in the intrinsic mechanism and partially fulfills the role of the ``arginine finger'' in the RasGAP-assisted hydrolysis mechanism, although with much lower efficacy. 
 From this perspective, the role of Q61 is to stabilize the hydronium ion, which in turn stabilizes the transition state. 
 This mechanism was suggested based on the appearance of a crystallographic water molecule in the pdb structure 3k8y\cite{Buhrman2010} but has not been confirmed through other experiments. 
 However, it is further supported by the fact that, in separate work, the same group found that highly and moderately transforming (cancer causing) mutants of Q61 tended to be buried and occluded from solvent, while weakly and nontransforming (noncancer causing) mutations were solvent exposed \cite{Buhrman2007}. 
 This supports the idea that water is crucial to the intrinsic hydrolysis mechanism. If this hypothesis is correct, then Q61 can be thought of as participating electrostatically, not chemically, in GTP hydrolysis, and so a careful interrogation of the effects of the electric field in and around the active site at steady-state and during hydrolysis are important for proving this mechanism.
 
+\begin{figure}
+    \center
+    \includegraphics[width=6.0in]{figures-ras/Figure1_two_column.png}
+    \caption{(A) A proposed multiwater mechanism of the intrinsic Ras GTPase reaction. The catalytic water (blue) shuttles a proton to a nearby, stabilized water (red) via the $\gamma$-phosphate, adopted from ref \citenum{Buhrman2010} and ref \citenum{Stafford2012}. (B) A snapshot of the Ras/\RalBSCN{} interface. The ribbons in the background represent the backbone of the protein. The sticks represent the relevant residues in the system: Y32 of Ras, Q61 of Ras, GTP, and \RalBSCN{}. The pink sphere is \ce{Mg^2+}, and the small sticks represent water in the active site.}
+    \label{fig:ras-mech}
+\end{figure}
 
 Previous work in our group has made use of vibrational Stark effect (VSE) spectroscopy to interrogate the electric field of the active site of Ras constructs with mutations at position 61 (RasQ61X, where X represents a mutation from the native Gln residue) \cite{Stafford2012}.
 VSE spectroscopy takes advantage of the difference dipole moment, $\Delta\vec{\mu}$, inherent in small vibrational probes (in this case a nitrile), to relate shifts in the vibrational frequency, $\Delta E$, to changes in local electric field, $\Delta\vec{F}$, according to eq \ref{eq:ras-stark} \cite{Andrews2000, Andrews2002, Fafarman2006, Fried2015, Slocum2018}:
@@ -59,13 +65,13 @@ VSE spectroscopy takes advantage of the difference dipole moment, $\Delta\vec{\m
 In that work, a nitrile probe was strategically incorporated at position 18 of the Ras binding domain of the downstream effector RalGDS (hereafter, \RalB{}), generating the construct \RalBSCN{} which denotes that the native isoleucine at position 18 was replaced with a cysteine, which was then post-translationally modified to cyanocysteine. 
 Though a different protein, c-Raf kinase (Raf), is the primary downstream effector of Ras \emph{in vivo}, Raf has been shown to alter some rates of intrinsic hydrolysis \cite{Buhrman2011}.
 By docking \RalBSCN{} with Ras, the nitrile group was well positioned to report on electric field changes due to mutations to Q61 in and around the Ras active site, without affecting the intrinsic hydrolysis mechanism. 
-A snapshot of this system based on the pdb structure 1lfd is shown in Figure 1B.
+A snapshot of this system based on the pdb structure 1lfd is shown in Figure \ref{fig:ras-mech}B.
 
 While nitrile spectra have also been shown to report on solvation environments due to quantum mechanical effects of specific hydrogen bonding \cite{Waegele2009, Oh2008,Fafarman2010}, here we show that the solvent exposure and specific hydrogen bonding interactions of the nitrile on \RalBSCN{} are identical between the Ras mutants. 
 We therefore interpreted the shifts in vibrational frequency of the nitrile probe on \RalB{} as changes in local electric field, according to eq \ref{eq:ras-stark}, caused by mutations to Q61 in Ras across the protein-protein interface ($\sim$9 \si{\angstrom}). 
 Because any multiwater intrinsic hydrolysis mechanism, such as that proposed by Buhrman et al., relies on noncovalent stabilization of water in the active site, we compared the shifts in nitrile frequency to quantitative measurements of the ability of the side chain to interact with water. 
 We observed correlations between the nitrile shifts and both the solvent accessible surface area (SASA) and the hydration potential of the residue at position 61 \cite{Stafford2012}.
-Based on these results, we hypothesized that the identity of the residue at position 61 affects the rate of intrinsic GTP hydrolysis through noncovalent and electrostatic stabilization of water molecules according to each residue's affinity for water, supporting a multiwater mechanism such as the one proposed in Figure 1A.
+Based on these results, we hypothesized that the identity of the residue at position 61 affects the rate of intrinsic GTP hydrolysis through noncovalent and electrostatic stabilization of water molecules according to each residue's affinity for water, supporting a multiwater mechanism such as the one proposed in Figure \ref{fig:ras-mech}A.
 
 In spite of the ongoing debate regarding the role of Q61 in the mechanism of intrinsic hydrolysis, there has not yet been a comprehensive quantitative examination of the role of Q61 mutations on the intrinsic hydrolysis rate. 
 Though the literature has suggested that at least 17 Q61X intrinsic hydrolysis rates have been measured, most have not been explicitly reported and, to our knowledge, were measured only semiquantitatively \cite{Der1986}.
@@ -83,7 +89,7 @@ No relationships were observed for amino acids with positively charged or nonpol
 Additionally, we used enhanced molecular dynamics (MD) simulations to determine the molecular basis for this relationship by calculating the SASA of the polar side chain atoms as well as the entire side chain of Q61X. 
 We found that the reported vibrational frequencies were well correlated to the SASA of the side chain polar atoms in all polar and charged amino acids, while the initial rate of intrinsic hydrolysis was well correlated to the SASA of the entire side chain, but only for polar and negatively charged amino acids. 
 For the polar and negatively charged residues, we found a strong correlation between the number of water molecules in the active site (determined from MD) and the initial rate of intrinsic hydrolysis.
-This evidence strongly supports a multiwater mechanism, such as the mechanism proposed by Buhrman et al. and illustrated in Figure 1A, where a positively charged hydronium ion stabilizes the transition state of the reaction. 
+This evidence strongly supports a multiwater mechanism, such as the mechanism proposed by Buhrman et al. and illustrated in Figure \ref{fig:ras-mech}A, where a positively charged hydronium ion stabilizes the transition state of the reaction. 
 This kinetic data set is invaluable for understanding the intrinsic mechanism of hydrolysis and will provide insight for further computation and development of therapeutic strategies
 
 
@@ -131,8 +137,16 @@ Each reaction was initiated by mixing 20 $\mu$L of 8 mM RasQ61X with 20 $\mu$L o
 Reactions were incubated at 37 \si{\celsius} from 0 to 8 h by initiating the 8 h reaction first and then adding subsequent reactions to the incubator at each time point. 
 All reactions were then transferred to a black, optical-bottom 384-well plate (Thermo Scientific) and all stopped at the same time through the addition of the malachite green reagent. 
 Reactions were done at least in triplicate, and each reaction vial had enough volume for three wells, resulting in at least 9 measurements for each time point. 
-Each well contained 10 $\mu$L of assay reaction and 30 $\mu$L of malachite reagent, and the optical response was linear (Figure S1) through the entire range of standards (0-25 $\mu$M phosphate). 
+Each well contained 10 $\mu$L of assay reaction and 30 $\mu$L of malachite reagent, and the optical response was linear (Figure \ref{fig:ras-response}) through the entire range of standards (0-25 $\mu$M phosphate). 
 Absorption of the phosphomolybdate/malachite green colored complex was measured via a BioTek Synergy H4 plate reader at 640 nm using path length correction functionality to account for small differences in volume due to pipetting error.
+
+\begin{figure}
+    \center
+    \includegraphics[width=3.25in]{figures-ras/optical_response.png}
+    \caption{Calibration curve of the malachite green colorimetric assay collected from phosphate standards of 0.00, 0.39, 0.78, 1.56, 3.13, 6.25, 12.5, and 25 $\mu$M. The response is linear over the range of phosphate concentration measured in our experiments.}
+    \label{fig:ras-response}
+
+\end{figure}
 
 \subsection{MD and SASA Calculations} 
 
@@ -145,9 +159,34 @@ Parameters for the nitrile-containing cyanocysteine (CNC) residue have been desc
 Phosphate parameters for use in GTP have been published by Meagher et al\cite{Meagher2003}.
 However, the charges in this parameter set were derived in accordance with the Amber99 force field. 
 To attain parameters consistent with the Amber03 force field (ffAmber03), multiconformational RESP\cite{Cornell1993, Bayly1993, Cieplak1995} was used to fit charges using the Duan et al. protocol\cite{Duan2003} in the seven minimum energy conformations identified in Meagher et al. 
-Charges for ffAmber03 were all similar to the charges for the Amber99 force field and can be found in the Supporting Information (Table S1). 
+Charges for ffAmber03 were all similar to the charges for the Amber99 force field and can be found in the Supporting Information (Table \ref{tbl:ras-charges}). 
 Though the protonation state of the terminal phosphate of GTP in Ras proteins has been recently discussed in the literature \cite{Knihtila2015, Mann2018}, for these simulations we used the fully deprotonated structure of GTP (net charge of -4). 
 All further minimizations and MD simulations were performed using the Gromacs 2016.3 molecular dynamics simulation package\cite{Berendsen1995, Lindahl2001, VanDerSpoel2005, Miyake-Stoner2009, Hess2008, Pronk2013, Pall2015, Abraham2015} and ffAmber03 \cite{Duan2003, Sorin2005}.
+
+\begin{table}
+    \caption{Partial charges for the phosphate atoms derived in accordance with Amber03.}
+    \begin{center}
+    \begin{tabular}{cc}
+    \toprule
+       \rowcolor{lgray}
+       Atom Name & Charge  \\
+        \cmidrule(r){1-1}\cmidrule(l){2-2}
+     CT  &        0.295166 \\
+      HC &        -0.034122 \\
+     O3  &       -0.934008   \\
+     O2(1)  &   -0.841563   \\
+     O2(2) &    -0.854716   \\
+     OS(1)  &   -0.471014   \\
+     OS(2)  &   -0.506642   \\
+     OS(3) &    -0.529221   \\
+     P(1)   &     1.190429   \\
+     P(2)   &     1.178895   \\
+     P(3)   &     1.139338   \\
+    \bottomrule
+    \end{tabular}
+    \end{center}
+    \label{tbl:ras-charges}
+\end{table}
 
 The 16 protein systems were energy minimized in a vacuum using the steepest descent algorithm and solvated in a dodecahedron box of TIP3P water \cite{Jorgensen1983}, with a minimum distance of 1.5 nm between the protein and the edge of the box. 
 The solvated systems were then energy minimized using steepest descent, heated under the NVT ensemble at 300 K, and equilibrated under the NPT ensemble at 1 atm, each with heavy atom restraints on the protein atoms. 
@@ -159,26 +198,85 @@ Snapshots were recorded every 4 ps during simulations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Results} \label{pKa-results}
+\section{Results} \label{ras-results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Measurement of the Intrinsic Hydrolysis Rate}
 
-A hypothesized mechanism for intrinsic GTP hydrolysis by Ras (Figure 1A) proposes that the electric field created by the arrangement of amino acids at the Ras surface is critically important for enzyme function. 
+A hypothesized mechanism for intrinsic GTP hydrolysis by Ras (Figure \ref{fig:ras-mech}A) proposes that the electric field created by the arrangement of amino acids at the Ras surface is critically important for enzyme function. 
 To determine the effect that each Q61X mutation caused to the local electric field, it was necessary to determine the extent to which each mutation changed the rate of enzyme hydrolysis, which was not possible to construct from the literature. 
 Various methods used previously on different RasQ61X mutants have not been comprehensive or quantitative, but generally it has been found that mutations to position 61 result in slower intrinsic GTP hydrolysis rates \cite{Der1986, Krengel1990}. 
 We measured the initial rate of intrinsic hydrolysis of WT Ras and 17 mutants at position 61 to examine the role of the residue in the electrostatic stabilization of the proposed hydronium ion. 
 To do this, we monitored the increase in concentration of phosphate over time for each mutant, measured using a malachite green colorimetric assay. 
 Because the Ras-GTP complex has a $K_d$ in the picomolar range, the addition of excess GTP to initiate the reaction resulted in a single exponential rise in the concentration of phosphate. 
 In order to have a quantitative comparison between the mutants in our experiment, we used linear regression on the first five measurements of phosphate concentration (i.e., 0-180 min), which corresponds to the linear portion of the exponential curve. 
-We extracted the initial rates from the slope of the resulting fits, and all fits are shown in the Supporting Information (Figure S2). 
-For brevity, representative curves are shown in Figure 2, and initial rates for all mutants are reported in Table 1. 
+We extracted the initial rates from the slope of the resulting fits, and all fits are shown in the Supporting Information (Figure \ref{fig:ras-all_fits}). 
+For brevity, representative curves are shown in Figure \ref{fig:ras-curves}, and initial rates for all mutants are reported in Table \ref{tbl:ras-data}. 
 The error is reported as the standard error of the linear regression. 
 In some cases, we obtained a better fit with smaller error by omitting the first data point because of low sensitivity of the zero time point in colorimetric assays. 
 In all cases, we report the fit that yielded the lowest standard error. 
 We chose to measure the initial rate of the reaction rather than a fit of the observed rate over the entire exponential curve because some mutants do not appear to have reached equilibrium through the course of the 8 h experiment, either because the mutant is too slow or because the mutant protein no longer functions due to denaturation or aggregation. 
 However, it should be noted that only the Q61V construct visibly precipitated after 3 h at 37 \si{\celsius}, and there was no other visible aggregation for any other mutant over the course of the 8 h experiment.
+
+\begin{figure} 
+    \center
+    \includegraphics[width=6.0in]{figures-ras/all_fits.png}
+    \caption{The production of inorganic phosphate, \ce{Pi}, as a function of reaction time for all viable RasQ61X constructs. The identity of the amino acid at position 61 is shown in the upper left corner of each plot. The first five points were fit with linear regression. The slope and standard error of the fit are displayed in the bottom-right corner of each window. If a lower standard error was obtained by omitting the first time point (0 min), then that fit is reported. Such cases are marked with an asterisk in the top-left corner. Blue: polar or negatively charged residues; red: positively charged residues; black: nonpolar residues.}
+    \label{fig:ras-all_fits}
+\end{figure}
+
+\begin{table}
+    \caption{Vibrational Frequencies of a Nearby Nitrile on \RalBSCN{}, Measured Intrinsic Initial Rates of GTP hydrolysis, and Computed SASA Values of Both the Entire Side Chain and Only the Side Chain Polar Atoms (N, O, and H bound to N or O) from MD Simulation for 18 Constructs of RasQ61X}
+    \begin{tabular}{ccccc}
+    \toprule
+    \rowcolor{lgray}
+        Ras Construct & $\tilde{\nu}^{a}$   & Initial Rate$^{b}$  & \multicolumn{2}{c}{SASA$^{c}$ of: (\si{\angstrom^2}) }\\
+    \rowcolor{lgray}
+    & (cm$^{-1}$) &     ($10^{-2}$ $\mu$M min$^{-1}$)  & polar atoms & side chain \\
+    \cmidrule(r){1-1}\cmidrule(lr){2-2}\cmidrule(lr){3-3}\cmidrule(l){4-5}
+
+
+    WT Ras$^{d}$   & $2162.8 \pm 0.2$ & $ 7.03 \pm 0.49  $ & $65 \pm 15$ & $98  \pm 16 $\\
+    
+    \rowcolor{lgray}
+    \multicolumn{5}{c}{Residues with Charged Sidechains} \\
+    RasQ61D & $2162.0 \pm 0.1$ & $ 0.47 \pm  0.12 $ & $51 \pm 7  $ & $77  \pm 7  $\\
+    RasQ61E & $2162.8 \pm 0.2$ & $ 0.86 \pm  0.05 $ & $60 \pm 10.$ & $91  \pm 11 $\\
+    RasQ61K & $2163.1 \pm 0.2$ & $ 0.47 \pm  0.13 $ & $50 \pm 17 $ & $114 \pm 22 $\\
+    RasQ61R & $2162.4 \pm 0.1$ & $ 0.58 \pm  0.01 $ & $71 \pm 24 $ & $121 \pm 24 $\\
+    
+    \rowcolor{lgray}
+    \multicolumn{5}{c}{Residues with Polar Sidechains} \\
+    RasQ61H & $2163.8 \pm 0.2$ & $ 0.92 \pm  0.22 $ & $34 \pm 6  $ & $108 \pm 14 $\\
+    RasQ61N & $2162.7 \pm 0.2$ & $ 1.32 \pm  0.13 $ & $49 \pm 13 $ & $76  \pm 10 $\\
+    RasQ61S & $2164.4 \pm 0.1$ & $ 0.37 \pm  0.11 $ & $18 \pm 9  $ & $47  \pm 9  $\\
+    RasQ61T & $2164.7 \pm 0.2$ & $ 0.18 \pm  0.04 $ & $20 \pm 9  $ & $59  \pm 11 $\\
+    RasQ61W & $2164.1 \pm 0.2$ & $ 1.19 \pm  0.37 $ & $18 \pm 10.$ & $151 \pm 21 $\\
+    RasQ61Y & $2163.5 \pm 0.1$ & $ 9.64 \pm  1.50 $ & $36 \pm 15 $ & $130.\pm 25 $\\
+    
+    \rowcolor{lgray}
+    \multicolumn{5}{c}{Residues with Nonpolar Sidechains} \\
+    RasQ61A & $2162.0 \pm 0.2$ & $ 1.56 \pm  0.18 $ &                   &         \\
+    RasQ61F & $2163.0 \pm 0.2$ & $ 1.40 \pm  0.15 $ & $0  \pm 0  $ & $114 \pm 21 $\\
+    RasQ61G & $2163.1 \pm 0.1$ & $ 1.59 \pm  0.22 $ &              &              \\
+    RasQ61I & $2164.0 \pm 0.2$ & $ 0.83 \pm  0.25 $ & $0  \pm 0  $ & $95  \pm 9  $\\      
+    RasQ61L & $2163.2 \pm 0.2$ & $ 1.57 \pm  0.21 $ & $0  \pm 0  $ & $102 \pm 14 $\\
+    RasQ61M & $2162.6 \pm 0.1$ & $ 0.65 \pm  0.19 $ & $0  \pm 0  $ & $101 \pm 20 $\\
+    RasQ61V & $2163.9 \pm 0.0$ & $ 3.51 \pm  0.38 $ & $0  \pm 0  $ & $78  \pm 11 $\\
+    
+    \bottomrule
+    \end{tabular}
+    $^{a}$Taken from ref \citenum{Stafford2012}. $^{b}$Errors in the rate are reported as the standard error of the linear fit. $^{c}$Errors in the SASA are reported as the standard deviation of the entire ensemble of structures. $^{d}$The identity of position 61 in wild-type Ras is Q.
+    \label{tbl:ras-data}
+\end{table}
+
+\begin{figure}
+    \center
+    \includegraphics[width=3.25in]{figures-ras/modelCurvesFigure.png}
+    \caption{Representative kinetic measurements of 4 $\mu$M RasQ61X constructs reacted with 20 $\mu$M GTP over 8 h, WT (blue), Q61G (black), and Q61K (red). The dashed lines represent the linear fit to the first five time points. The slope of the linear fit is the initial rate of the intrinsic hydrolysis reaction. The rates for each mutant are reported in Table \ref{tbl:ras-data}.}
+    \label{fig:ras-curves}
+\end{figure}
 
 Though the most common approach to enzyme kinetics is the Michaelis-Menten formalism \cite{Michaelis1913, Johnson2011}, in this case, the mutations at position 61 should affect the turnover rate of the enzyme ($k_{\text{cat}}$) and not the overall Michaelis constant ($K_m$). 
 Because of this, measuring the initial rate at a single substrate concentration was sufficient, given the number of constructs we investigated. 
@@ -204,18 +302,25 @@ RasQ61E has been reported to have a 10-fold slower hydrolysis rate than the WT\c
 
 Recently, Stafford et al. used VSE spectroscopy to measure electric field changes due to the change in identity of the residue at RasQ61\cite{Stafford2012}. 
 In those experiments, RasQ61X was docked to \RalBSCN{}, which contained a cyanocysteine vibrational probe. 
-The FTIR absorption frequencies from the nitrile group on the probe when docked to each Ras mutant are listed in Table 1. 
+The FTIR absorption frequencies from the nitrile group on the probe when docked to each Ras mutant are listed in Table \ref{tbl:ras-data}. 
 Though \RalB{} docks to GTP-bound Ras with a micromolar $K_d$, we did not expect it to have an effect on the Ras intrinsic hydrolysis rate. 
-To confirm this, and in order to compare our rate results with the published VSE data, we measured the intrinsic hydrolysis rate of WT Ras alone versus WT Ras docked to \RalBSCN{} and observed no differences in the rate of intrinsic hydrolysis whether or not \RalBSCN{} was present (Figure 3).
+To confirm this, and in order to compare our rate results with the published VSE data, we measured the intrinsic hydrolysis rate of WT Ras alone versus WT Ras docked to \RalBSCN{} and observed no differences in the rate of intrinsic hydrolysis whether or not \RalBSCN{} was present (Figure \ref{fig:ras-ral}).
+
+\begin{figure}
+    \center
+    \includegraphics[width=3.25in]{figures-ras/Figure3.png}
+    \caption{Concentration of the phosphate product of the intrinsic hydrolysis reaction for both WT Ras (blue) and WT Ras docked to \RalBSCN{} (green) over 8 h. Linear regression fits are shown to the first five time points of each data set, and the slopes are displayed in the corresponding color. The intrinsic hydrolysis rate of WT Ras/\RalBSCN{} is within error of the intrinsic hydrolysis rate of WT Ras alone ($5.9 \pm 1.1 \times 10^{-2}$ $\mu$M min$^{-1}$ and $7.0 \pm 0.5 \times 10^{-2}$ $\mu$M min$^{-1}$, respectively).}
+    \label{fig:ras-ral}
+\end{figure}
 
 \subsection{SASA Calculations}
 
-Because the proposed mechanism in Figure 1A is based on a favorable interaction of Q61 with water, we attempted to quantify the likelihood of this interaction by calculating the SASA for each mutant of several subsets of atoms of the Q61X residue using the gmx sasa tool \cite{Eisenhaber1995}.
+Because the proposed mechanism in Figure \ref{fig:ras-mech}A is based on a favorable interaction of Q61 with water, we attempted to quantify the likelihood of this interaction by calculating the SASA for each mutant of several subsets of atoms of the Q61X residue using the gmx sasa tool \cite{Eisenhaber1995}.
 While SASA is often an oversimplification of solvent interactions, it is nevertheless a good starting point because it is efficient and convenient to calculate from a protein structure or MD trajectory. 
 We therefore calculated the SASA of both the whole side chain and the polar atoms on the side chain; we refer to these quantities as the ``side chain SASA'' and the ``polar atom SASA,'' respectively. 
 All N and O atoms and their bonded hydrogens were considered to be polar atoms. 
 Each calculated SASA was weighted using the weighted histogram analysis method (WHAM) at 300 K, and the Boltzmann-weighted average SASA value was computed. 
-These averages and standard deviations are reported in Table 1.
+These averages and standard deviations are reported in Table \ref{tbl:ras-data}.
 
 Since F, I, L, M, and V do not have polar atoms on their side chains, the polar atom SASAs for these residues were exactly zero. 
 S, T, and W all had similar polar atom SASAs of $\sim$18 \si{\angstrom^2}. 
@@ -240,52 +345,111 @@ Combined, the SASA calculations indicated that residues similar in size and chem
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Discussion}\label{pKa-discussion}
+\section{Discussion}\label{ras-discussion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Because the proposed mechanism of intrinsic hydrolysis of GTP in Ras (Figure 1A) relies on electrostatic stabilization of a transient hydronium ion in the active site, we plotted the measured vibrational frequencies from Stafford et al.\cite{Stafford2012} against the measured initial rates of intrinsic hydrolysis (Figure 4). 
+Because the proposed mechanism of intrinsic hydrolysis of GTP in Ras (Figure \ref{fig:ras-mech}A) relies on electrostatic stabilization of a transient hydronium ion in the active site, we plotted the measured vibrational frequencies from Stafford et al.\cite{Stafford2012} against the measured initial rates of intrinsic hydrolysis (Figure \ref{fig:ras-stark_vs_rate}). 
 Since hydrolysis rates change by nearly 2 orders of magnitude, it is useful to view these differences in rate on a logarithmic scale. 
 For the polar and negatively charged residues, which are capable of stabilizing the proposed hydronium ion, the rates increased rapidly with increasing nitrile absorption frequency until $\sim$2163 \si{\wn}, the absorption energies of Ras containing both Q (i.e., WT) and Y at position 61, and then rapidly decreased with the continued increase in absorption frequency. 
 This correlation was fit to a normal distribution with the residues capable of stabilizing the hydronium ion (the polar and negatively charged residues). 
 For these data, residues that caused the nitrile absorption frequency to red-shift or blue-shift from $\sim$2163 \si{\wn} decreased the rate.
 
+\begin{figure}
+    \center
+    \includegraphics[width=3.25in]{figures-ras/Figure4.png}
+    \caption{Vibrational frequencies of the nitrile on \RalBSCN{} against the log of the measured intrinsic rate of GTP hydrolysis. Blue: polar and negatively charged side chains. Black: all nonpolar side chains. Red: the two positively charged side chains. Blue line: normal distribution fit to the polar and the negatively charged side chains. All points that were excluded from the fit are marked with triangles.}
+    \label{fig:ras-stark_vs_rate}
+\end{figure}
+
 Because nitrile groups have been shown to report on changes in solvation due to hydrogen bonding, we calculated the SASA of the nitrile on \RalBSCN{} and the number of waters within a 5 \si{\angstrom} sphere of the nitrile. 
-These values were within error of each other for all of the Q61X mutants and are presented in Table S2. 
+These values were within error of each other for all of the Q61X mutants and are presented in Table \ref{tbl:ras-sasa}. 
 Further, because the solvation effect is caused by changes in specific hydrogen bonding interactions\cite{Choi2008}, we calculated the geometries of each observed hydrogen bond between the nitrile and solvent. 
 Recently, we have shown that the geometry of these interactions can dominate the vibrational frequency\cite{First2018}.
-In this case, however, the average angles and distances of the hydrogen bonding interactions were all within error of each other for each of the 18 mutant systems, as shown in Table S2. 
+In this case, however, the average angles and distances of the hydrogen bonding interactions were all within error of each other for each of the 18 mutant systems, as shown in Table \ref{tbl:ras-sasa}. 
 Together, these data demonstrate that the perturbation to the solvation environment caused by the mutation has relaxed over the $\sim$9 \si{\angstrom} distance between the nitrile probe and position 61. 
 We have previously demonstrated that, in cases of a similar hydrogen bonding environment, such as these systems, shifts in nitrile frequency agree with independent measurements of electric field \cite{Slocum2016, Slocum2017}.
 We therefore interpret the shifts in absorption frequency as a measure of change in the electric field through eq \ref{eq:ras-stark}.
 
-The observation in Figure 4 supports the hypothesis that the role of Q61 is to provide an electrostatic contribution to the stabilization of water near the active site and that Q61X mutants that do not provide the optimal electrostatic potential; i.e., all mutants studied besides Q and Y are less effective at stabilizing the catalytic hydronium ion. 
+\begin{table}
+    \caption{Boltzmann-weighted averages of the SASA of the nitrile on \RalBSCN{}, number of waters within a 5 \si{\angstrom} sphere of the nitrogen of the nitrile, and geometric properties of all the hydrogen bonding interaction between the solvent and the nitrile in the simulations. These geometric properties are illustrated in Figure \ref{fig:ras-hbond}.}
+    \begin{tabular}{cccccc} 
+    \toprule
+        \rowcolor{lgray}
+        Ras Construct & SASA (\si{\angstrom^2})  & \# waters & $\left < \theta_1 \right >$  & $\left < \theta_2 \right >$ & $\left < d_{\rm{NH}} \right >$ (\si{\angstrom}) \\
+    
+        \cmidrule(r){1-1}\cmidrule(lr){2-2}\cmidrule(lr){3-3}\cmidrule(lr){4-4}\cmidrule(lr){5-5}\cmidrule(l){6-6}
+    
+    RasQ61D  & $51 \pm 13$  &  $14 \pm 2$    &  $135.2 \pm 19.3$ & $152.3 \pm 13.5$  & $2.1 \pm 0.2 $              \\  
+    RasQ61E  & $60 \pm 13$  &  $15 \pm 2$    &  $133.5 \pm 19.3$ & $152.2 \pm 13.6$  & $2.1 \pm 0.2 $              \\  
+    RasQ61F  & $51 \pm 17$  &  $14 \pm 3$    &  $137.3 \pm 19.4$ & $153.2 \pm 13.1$  & $2.1 \pm 0.2 $              \\  
+    RasQ61H  & $48 \pm 15$  &  $14 \pm 3$    &  $137.4 \pm 19.3$ & $152.9 \pm 13.4$  & $2.1 \pm 0.2 $              \\  
+    RasQ61I  & $58 \pm 15$  &  $15 \pm 3$    &  $134.6 \pm 18.9$ & $152.6 \pm 13.5$  & $2.1 \pm 0.2 $              \\  
+    RasQ61K  & $56 \pm 16$  &  $15 \pm 3$    &  $135.1 \pm 19.6$ & $152.9 \pm 13.2$  & $2.1 \pm 0.2 $              \\  
+    RasQ61L  & $57 \pm 17$  &  $15 \pm 3$    &  $135.5 \pm 18.8$ & $153.1 \pm 13.6$  & $2.1 \pm 0.2 $              \\  
+    RasQ61M  & $48 \pm 18$  &  $13 \pm 3$    &  $136.9 \pm 19.3$ & $153.3 \pm 13.0$  & $2.1 \pm 0.2 $              \\  
+    RasQ61N  & $52 \pm 17$  &  $14 \pm 3$    &  $135.1 \pm 19.3$ & $152.3 \pm 13.6$  & $2.1 \pm 0.2 $              \\  
+    RasQ61Q  & $55 \pm 19$  &  $14 \pm 3$    &  $137.2 \pm 19.1$ & $153.0 \pm 13.3$  & $2.1 \pm 0.2 $              \\  
+    RasQ61R  & $61 \pm 19$  &  $15 \pm 3$    &  $135.3 \pm 19.1$ & $152.7 \pm 13.5$  & $2.1 \pm 0.2 $              \\  
+    RasQ61S  & $53 \pm 16$  &  $13 \pm 3$    &  $132.0 \pm 18.6$ & $152.6 \pm 13.7$  & $2.1 \pm 0.2 $              \\  
+    RasQ61T  & $45 \pm 19$  &  $13 \pm 3$    &  $134.8 \pm 19.6$ & $152.7 \pm 13.7$  & $2.1 \pm 0.2 $              \\  
+    RasQ61V  & $53 \pm 17$  &  $15 \pm 3$    &  $136.9 \pm 19.3$ & $153.7 \pm 13.1$  & $2.1 \pm 0.2 $              \\  
+    RasQ61W  & $62 \pm 15$  &  $15 \pm 3$    &  $136.3 \pm 18.9$ & $151.8 \pm 13.7$  & $2.1 \pm 0.2 $              \\  
+    RasQ61Y  & $56 \pm 18$  &  $14 \pm 3$    &  $135.8 \pm 19.0$ & $152.4 \pm 13.5$  & $2.1 \pm 0.2 $              \\  
+    
+    \bottomrule
+    \end{tabular}
+    \label{tbl:ras-sasa}
+\end{table}
+
+\begin{figure}
+    \center
+    \includegraphics[width=3.25in]{figures-ras/Figure_S4.pdf}
+    \caption{Geometric criteria and property definitions for the hydrogen bonding calculations. $\theta_1$ is the C--N$\cdots$H angle, $\theta_2$ is the N$\cdots$H--R$_{\text{donor}}$ angle, where R$_{\text{donor}}$ represents a water hydrogen bond donor, and $d_{\text{NH}}$ is the distance between the hydrogen and the acceptor nitrogen. To be considered a hydrogen bond, $\theta_1$ must be greater than \ang{99}, $\theta_2$ must be greater than \ang{120}, and $d_{\text{NH}}$ must be less than 2.45 \si{\angstrom}. Adopted from ref \citenum{First2018}.} 
+    \label{fig:ras-hbond}
+\end{figure}
+
+The observation in Figure \ref{fig:ras-stark_vs_rate} supports the hypothesis that the role of Q61 is to provide an electrostatic contribution to the stabilization of water near the active site and that Q61X mutants that do not provide the optimal electrostatic potential; i.e., all mutants studied besides Q and Y are less effective at stabilizing the catalytic hydronium ion. 
 Mutations that caused a deviation from the optimal field in either direction (measured as a red- or blue-shift in the nitrile vibrational frequency) disrupted the intrinsic mechanism and decreased the rate, except for residues that did not stabilize a hydronium ion, resulting in rates that are normally distributed about an optimal electric field.
 
 For the residues that would be unable to stabilize the hydronium ion in the active site, no such trend was observed. 
-Two of the uncorrelated residues are R and K, the two positively charged amino acids (red data points in Figure 4). 
+Two of the uncorrelated residues are R and K, the two positively charged amino acids (red data points in Figure \ref{fig:ras-stark_vs_rate}). 
 These two side chains are incapable of stabilizing a hydronium ion due to Coulombic repulsion and are thus easily explained. 
-The hydrophobic residues at position 61 display a more interesting behavior, however, with a range of hydrolysis activities depending on the identity of the hydrophobic residue (black data points in Figure 4). 
+The hydrophobic residues at position 61 display a more interesting behavior, however, with a range of hydrolysis activities depending on the identity of the hydrophobic residue (black data points in Figure \ref{fig:ras-stark_vs_rate}). 
 For example, V has an intermediate initial rate of intrinsic hydrolysis ($3.51 \pm 0.38$ $\mu$M min$^{-1}$), while M has a very low initial rate ($0.65 \pm 0.19$ $\mu$M min$^{-1}$).  
 Side chain size alone does not explain this observation: G, A, V, and L increase in molecular volume in that order, but the rates of GTP hydrolysis in those Q61X mutants do not follow the same trend.
 
 In order to investigate the effect of side chain size, we plotted the polar atom SASA and the side chain SASA for each mutant against the nitrile shift and the initial rate of GTP hydrolysis. 
-As observed in Stafford et al., the SASA of the polar atoms are well correlated with the measured vibrational frequency of the nearby nitrile on \RalBSCN{} (Figure 5A). 
+As observed in Stafford et al., the SASA of the polar atoms are well correlated with the measured vibrational frequency of the nearby nitrile on \RalBSCN{} (Figure \ref{fig:ras-sasa}A). 
 With increased sampling and increased accuracy of the SASA calculation, our correlation ($r = −0.89$) is improved compared to the previous result \cite{Stafford2012}. 
 Therefore, the measured field observed by the nitrile is a good measure of the ability of Q61X to interact with water and thus a good metric by which to evaluate the hypothesis of Buhrman et al. 
-No correlation was observed between the polar atom SASA and the measured intrinsic rate (Figure S3B), and when we measured the side chain SASA, we found that it did not correlate to the nitrile shifts (Figure S3B). 
-However, we found that the SASA of the side chain was moderately correlated (Figure 5B, $r = 0.81$) to the measured initial rate of the side chains capable of stabilizing the hydronium ion (the polar and negatively charged residues), with the exception of W. 
+No correlation was observed between the polar atom SASA and the measured intrinsic rate (Figure \ref{fig:ras-sasa}B), and when we measured the side chain SASA, we found that it did not correlate to the nitrile shifts (Figure \ref{fig:ras-sasa}C). 
+However, we found that the SASA of the side chain was moderately correlated (Figure \ref{fig:ras-sasa}D, $r = 0.81$) to the measured initial rate of the side chains capable of stabilizing the hydronium ion (the polar and negatively charged residues), with the exception of W. 
 Because of the unique chemical structure of W, the side chain SASA was extremely large, yet the large SASA of W did not translate to a large number of water molecules in the active site of the protein. 
 This prompted us to calculate how many water molecules were actually present in the GTP binding site based on the identity of the residue at position 61.
+
+\begin{figure}
+    \center
+    \includegraphics[width=6.0in]{figures-ras/Figure5.png}
+    \caption{Boltzmann-weighted polar atom and side chain SASAs compared to experimentally measured values of nitrile absorption frequency and initial rate of intrinsic hydrolysis in RasQ61X mutants. (A) The absorption frequency of the nitrile on \RalBSCN{} against the polar atom SASA of Q61X. (B) The initial rate of intrinsic hydrolysis against the polar atom SASA of Q61X. (C) The absorption frequency of the nitrile on \RalBSCN{} against the side chain SASA of Q61X. (D) The initial rate of intrinsic hydrolysis against the side chain SASA of Q61X. Blue: polar or negatively charged side chain. Red: positively charged side chains. Black: nonpolar side chains. Triangles: residues not included in the linear regression. In panel D, W (cyan) is excluded from the polar residue group as discussed in the text.}
+    \label{fig:ras-sasa}
+\end{figure}
 
 While SASA is a convenient measure of the ability of a residue to interact with water, it lacks molecular level details of the interaction. 
 Specifically, it does not address how much solvent is actually interacting with the residue. 
 Instead, it only estimates the area of a residue that could interact with solvent. 
 Because of this distinction and the observation that W interacted with a small number of waters, we calculated the number of waters that are confined to the active site around GTP. 
 All waters that were within 5 \si{\angstrom} of GTP's reactive terminal phosphate oxygen (O1G) atom and within 5 \si{\angstrom} of the side chain of Q61 were considered to be in the active site. 
-We have plotted the Boltzmann-weighted average number of water molecules that met these criteria against the log of the measured intrinsic rate in Figure 6. 
+We have plotted the Boltzmann-weighted average number of water molecules that met these criteria against the log of the measured intrinsic rate in Figure \ref{fig:ras-scount}. 
 We found that the number of waters in the active site was strongly correlated ($r = 0.93$) to the log of the measured intrinsic rate for residues that are capable of stabilizing the proposed hydronium ion; that is, for polar residues and negatively charged residues. 
 We interpret the observation of this strong correlation to mean that the ability of the residue at position 61 to interact with water impacts the intrinsic hydrolysis rate.
+
+\begin{figure}
+    \center
+    \includegraphics[width=3.25in]{figures-ras/Figure6.png}
+    \caption{Boltzmann-weighted average number of waters in the active site per frame against the measured intrinsic rate. To be considered in the active site, each water needed to be within 5 \si{\angstrom} of the Q61X side chain and within 5 \si{\angstrom} of the terminal phosphate oxygen of GTP (atom name O1G). Blue: all polar or negatively charged side chains. All other points are marked as triangles and are excluded from the fit. Red: positively charged side chains. Black: nonpolar side chains.}
+    \label{fig:ras-scount}
+\end{figure}
 
 The positively charged residues (R and K) and the nonpolar residues (M, F, V, L, and I) are not included in the linear regression fit. 
 Interestingly, it appears that the three branched nonpolar residues I, L, and V do still fit this same trend (including these residues in the fit does not change the correlation). 
@@ -294,20 +458,51 @@ Indeed, if we consider the hydration potential of each residue as reported by Wo
 When calculated in a vacuum, M and F are the only hydrophobic residues for which the transfer from the vapor phase to the solution phase occurs spontaneously, with negative hydration potentials (-1.48 and -0.76 kcal mol$^{-1}$, respectively, at pH 7), while, under the same conditions, the other hydrophobic residues I, L, and V had positive hydration potentials (2.15, 2.28, and 1.99 kcal mol$^{-1}$, respectively, at pH 7). 
 This suggests that these two outliers have higher affinities for water and are changing the organization of water in the active site in some manner that is different from the other nonpolar residues. 
 It is interesting that the positively charged and nonpolar residues had nonzero intrinsic hydrolysis rates, despite being unable to stabilize the transient hydronium ion. 
-Without more information, it is impossible to determine if the rates are merely shifted from the correlation in Figure 6, or if these mutants hydrolyzed GTP via an alternative mechanism that does not rely on the stabilization of a hydronium ion in the transition state.
+Without more information, it is impossible to determine if the rates are merely shifted from the correlation in Figure \ref{fig:ras-scount}, or if these mutants hydrolyzed GTP via an alternative mechanism that does not rely on the stabilization of a hydronium ion in the transition state.
 
-Nevertheless, these results strongly support a multiwater intrinsic hydrolysis mechanism, such as the one shown in Figure 1A, in which Q61 electrostatically stabilizes a hydronium ion in the transition state caused by the nucleophilic attack of a basic water molecule. 
+Nevertheless, these results strongly support a multiwater intrinsic hydrolysis mechanism, such as the one shown in Figure \ref{fig:ras-mech}A, in which Q61 electrostatically stabilizes a hydronium ion in the transition state caused by the nucleophilic attack of a basic water molecule. 
 In the case of the mechanism proposed by Buhrman et al., the hydronium ion is thought to be located between Q61, the bridging oxygen to the $\gamma$-phosphate, and a terminal oxygen on the $\gamma$-phosphate. 
 This location was originally proposed based on observations from a crystal structure, which, by necessity, were obtained with the nonhydrolyzable GTP analogue 5'-guanylylimidodiphosphate (GppNHp) in the binding site. 
 It is generally thought that the conversion of the bridging oxygen to a nitrogen between the second and third phosphate is a fairly conservative change, and it has allowed for the study of GTPases in the ON state. 
 In the case of the VSE measurements by Stafford et al., which also relied on GppNHp, there should be very little difference in the results between GTP-bound Ras and GppNHp-bound Ras because the only observable perturbation at this distance should be electrostatic. 
 However, the effect on the hydrogen bonding network caused by the switch of an oxygen to a nitrogen in the phosphate region may not be negligible. 
 Indeed, in every one of our simulations of Q61X constructs with GTP, the bridging oxygen accepts a hydrogen bond from the amide backbone of G12. 
-The interaction distances and number of hydrogen bonds per frame between these two groups are shown in the Supporting Information (Table S3). 
+The interaction distances and number of hydrogen bonds per frame between these two groups are shown in Table \ref{tbl:ras-g12}. 
 However, this interaction is not present in the crystal structure of Buhrman et al. 
 The replacement of GTP with GppNHp in the crystallization replaces a hydrogen bond accepting oxygen (the bridging oxygen) with a hydrogen bond donating nitrogen, which could push G12 farther from the $\gamma$-phosphate, providing room for a water to be observed in between G12 and GppNHp. 
 In our simulations, however, the hydrogen bond between G12 and GTP brings the protein backbone too close to allow for a water in this location. 
 Therefore, while our data supports a multiwater mechanism in which Q61 electrostatically stabilizes a hydronium ion, which in turn stabilizes the transition state, we hypothesize that the hydronium ion must be elsewhere.
+
+\begin{table}
+    \caption{Interaction distances and probability of a hydrogen bond per frame between the amide nitrogen of G12 and the bridging oxygen (OS3) of GTP. The standard deviations of the probabilities are omitted because they are of the same order of magnitude as the probabilities.}
+    \begin{center}
+    \begin{tabular}{ccc}
+    \toprule
+   \rowcolor{lgray}
+    Ras construct & Interaction distance & Hydrogen bond probability\\
+    \cmidrule(r){1-1}\cmidrule(rl){2-2}\cmidrule(l){3-3}
+Q61D  & $2.86 \pm   0.12$ &   $0.54 $\\%\pm   0.50$  \\
+Q61E  & $2.99 \pm   0.14$ &   $0.52 $\\%\pm   0.50$  \\
+Q61F  & $2.87 \pm   0.12$ &   $0.50 $\\%\pm   0.50$  \\
+Q61H  & $2.89 \pm   0.13$ &   $0.65 $\\%\pm   0.48$  \\
+Q61I  & $2.90 \pm   0.14$ &   $0.71 $\\%\pm   0.45$  \\
+Q61K  & $2.90 \pm   0.13$ &   $0.70 $\\%\pm   0.46$  \\
+Q61L  & $2.88 \pm   0.13$ &   $0.47 $\\%\pm   0.50$  \\
+Q61M  & $2.87 \pm   0.12$ &   $0.50 $\\%\pm   0.50$  \\
+Q61N  & $2.86 \pm   0.12$ &   $0.52 $\\%\pm   0.50$  \\
+Q61Q  & $2.85 \pm   0.11$ &   $0.53 $\\%\pm   0.50$  \\
+Q61R  & $2.89 \pm   0.13$ &   $0.67 $\\%\pm   0.47$  \\
+Q61S  & $2.88 \pm   0.12$ &   $0.49 $\\%\pm   0.50$  \\
+Q61T  & $2.89 \pm   0.13$ &   $0.73 $\\%\pm   0.44$  \\
+Q61V  & $2.89 \pm   0.14$ &   $0.43 $\\%\pm   0.50$  \\
+Q61W  & $2.91 \pm   0.14$ &   $0.76 $\\%\pm   0.43$  \\
+Q61Y  & $2.87 \pm   0.13$ &   $0.59 $\\%\pm   0.49$  \\
+
+\bottomrule
+\end{tabular}
+    \end{center}
+    \label{tbl:ras-g12}
+\end{table}
 
 Proposed mechanisms have also identified other residues in the region that could contribute to the intrinsic hydrolysis reaction, in particular Y32 identified in the mechanism proposed by Buhrman et al \cite{Buhrman2010}. 
 Though mutant forms of residues other than G12, G13, and Q61 have not generally been identified as oncogenic, nor have they been reported as frequent mutations in tumors, Y32 is of interest to us because the Buhrman et al. mechanism suggests that it may be a secondary stabilizer of the transition state hydronium ion. 
@@ -322,7 +517,7 @@ Our data set can be used to validate new computational models and inform future 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusions}\label{pKa-conclusion}
+\section{Conclusions}\label{ras-conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
