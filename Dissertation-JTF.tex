@@ -22,22 +22,39 @@
 % the package usage command.					     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage[showframe,left=1.25in,right=1.25in]{geometry}
 \usepackage[tbtags]{amsmath}
 \usepackage{amsthm,amsfonts,amscd} 
 				% Some packages to write mathematics.
 \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{eucal} 	 	% Euler fonts
 \usepackage{verbatim}      	% Allows quoting source with commands.
 \usepackage{makeidx}       	% Package to make an index.
 \usepackage[version=3]{mhchem}
 \usepackage{siunitx}
 \usepackage{colortbl}
+\usepackage{notoccite}
+%\usepackage{bibentry}
 \usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{adjustbox}
 \usepackage{chemmacros}
+\usepackage[Symbolsmallscale]{upgreek}
+\usepackage{textgreek}
+%\usepackage{gensymb}
 \usepackage[sort&compress,numbers,super]{natbib}
 \usepackage{natmove}
+
 \DeclareSIUnit\wn{\cm\tothe{-1}}
 \sisetup{per-mode=symbol}
+
+\newlength{\double}
+\setlength{\double}{6.5in}
+
+\newlength{\single}
+\setlength{\single}{3.25in}
+
 %\usepackage{psfig}         	% Allows inclusion of eps files.
 %\usepackage{epsfig}         	% Allows inclusion of eps files.
 %\usepackage{citesort}         	% 
@@ -96,9 +113,9 @@
 %
 %
 \committeemembers
-	[Carlos Baiz]
+	[Carlos R. Baiz]
 	[Ron Elber]
-	[Dima Makarov]
+	[Dmitrii E. Makarov]
 	{Pengyu Ren}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -246,6 +263,24 @@
 
 \makeindex    % Make the index
 
+
+%Adds journal titles to bibliography
+\begin{filecontents}{\jobname-control.bib}
+@Control{achemso-control,
+  ctrl-article-title  = "yes",
+  ctrl-etal-number    = "15",
+  ctrl-etal-firstonly = "yes",
+}
+\end{filecontents}
+\AtBeginDocument{\nocite{achemso-control}}
+
+
+%% Mendeley Unicode fixes for titles: 
+% U+22EF: Hydrogen bonds 
+% U+2009: Thin space after colon
+\DeclareUnicodeCharacter{22EF}{$\cdots$} 
+\DeclareUnicodeCharacter{2009}{ }         
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %		The document starts here.			     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -322,26 +357,21 @@ This document and its source file show to write a Doctoral Dissertation using
 % Actual text starts here.					     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Including external files for each chapter makes this document simpler,
-% makes each chapter simpler, and allows for generating test documents
-% with as few as zero chapters (by commenting out the include statements).
-% This allows quicker processing by the Makediss command file in case you
-% are not working on a specific, long and slow to compile chapter. You
-% can even change the chapter order by merely interchanging the order
-% of the include statements (something I found helpful in my own
-% dissertation).
-%
-%\include{chapter-introduction}
+\include{chapter-introduction}
 
-%\include{chapter-helix-folding}
+\include{chapter-methods}
 
 \include{chapter-gfp-pKa}
 
-%\include{chapter-gfp-hbond}
+\include{chapter-gfp-hbond}
 
-%\include{chapter-snase}
+\include{chapter-snase}
 
-%\include{chapter-future_directions}
+\include{chapter-ras}
+
+\include{chapter-helix-folding}
+
+\include{chapter-future_directions}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -370,15 +400,8 @@ This document and its source file show to write a Doctoral Dissertation using
 %	to generate the index (if used) MUST be moved to before      %
 %	this section.						     %
 %								     %
-%\nocite{*}      % This command causes all items in the 		     %
-                % bibliographic database to be added to 	     %
-                % the bibliography, even if they are not 	     %
-                % explicitly cited in the text. 		     %
-	 	%						     %
 \bibliographystyle{achemso}
-%\bibliographystyle{plain}  % Here the bibliography 		     %
-%\bibliography{library}        % is inserted.			     %
-\bibliography{/Users/jfirst/Documents/Mendeley/Bibtex/library.bib}
+\bibliography{/Users/jfirst/Documents/Mendeley/Bibtex/library.bib,\jobname-control}
 \index{Bibliography@\emph{Bibliography}}%			     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -401,10 +424,10 @@ This document and its source file show to write a Doctoral Dissertation using
 % Vita page.							     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\begin{vita}
-%Jeremy Todd First
-%Is a vita even a real thing? If so, the text goes here and is a quick
-%biography. Who would want to read about you? 
-%\end{vita}
+\begin{vita}
+Jeremy Todd First
+Is a vita even a real thing? If so, the text goes here and is a quick
+biography. Who would want to read about you? 
+\end{vita}
 
 \end{document}

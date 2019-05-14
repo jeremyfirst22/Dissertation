@@ -16,6 +16,16 @@ We discuss the implications of such a mechanism on future strategies for combati
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Publication note} \label{ras-pub-note}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Portions of this chapter are adapted from the following publication: 
+
+\noindent Elisa T. Novelli, Jeremy T. First, Lauren J. Webb; Quantitative Measurement of Intrinsic GTP Hydrolysis for Carcinogenic Glutamine 61 Mutants in H-Ras. \emph{Biochemistry}. \textbf{2018}, \emph{57}, 6356-6366.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction} \label{ras-intro}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -49,8 +59,15 @@ This supports the idea that water is crucial to the intrinsic hydrolysis mechani
 
 \begin{figure}
     \center
-    \includegraphics[width=6.0in]{figures-ras/Figure1_two_column.png}
-    \caption{(A) A proposed multiwater mechanism of the intrinsic Ras GTPase reaction. The catalytic water (blue) shuttles a proton to a nearby, stabilized water (red) via the $\gamma$-phosphate, adopted from ref \citenum{Buhrman2010} and ref \citenum{Stafford2012}. (B) A snapshot of the Ras/\RalBSCN{} interface. The ribbons in the background represent the backbone of the protein. The sticks represent the relevant residues in the system: Y32 of Ras, Q61 of Ras, GTP, and \RalBSCN{}. The pink sphere is \ce{Mg^2+}, and the small sticks represent water in the active site.}
+    \includegraphics[width=\double]{figures-ras/Figure1_two_column.png}
+    \caption{
+        (A) A proposed multiwater mechanism of the intrinsic Ras GTPase reaction. 
+        The catalytic water (blue) shuttles a proton to a nearby, stabilized water (red) via the $\gamma$-phosphate, adopted from ref \citenum{Buhrman2010} and ref \citenum{Stafford2012}. 
+        (B) A snapshot of the Ras/\RalBSCN{} interface. 
+        The ribbons in the background represent the backbone of the protein. 
+        The sticks represent the relevant residues in the system: Y32 of Ras, Q61 of Ras, GTP, and \RalBSCN{}. 
+        The pink sphere is \ce{Mg^2+}, and the small sticks represent water in the active site.
+    }
     \label{fig:ras-mech}
 \end{figure}
 
@@ -142,8 +159,11 @@ Absorption of the phosphomolybdate/malachite green colored complex was measured 
 
 \begin{figure}
     \center
-    \includegraphics[width=3.25in]{figures-ras/optical_response.png}
-    \caption{Calibration curve of the malachite green colorimetric assay collected from phosphate standards of 0.00, 0.39, 0.78, 1.56, 3.13, 6.25, 12.5, and 25 $\mu$M. The response is linear over the range of phosphate concentration measured in our experiments.}
+    \includegraphics[width=\single]{figures-ras/optical_response.png}
+    \caption{
+        Calibration curve of the malachite green colorimetric assay collected from phosphate standards of 0.00, 0.39, 0.78, 1.56, 3.13, 6.25, 12.5, and 25 $\mu$M. 
+        The response is linear over the range of phosphate concentration measured in our experiments.
+    }
     \label{fig:ras-response}
 
 \end{figure}
@@ -159,12 +179,14 @@ Parameters for the nitrile-containing cyanocysteine (CNC) residue have been desc
 Phosphate parameters for use in GTP have been published by Meagher et al\cite{Meagher2003}.
 However, the charges in this parameter set were derived in accordance with the Amber99 force field. 
 To attain parameters consistent with the Amber03 force field (ffAmber03), multiconformational RESP\cite{Cornell1993, Bayly1993, Cieplak1995} was used to fit charges using the Duan et al. protocol\cite{Duan2003} in the seven minimum energy conformations identified in Meagher et al. 
-Charges for ffAmber03 were all similar to the charges for the Amber99 force field and can be found in the Supporting Information (Table \ref{tbl:ras-charges}). 
+Charges for ffAmber03 were all similar to the charges for the Amber99 force field and can be found in Table \ref{tbl:ras-charges}. 
 Though the protonation state of the terminal phosphate of GTP in Ras proteins has been recently discussed in the literature \cite{Knihtila2015, Mann2018}, for these simulations we used the fully deprotonated structure of GTP (net charge of -4). 
 All further minimizations and MD simulations were performed using the Gromacs 2016.3 molecular dynamics simulation package\cite{Berendsen1995, Lindahl2001, VanDerSpoel2005, Miyake-Stoner2009, Hess2008, Pronk2013, Pall2015, Abraham2015} and ffAmber03 \cite{Duan2003, Sorin2005}.
 
 \begin{table}
-    \caption{Partial charges for the phosphate atoms derived in accordance with Amber03.}
+    \caption[Partial charges for phosphate atoms]{
+        Partial charges for the phosphate atoms derived in accordance with Amber03.
+    }
     \begin{center}
     \begin{tabular}{cc}
     \toprule
@@ -211,7 +233,7 @@ We measured the initial rate of intrinsic hydrolysis of WT Ras and 17 mutants at
 To do this, we monitored the increase in concentration of phosphate over time for each mutant, measured using a malachite green colorimetric assay. 
 Because the Ras-GTP complex has a $K_d$ in the picomolar range, the addition of excess GTP to initiate the reaction resulted in a single exponential rise in the concentration of phosphate. 
 In order to have a quantitative comparison between the mutants in our experiment, we used linear regression on the first five measurements of phosphate concentration (i.e., 0-180 min), which corresponds to the linear portion of the exponential curve. 
-We extracted the initial rates from the slope of the resulting fits, and all fits are shown in the Supporting Information (Figure \ref{fig:ras-all_fits}). 
+We extracted the initial rates from the slope of the resulting fits, and all fits are shown in Figure \ref{fig:ras-all_fits}. 
 For brevity, representative curves are shown in Figure \ref{fig:ras-curves}, and initial rates for all mutants are reported in Table \ref{tbl:ras-data}. 
 The error is reported as the standard error of the linear regression. 
 In some cases, we obtained a better fit with smaller error by omitting the first data point because of low sensitivity of the zero time point in colorimetric assays. 
@@ -221,13 +243,26 @@ However, it should be noted that only the Q61V construct visibly precipitated af
 
 \begin{figure} 
     \center
-    \includegraphics[width=6.0in]{figures-ras/all_fits.png}
-    \caption{The production of inorganic phosphate, \ce{Pi}, as a function of reaction time for all viable RasQ61X constructs. The identity of the amino acid at position 61 is shown in the upper left corner of each plot. The first five points were fit with linear regression. The slope and standard error of the fit are displayed in the bottom-right corner of each window. If a lower standard error was obtained by omitting the first time point (0 min), then that fit is reported. Such cases are marked with an asterisk in the top-left corner. Blue: polar or negatively charged residues; red: positively charged residues; black: nonpolar residues.}
+    \includegraphics[width=\double]{figures-ras/all_fits.png}
+    \caption{
+        The production of inorganic phosphate, \ce{Pi}, as a function of reaction time for all viable RasQ61X constructs. 
+        The identity of the amino acid at position 61 is shown in the upper left corner of each plot. 
+        The first five points were fit with linear regression. 
+        The slope and standard error of the fit are displayed in the bottom-right corner of each window. 
+        If a lower standard error was obtained by omitting the first time point (0 min), then that fit is reported. 
+        Such cases are marked with an asterisk in the top-left corner. 
+        Blue: polar or negatively charged residues; red: positively charged residues; black: nonpolar residues.
+    }
     \label{fig:ras-all_fits}
 \end{figure}
 
 \begin{table}
-    \caption{Vibrational Frequencies of a Nearby Nitrile on \RalBSCN{}, Measured Intrinsic Initial Rates of GTP hydrolysis, and Computed SASA Values of Both the Entire Side Chain and Only the Side Chain Polar Atoms (N, O, and H bound to N or O) from MD Simulation for 18 Constructs of RasQ61X}
+    \caption[Summary of experimental and computational results]{
+        Vibrational Frequencies of a Nearby Nitrile on \RalBSCN{}, 
+        Measured Intrinsic Initial Rates of GTP hydrolysis, and 
+        Computed SASA Values of Both the Entire Side Chain and Only the Side Chain Polar Atoms (N, O, and H bound to N or O) from MD Simulation for 18 Constructs of RasQ61X
+    }
+    \begin{center}
     \begin{tabular}{ccccc}
     \toprule
     \rowcolor{lgray}
@@ -235,17 +270,13 @@ However, it should be noted that only the Q61V construct visibly precipitated af
     \rowcolor{lgray}
     & (cm$^{-1}$) &     ($10^{-2}$ $\mu$M min$^{-1}$)  & polar atoms & side chain \\
     \cmidrule(r){1-1}\cmidrule(lr){2-2}\cmidrule(lr){3-3}\cmidrule(l){4-5}
-
-
     WT Ras$^{d}$   & $2162.8 \pm 0.2$ & $ 7.03 \pm 0.49  $ & $65 \pm 15$ & $98  \pm 16 $\\
-    
     \rowcolor{lgray}
     \multicolumn{5}{c}{Residues with Charged Sidechains} \\
     RasQ61D & $2162.0 \pm 0.1$ & $ 0.47 \pm  0.12 $ & $51 \pm 7  $ & $77  \pm 7  $\\
     RasQ61E & $2162.8 \pm 0.2$ & $ 0.86 \pm  0.05 $ & $60 \pm 10.$ & $91  \pm 11 $\\
     RasQ61K & $2163.1 \pm 0.2$ & $ 0.47 \pm  0.13 $ & $50 \pm 17 $ & $114 \pm 22 $\\
     RasQ61R & $2162.4 \pm 0.1$ & $ 0.58 \pm  0.01 $ & $71 \pm 24 $ & $121 \pm 24 $\\
-    
     \rowcolor{lgray}
     \multicolumn{5}{c}{Residues with Polar Sidechains} \\
     RasQ61H & $2163.8 \pm 0.2$ & $ 0.92 \pm  0.22 $ & $34 \pm 6  $ & $108 \pm 14 $\\
@@ -254,7 +285,6 @@ However, it should be noted that only the Q61V construct visibly precipitated af
     RasQ61T & $2164.7 \pm 0.2$ & $ 0.18 \pm  0.04 $ & $20 \pm 9  $ & $59  \pm 11 $\\
     RasQ61W & $2164.1 \pm 0.2$ & $ 1.19 \pm  0.37 $ & $18 \pm 10.$ & $151 \pm 21 $\\
     RasQ61Y & $2163.5 \pm 0.1$ & $ 9.64 \pm  1.50 $ & $36 \pm 15 $ & $130.\pm 25 $\\
-    
     \rowcolor{lgray}
     \multicolumn{5}{c}{Residues with Nonpolar Sidechains} \\
     RasQ61A & $2162.0 \pm 0.2$ & $ 1.56 \pm  0.18 $ &                   &         \\
@@ -264,17 +294,21 @@ However, it should be noted that only the Q61V construct visibly precipitated af
     RasQ61L & $2163.2 \pm 0.2$ & $ 1.57 \pm  0.21 $ & $0  \pm 0  $ & $102 \pm 14 $\\
     RasQ61M & $2162.6 \pm 0.1$ & $ 0.65 \pm  0.19 $ & $0  \pm 0  $ & $101 \pm 20 $\\
     RasQ61V & $2163.9 \pm 0.0$ & $ 3.51 \pm  0.38 $ & $0  \pm 0  $ & $78  \pm 11 $\\
-    
     \bottomrule
-    \end{tabular}
+    \end{tabular} \\
+    \end{center}
     $^{a}$Taken from ref \citenum{Stafford2012}. $^{b}$Errors in the rate are reported as the standard error of the linear fit. $^{c}$Errors in the SASA are reported as the standard deviation of the entire ensemble of structures. $^{d}$The identity of position 61 in wild-type Ras is Q.
     \label{tbl:ras-data}
 \end{table}
 
 \begin{figure}
     \center
-    \includegraphics[width=3.25in]{figures-ras/modelCurvesFigure.png}
-    \caption{Representative kinetic measurements of 4 $\mu$M RasQ61X constructs reacted with 20 $\mu$M GTP over 8 h, WT (blue), Q61G (black), and Q61K (red). The dashed lines represent the linear fit to the first five time points. The slope of the linear fit is the initial rate of the intrinsic hydrolysis reaction. The rates for each mutant are reported in Table \ref{tbl:ras-data}.}
+    \includegraphics[width=\single]{figures-ras/modelCurvesFigure.png}
+    \caption{
+        Representative kinetic measurements of 4 $\mu$M RasQ61X constructs reacted with 20 $\mu$M GTP over 8 h, WT (blue), Q61G (black), and Q61K (red). 
+        The dashed lines represent the linear fit to the first five time points. 
+        The slope of the linear fit is the initial rate of the intrinsic hydrolysis reaction. 
+        The rates for each mutant are reported in Table \ref{tbl:ras-data}.}
     \label{fig:ras-curves}
 \end{figure}
 
@@ -308,8 +342,12 @@ To confirm this, and in order to compare our rate results with the published VSE
 
 \begin{figure}
     \center
-    \includegraphics[width=3.25in]{figures-ras/Figure3.png}
-    \caption{Concentration of the phosphate product of the intrinsic hydrolysis reaction for both WT Ras (blue) and WT Ras docked to \RalBSCN{} (green) over 8 h. Linear regression fits are shown to the first five time points of each data set, and the slopes are displayed in the corresponding color. The intrinsic hydrolysis rate of WT Ras/\RalBSCN{} is within error of the intrinsic hydrolysis rate of WT Ras alone ($5.9 \pm 1.1 \times 10^{-2}$ $\mu$M min$^{-1}$ and $7.0 \pm 0.5 \times 10^{-2}$ $\mu$M min$^{-1}$, respectively).}
+    \includegraphics[width=\single]{figures-ras/Figure3.png}
+    \caption{
+        Concentration of the phosphate product of the intrinsic hydrolysis reaction for both WT Ras (blue) and WT Ras docked to \RalBSCN{} (green) over 8 h. 
+        Linear regression fits are shown to the first five time points of each data set, and the slopes are displayed in the corresponding color. 
+        The intrinsic hydrolysis rate of WT Ras/\RalBSCN{} is within error of the intrinsic hydrolysis rate of WT Ras alone ($5.9 \pm 1.1 \times 10^{-2}$ $\mu$M min$^{-1}$ and $7.0 \pm 0.5 \times 10^{-2}$ $\mu$M min$^{-1}$, respectively).
+    }
     \label{fig:ras-ral}
 \end{figure}
 
@@ -357,8 +395,13 @@ For these data, residues that caused the nitrile absorption frequency to red-shi
 
 \begin{figure}
     \center
-    \includegraphics[width=3.25in]{figures-ras/Figure4.png}
-    \caption{Vibrational frequencies of the nitrile on \RalBSCN{} against the log of the measured intrinsic rate of GTP hydrolysis. Blue: polar and negatively charged side chains. Black: all nonpolar side chains. Red: the two positively charged side chains. Blue line: normal distribution fit to the polar and the negatively charged side chains. All points that were excluded from the fit are marked with triangles.}
+    \includegraphics[width=\single]{figures-ras/Figure4.png}
+    \caption{
+        Vibrational frequencies of the nitrile on \RalBSCN{} against the log of the measured intrinsic rate of GTP hydrolysis. 
+        Blue: polar and negatively charged side chains. Black: all nonpolar side chains. 
+        Red: the two positively charged side chains. Blue line: normal distribution fit to the polar and the negatively charged side chains. 
+        All points that were excluded from the fit are marked with triangles.
+    }
     \label{fig:ras-stark_vs_rate}
 \end{figure}
 
@@ -372,7 +415,13 @@ We have previously demonstrated that, in cases of a similar hydrogen bonding env
 We therefore interpret the shifts in absorption frequency as a measure of change in the electric field through eq \ref{eq:ras-stark}.
 
 \begin{table}
-    \caption{Boltzmann-weighted averages of the SASA of the nitrile on \RalBSCN{}, number of waters within a 5 \si{\angstrom} sphere of the nitrogen of the nitrile, and geometric properties of all the hydrogen bonding interaction between the solvent and the nitrile in the simulations. These geometric properties are illustrated in Figure \ref{fig:ras-hbond}.}
+    \caption[Nitrile exposure to water in the Ras/\RalBSCN{} constructs]{
+        Boltzmann-weighted averages of the SASA of the nitrile on \RalBSCN{}, 
+        number of waters within a 5 \si{\angstrom} sphere of the nitrogen of the nitrile, and 
+        geometric properties of all the hydrogen bonding interaction between the solvent and the nitrile in the simulations. 
+        These geometric properties are illustrated in Figure \ref{fig:ras-hbond}.
+    }
+    \begin{center}
     \begin{tabular}{cccccc} 
     \toprule
         \rowcolor{lgray}
@@ -399,13 +448,19 @@ We therefore interpret the shifts in absorption frequency as a measure of change
     
     \bottomrule
     \end{tabular}
+    \end{center}
     \label{tbl:ras-sasa}
 \end{table}
 
 \begin{figure}
     \center
-    \includegraphics[width=3.25in]{figures-ras/Figure_S4.pdf}
-    \caption{Geometric criteria and property definitions for the hydrogen bonding calculations. $\theta_1$ is the C--N$\cdots$H angle, $\theta_2$ is the N$\cdots$H--R$_{\text{donor}}$ angle, where R$_{\text{donor}}$ represents a water hydrogen bond donor, and $d_{\text{NH}}$ is the distance between the hydrogen and the acceptor nitrogen. To be considered a hydrogen bond, $\theta_1$ must be greater than \ang{99}, $\theta_2$ must be greater than \ang{120}, and $d_{\text{NH}}$ must be less than 2.45 \si{\angstrom}. Adopted from ref \citenum{First2018}.} 
+    \includegraphics[width=\single]{figures-ras/Figure_S4.pdf}
+    \caption{
+        Geometric criteria and property definitions for the hydrogen bonding calculations. 
+        $\theta_1$ is the C--N$\cdots$H angle, $\theta_2$ is the N$\cdots$H--R$_{\text{donor}}$ angle, where R$_{\text{donor}}$ represents a water hydrogen bond donor, and $d_{\text{NH}}$ is the distance between the hydrogen and the acceptor nitrogen. 
+        To be considered a hydrogen bond, $\theta_1$ must be greater than \ang{99}, $\theta_2$ must be greater than \ang{120}, and $d_{\text{NH}}$ must be less than 2.45 \si{\angstrom}. 
+        Adopted from ref \citenum{First2018}.
+    } 
     \label{fig:ras-hbond}
 \end{figure}
 
@@ -421,7 +476,7 @@ Side chain size alone does not explain this observation: G, A, V, and L increase
 
 In order to investigate the effect of side chain size, we plotted the polar atom SASA and the side chain SASA for each mutant against the nitrile shift and the initial rate of GTP hydrolysis. 
 As observed in Stafford et al., the SASA of the polar atoms are well correlated with the measured vibrational frequency of the nearby nitrile on \RalBSCN{} (Figure \ref{fig:ras-sasa}A). 
-With increased sampling and increased accuracy of the SASA calculation, our correlation ($r = −0.89$) is improved compared to the previous result \cite{Stafford2012}. 
+With increased sampling and increased accuracy of the SASA calculation, our correlation ($r = -0.89$) is improved compared to the previous result \cite{Stafford2012}. 
 Therefore, the measured field observed by the nitrile is a good measure of the ability of Q61X to interact with water and thus a good metric by which to evaluate the hypothesis of Buhrman et al. 
 No correlation was observed between the polar atom SASA and the measured intrinsic rate (Figure \ref{fig:ras-sasa}B), and when we measured the side chain SASA, we found that it did not correlate to the nitrile shifts (Figure \ref{fig:ras-sasa}C). 
 However, we found that the SASA of the side chain was moderately correlated (Figure \ref{fig:ras-sasa}D, $r = 0.81$) to the measured initial rate of the side chains capable of stabilizing the hydronium ion (the polar and negatively charged residues), with the exception of W. 
@@ -430,8 +485,19 @@ This prompted us to calculate how many water molecules were actually present in 
 
 \begin{figure}
     \center
-    \includegraphics[width=6.0in]{figures-ras/Figure5.png}
-    \caption{Boltzmann-weighted polar atom and side chain SASAs compared to experimentally measured values of nitrile absorption frequency and initial rate of intrinsic hydrolysis in RasQ61X mutants. (A) The absorption frequency of the nitrile on \RalBSCN{} against the polar atom SASA of Q61X. (B) The initial rate of intrinsic hydrolysis against the polar atom SASA of Q61X. (C) The absorption frequency of the nitrile on \RalBSCN{} against the side chain SASA of Q61X. (D) The initial rate of intrinsic hydrolysis against the side chain SASA of Q61X. Blue: polar or negatively charged side chain. Red: positively charged side chains. Black: nonpolar side chains. Triangles: residues not included in the linear regression. In panel D, W (cyan) is excluded from the polar residue group as discussed in the text.}
+    \includegraphics[width=\double]{figures-ras/Figure5.png}
+    \caption{
+        Boltzmann-weighted polar atom and side chain SASAs compared to experimentally measured values of nitrile absorption frequency and initial rate of intrinsic hydrolysis in RasQ61X mutants. 
+        (A) The absorption frequency of the nitrile on \RalBSCN{} against the polar atom SASA of Q61X. 
+        (B) The initial rate of intrinsic hydrolysis against the polar atom SASA of Q61X. 
+        (C) The absorption frequency of the nitrile on \RalBSCN{} against the side chain SASA of Q61X. 
+        (D) The initial rate of intrinsic hydrolysis against the side chain SASA of Q61X. 
+        Blue: polar or negatively charged side chain. 
+        Red: positively charged side chains. 
+        Black: nonpolar side chains. 
+        Triangles: residues not included in the linear regression. 
+        In panel D, W (cyan) is excluded from the polar residue group as discussed in the text.
+    }
     \label{fig:ras-sasa}
 \end{figure}
 
@@ -446,8 +512,15 @@ We interpret the observation of this strong correlation to mean that the ability
 
 \begin{figure}
     \center
-    \includegraphics[width=3.25in]{figures-ras/Figure6.png}
-    \caption{Boltzmann-weighted average number of waters in the active site per frame against the measured intrinsic rate. To be considered in the active site, each water needed to be within 5 \si{\angstrom} of the Q61X side chain and within 5 \si{\angstrom} of the terminal phosphate oxygen of GTP (atom name O1G). Blue: all polar or negatively charged side chains. All other points are marked as triangles and are excluded from the fit. Red: positively charged side chains. Black: nonpolar side chains.}
+    \includegraphics[width=\single]{figures-ras/Figure6.png}
+    \caption{
+        Boltzmann-weighted average number of waters in the active site per frame against the measured intrinsic rate. 
+        To be considered in the active site, each water needed to be within 5 \si{\angstrom} of the Q61X side chain and within 5 \si{\angstrom} of the terminal phosphate oxygen of GTP (atom name O1G). 
+        Blue: all polar or negatively charged side chains. 
+        All other points are marked as triangles and are excluded from the fit. 
+        Red: positively charged side chains. 
+        Black: nonpolar side chains.
+    }
     \label{fig:ras-scount}
 \end{figure}
 
@@ -474,7 +547,10 @@ In our simulations, however, the hydrogen bond between G12 and GTP brings the pr
 Therefore, while our data supports a multiwater mechanism in which Q61 electrostatically stabilizes a hydronium ion, which in turn stabilizes the transition state, we hypothesize that the hydronium ion must be elsewhere.
 
 \begin{table}
-    \caption{Interaction distances and probability of a hydrogen bond per frame between the amide nitrogen of G12 and the bridging oxygen (OS3) of GTP. The standard deviations of the probabilities are omitted because they are of the same order of magnitude as the probabilities.}
+    \caption[Interactions between GTP and residue G12 in Ras]{
+        Interaction distances and probability of a hydrogen bond per frame between the amide nitrogen of G12 and the bridging oxygen (OS3) of GTP. 
+        The standard deviations of the probabilities are omitted because they are of the same order of magnitude as the probabilities.
+    }
     \begin{center}
     \begin{tabular}{ccc}
     \toprule
