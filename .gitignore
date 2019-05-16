@@ -7,7 +7,11 @@
 *.lof 
 *.log 
 *.lot 
+*.bib
+*.bak
 clean_preview
 make 
 Dissertation-JTF.pdf
+*/.DS_Store
+.DS_Store
 

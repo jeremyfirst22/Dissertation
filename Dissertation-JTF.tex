@@ -22,7 +22,8 @@
 % the package usage command.					     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage[showframe,left=1.25in,right=1.25in]{geometry}
+%\usepackage[showframe,left=1.00in,right=1.00in]{geometry}
+\usepackage[left=1.00in,right=1.00in]{geometry}
 \usepackage[tbtags]{amsmath}
 \usepackage{amsthm,amsfonts,amscd} 
 				% Some packages to write mathematics.
@@ -274,12 +275,12 @@
 \end{filecontents}
 \AtBeginDocument{\nocite{achemso-control}}
 
-
 %% Mendeley Unicode fixes for titles: 
 % U+22EF: Hydrogen bonds 
 % U+2009: Thin space after colon
 \DeclareUnicodeCharacter{22EF}{$\cdots$} 
 \DeclareUnicodeCharacter{2009}{ }         
+\DeclareUnicodeCharacter{03D5}{$\phi$}         
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %		The document starts here.			     %
@@ -320,8 +321,7 @@ This is where dedications will go.
 
 \begin{acknowledgments}		% Optional
 \index{Acknowledgments@\emph{Acknowledgments}}%
-I wish to thank the multitudes of people who helped me. Time would
-fail me to tell of \ldots
+\input{acknowledgements}
 \end{acknowledgments}
 
 
@@ -333,17 +333,8 @@ fail me to tell of \ldots
 \utabstract
 \index{Abstract}%
 \indent
-This document has the form of a ``fake'' doctoral dissertation
-in order to provide an example of such, but it is actually a
-copy of Miguel Lerma's documentation for the Mathematics
-Department Computer Seminar of 25 March 1998 updated in July 2001
-and following by Craig McCluskey to meet the March 2001
-requirements of the Graduate School.
 
-This document and its source file show to write a Doctoral Dissertation using 
-\LaTeX{} and the utdiss2 package. 
-
-
+\input{abstract}
 
 \tableofcontents   % Table of Contents will be automatically
 %                   % generated and placed here.
@@ -359,7 +350,7 @@ This document and its source file show to write a Doctoral Dissertation using
 %
 \include{chapter-introduction}
 
-\include{chapter-methods}
+\include{chapter-helix-folding}
 
 \include{chapter-gfp-pKa}
 
@@ -368,11 +359,6 @@ This document and its source file show to write a Doctoral Dissertation using
 \include{chapter-snase}
 
 \include{chapter-ras}
-
-\include{chapter-helix-folding}
-
-\include{chapter-future_directions}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix/Appendices                                                %
@@ -415,7 +401,7 @@ This document and its source file show to write a Doctoral Dissertation using
 %	to generate the index (if used) MUST be moved to before      %
 %	the bibliography section.				     %
 %								     %
-\printindex%    % Include the index here. Comment out this line      %
+%\printindex%    % Include the index here. Comment out this line      %
 %		% with a percent sign if you do not want an index.   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -424,10 +410,10 @@ This document and its source file show to write a Doctoral Dissertation using
 % Vita page.							     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{vita}
-Jeremy Todd First
-Is a vita even a real thing? If so, the text goes here and is a quick
-biography. Who would want to read about you? 
-\end{vita}
+%\begin{vita}
+%Jeremy Todd First
+%Is a vita even a real thing? If so, the text goes here and is a quick
+%biography. Who would want to read about you? 
+%\end{vita}
 
 \end{document}

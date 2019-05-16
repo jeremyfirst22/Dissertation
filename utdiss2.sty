@@ -46,7 +46,7 @@
 %					29 Nov 2001	cwm
 
 \hoffset 0.0in
-\oddsidemargin 0.250in \evensidemargin 0.250in
+\oddsidemargin 0.000in \evensidemargin 0.000in
 \textwidth 6.0in
 \headheight .21in
 \headsep .29in	% \headheight + \headsep = 0.5in
@@ -574,23 +574,22 @@
     \typeout{*                        *}
     \typeout{*                        *}
     \def\doc@type{dissertation}   % for dissertation 
-    \def\DOC@TYPE{DISSERTATION}   % the document type 
+    \def\DOC@TYPE{Dissertation}   % the document type 
                                   % is "dissertation" 
 %
 \def\previous@degrees{B.S., M.S.}
 \def\target@degree{Ph.D.}
-\def\d@gree{DOCTOR OF PHILOSOPHY}
+\def\d@gree{Doctor Of Philosophy}
 %
 \def\certif@words{		%	26 Aug 2001	cwm
-	\centerline{The Dissertation Committee for \au@thor}
-	\centerline{certifies that this is the approved version\ 
-		of the following dissertation:}		
+    \centerline{\textbf{The Dissertation Committee for \au@thor{} certifies that this is the}}
+    \centerline{\textbf{approved version of the following Dissertation:}		}
                                            }			
 %
 \def\approvalwords{%		%	22 Jul 2001	cwm
-         \leftline{\hbox to 2.5in{}Committee:\hfill}		%
+    \leftline{\hbox to 2.5in{}\textbf{Committee:}\hfill}		%
                                            }			%
-    \def\pubnum{\centerline{Publication No. \rule{1.5in}{0.4pt}}}
+    %\def\pubnum{\centerline{Publication No. \rule{1.5in}{0.4pt}}}
 
 }	% End of definition of dissertation.
 
@@ -666,7 +665,8 @@
 \newcount\membernumbercounter
 
 \def\signline{%
-    \leftline{\hbox to 2.5in{}\hrulefill} % 26 Aug 2001	cwm
+    %\leftline{\hbox to 2.5in{}\hrulefill} % 26 Aug 2001	cwm
+    \hbox to 2.75in{}% 26 Aug 2001	cwm
     \endgraf
     }
 
@@ -678,7 +678,7 @@
     {\loop\ifnum\supervisornumbercounter<\numberofsupervisors
      \advance\supervisornumbercounter by1
      \signline
-     \vspace*{-18pt}
+     \vspace*{-2pt}
      \ifnum\supervisornumbercounter=1
 	\leftline{\hbox to 2.53in{}{\supervisora, Supervisor}}
      \fi
@@ -696,7 +696,7 @@
     {\loop\ifnum\membernumbercounter<\numberofmembers
      \advance\membernumbercounter by1
      \signline
-     \vspace*{-18pt}
+     \vspace*{-2pt}
      \ifnum\membernumbercounter=1
 	\leftline{\hbox to 2.53in{}{\committeemembera}}
      \fi
@@ -803,7 +803,7 @@
 %
 \def\commcertpage{\thispagestyle{empty}
     \certif@words
-    \vspace*{75pt}
+    \vspace*{15pt}
     \baselineskip=16.5pt plus .5pt minus .2 pt
     \baselineskip=28.5pt plus .5pt minus .2 pt
     \begin{center}
@@ -844,6 +844,7 @@
 %       Dedication Page
 %
 \newenvironment{dedication}{\thispagestyle{empty}
+    \center{\textbf{Dedication}}
     \vspace*{170pt}\begin{center}\default@spacing}%
     {\end{center}\clearpage}
 
@@ -869,12 +870,12 @@
     \end{center}
     \vspace{25pt}
     \centerline{\large\bf by}
-    \vspace{25pt}
+    \vspace{12pt}
 %    \centerline{\large\bf\AU@THOR, \previous@degrees}
-    \centerline{\large\bf\au@thor, \previous@degrees}
+    \centerline{\large\bf\au@thor}%, \previous@degrees}
     \vfill
     \begin{center}
-    {\bf\DOC@TYPE}\\
+    {\textbf{\DOC@TYPE}}\\
     Presented to the Faculty of the Graduate School of\\
     The University of Texas at Austin\\
     in Partial Fulfillment\\
@@ -883,8 +884,8 @@
     \end{center}
     \centerline{\bf\d@gree}
     \vfill
-    \centerline{THE UNIVERSITY OF TEXAS AT AUSTIN}
-    \centerline{\graduation@month\ \graduation@year}
+    \centerline{\textbf{The University of Texas at Austin}}
+    \centerline{\textbf{\graduation@month\ \graduation@year}}
     \clearpage
     \setcounter{regular@short}{1}}
 
@@ -929,11 +930,13 @@
 %			must all be the same.
 %
 %     \large\bf\TI@TLE		% All capitals title.
+     \large\textbf{Abstract}
+     \vspace*{25pt}
      \large\bf\ti@tle		% Mixed case title.
 
     \end{center}
     \vspace*{25pt}
-    \pubnum                                            % (MAL 3/18/98)
+    %\pubnum                                            % (MAL 3/18/98)
     \vspace*{25pt}
     \centerline{\au@thor, \target@degree}                            % <-
     \vspace*{5pt}                                      % (MAL 7/25/98)

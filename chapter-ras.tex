@@ -1,18 +1,18 @@
 \chapter{Quantitative Measurement of Intrinsic GTP Hydrolysis for
 Carcinogenic Glutamine 61 Mutants in H-Ras} \label{ras}
 
-\newcommand{\RalBSCN}{{Ral$\beta$I18C$_{\text{SCN}}$}}
-\newcommand{\RalB}{{Ral$\beta$}}
+\newcommand{\RalBSCN}{{Ral\textbeta{}I18C$_{\text{SCN}}$}}
+\newcommand{\RalB}{{Ral\textbeta{}}}
 
 
-Mutations of human oncoprotein p$^{21}$H-Ras (hereafter ``Ras'') at glutamine 61 are known to slow the rate of guanosine triphosphate (GTP) hydrolysis and transform healthy cells into malignant cells. 
-It has been hypothesized that this glutamine plays a role in the intrinsic mechanism of GTP hydrolysis by interacting with an active site water molecule that stabilizes the formation of the charged transition state at the $\gamma$-phosphate during hydrolysis.
-However, there is no comprehensive data set of the effects of mutations to Q61 on the protein's intrinsic catalytic rate, structure, or interactions with water at the active site. 
-Here, we present the first comprehensive and quantitative set of initial rates of intrinsic hydrolysis for all stable variants of RasQ61X. 
-We further conducted enhanced molecular dynamics (MD) simulations of each construct to determine the solvent accessible surface area (SASA) of the side chain at position 61 and compared these results to previously measured changes in electric fields caused by RasQ61X mutations. 
-For polar and negatively charged residues, we found that the rates are normally distributed about an optimal electrostatic contribution, close to that of the native Q61 residue, and the rates are strongly correlated to the number of waters in the active site. 
-Together, these results support a mechanism of GTP hydrolysis in which Q61 stabilizes a transient hydronium ion, which then stabilizes the transition state while the $\gamma$-phosphate is undergoing nucleophilic attack by a second, catalytically active water molecule. 
-We discuss the implications of such a mechanism on future strategies for combating Ras-based cancers.
+%Mutations of human oncoprotein p$^{21}$H-Ras (hereafter ``Ras'') at glutamine 61 are known to slow the rate of guanosine triphosphate (GTP) hydrolysis and transform healthy cells into malignant cells. 
+%It has been hypothesized that this glutamine plays a role in the intrinsic mechanism of GTP hydrolysis by interacting with an active site water molecule that stabilizes the formation of the charged transition state at the $\gamma$-phosphate during hydrolysis.
+%However, there is no comprehensive data set of the effects of mutations to Q61 on the protein's intrinsic catalytic rate, structure, or interactions with water at the active site. 
+%Here, we present the first comprehensive and quantitative set of initial rates of intrinsic hydrolysis for all stable variants of RasQ61X. 
+%We further conducted enhanced molecular dynamics (MD) simulations of each construct to determine the solvent accessible surface area (SASA) of the side chain at position 61 and compared these results to previously measured changes in electric fields caused by RasQ61X mutations. 
+%For polar and negatively charged residues, we found that the rates are normally distributed about an optimal electrostatic contribution, close to that of the native Q61 residue, and the rates are strongly correlated to the number of waters in the active site. 
+%Together, these results support a mechanism of GTP hydrolysis in which Q61 stabilizes a transient hydronium ion, which then stabilizes the transition state while the $\gamma$-phosphate is undergoing nucleophilic attack by a second, catalytically active water molecule. 
+%We discuss the implications of such a mechanism on future strategies for combating Ras-based cancers.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -23,6 +23,11 @@ We discuss the implications of such a mechanism on future strategies for combati
 Portions of this chapter are adapted from the following publication: 
 
 \noindent Elisa T. Novelli, Jeremy T. First, Lauren J. Webb; Quantitative Measurement of Intrinsic GTP Hydrolysis for Carcinogenic Glutamine 61 Mutants in H-Ras. \emph{Biochemistry}. \textbf{2018}, \emph{57}, 6356-6366.
+
+JTF performed all calculations.
+All code, force field parameters, structures, and other starting files used for the simulation, analysis, processing of data, and figure generation can be accessed at:
+\url{https://github.com/jeremyfirst22/RasRal}. 
+ETN performed all experiments. The experimental methods are ommited from this Chapter, but they may be found in the publication.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -60,7 +65,7 @@ This supports the idea that water is crucial to the intrinsic hydrolysis mechani
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-ras/Figure1_two_column.png}
-    \caption{
+    \caption[Proposed Ras hydrolysis mechanism and illustration of system]{
         (A) A proposed multiwater mechanism of the intrinsic Ras GTPase reaction. 
         The catalytic water (blue) shuttles a proton to a nearby, stabilized water (red) via the $\gamma$-phosphate, adopted from ref \citenum{Buhrman2010} and ref \citenum{Stafford2012}. 
         (B) A snapshot of the Ras/\RalBSCN{} interface. 
@@ -116,57 +121,57 @@ This kinetic data set is invaluable for understanding the intrinsic mechanism of
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Mutagenesis}
-
-The gene for hexahistidine-tagged WT H-Ras, residues 1-166, was a gift of the Kuriyan laboratory \cite{Boriack-Sjodin1998}. 
-A plasmid containing hexahistidine-tagged Tobacco Etch Virus Protease (His-TEV) with the S219V mutation in \emph{E. coli} Bl21(DE3)-RIL cells was a gift from David Waugh (Addgene plasmid 8827) \cite{Kapust2001}. 
-The 97-residue Ras Binding Domain of \RalB{} was taken from residues 790-886 of RalGDS and numbered according to the pdb entry 1lfd \cite{Huang1998}. 
-The gene was cloned and mutated as described previously \cite{Stafford2012, Stafford2010}.
-Mutations to Q61 of Ras were made using the Quikchange Lightning site-directed mutagenesis kit (Agilent).
-
-\subsection{Purification}
-
-Plasmids encoding the WT and mutant Ras constructs were transformed into BL21(DE3) cells for expression. 
-All proteins were expressed and purified as previously described \cite{Stafford2012, Kapust2001, Stafford2010}, with the exception of the buffers used for Ras, which were altered to minimize phosphate background in the kinetics experiments. 
-All reagents were purchased from Sigma-Aldrich and used without further purification unless stated otherwise. 
-Briefly, cells were collected and resuspended in loading buffer (50 mM Tris-HCl, 250 mM NaCl, 40 mM imidazole, 10\% glycerol, pH 7.5) for lysis via probe sonication followed by centrifugation to remove cell debris. 
-The supernatant was loaded onto a nickel immobilized metal affinity column (Ni-IMAC, Fisher). 
-His-tagged Ras proteins were eluted with an elution buffer (50 mM Tris-HCl, 250 mM NaCl, 500 mM imidazole, 10\% glycerol, pH 7.5). 
-Protein was exchanged into a cleavage buffer (50 mM Tris, 50 mM KCl, 10\% glycerol, pH 8) with a PD-10 column (GE Healthcare) and cleaved with His-TEV at a ratio of approximately 1 mg His-TEV to 100 mg of His-Ras overnight at 4 \si{\celsius}. His-TEV and uncleaved Ras were removed by passing the solution through another Ni-IMAC column, and the cleaved protein was exchanged into final buffer (50 mM Tris, 100 mM NaCl, 10\% glycerol, pH 7.5) and either used immediately or flash frozen and stored at -80 \si{\celsius} for later use. 
-To ensure that the active site of Ras contained GDP (OFF state) in preparation for kinetics experiments, the purified Ras was incubated with 5 mM dithiothreitol (DTT), 5 mM ethylenediamine tetraacetic acid (EDTA), and GDP in 100-fold excess of the protein concentration for 90 min on ice, and then 10 mM \ce{MgCl2} was added and the solution incubated for a further 30 min on ice. 
-The GDP-containing protein was then buffer exchanged into kinetics buffer (50 mM Tris-HCl, 50 mM NaCl, 20 mM EDTA, 5 mM \ce{MgCl2}, 0.01\% Triton X-100, pH 7.5) for the kinetics experiments. 
-The RasQ61C and RasQ61P mutations could not be expressed for reasons we have not investigated and are thus not presented here. 
-The nitrile functional group on \RalB{} was introduced as previously described \cite{Stafford2010}.
-
-\subsection{Kinetics}
-
-The initial rates of hydrolysis of GTP by RasQ61X constructs were measured using the malachite green assay\cite{Quan2005, Hohenwallner1973, Lanzetta1979} to detect the production of inorganic phosphate. 
-The hydrolysis product, \ce{Pi}, was detected through the formation of a colorless phosphomolybdate complex under acidic conditions, which reacted with malachite green indicator to form a colored product that was quantified by UV-vis absorption at 640 nm. 
-The assay has a broad dynamic range (typically 1-200 $\mu$M) that was tailored to the reaction conditions based on the ratio of assay volume to malachite green detection reagent volume. 
-The assay has the advantage of using GTP as the substrate instead of fluorescently labeled GTP, which introduces kinetic artifacts, or radiolabeled GTP, which has associated handling hazards and expenses.
-
-The malachite green reagent contained ammonium molybdate and malachite green oxalate dissolved in 1 N HCl (all purchased from Sigma-Aldrich) and was made as described previously \cite{Quan2005}.
-A 1 mM phosphate standard stock solution was made by drying the highest available purity \ce{K3PO4} in an oven at 110 \si{\celsius} overnight before dissolving in high purity water. 
-Lower concentration standard solutions of \ce{K3PO4} for the calibration curve were serially diluted from the stock solution in kinetics buffer at the time of the experiment. 
-The GTP substrate solution contained 40 $\mu$M GTP and 1 mM DTT in kinetics buffer. 
-To minimize contamination that increased the phosphate background, we used the highest purity GTP available. 
-Each reaction was initiated by mixing 20 $\mu$L of 8 mM RasQ61X with 20 $\mu$L of GTP substrate solution for a final assay reaction solution of 4 $\mu$M RasQ61X and 20 $\mu$M GTP. 
-Reactions were incubated at 37 \si{\celsius} from 0 to 8 h by initiating the 8 h reaction first and then adding subsequent reactions to the incubator at each time point. 
-All reactions were then transferred to a black, optical-bottom 384-well plate (Thermo Scientific) and all stopped at the same time through the addition of the malachite green reagent. 
-Reactions were done at least in triplicate, and each reaction vial had enough volume for three wells, resulting in at least 9 measurements for each time point. 
-Each well contained 10 $\mu$L of assay reaction and 30 $\mu$L of malachite reagent, and the optical response was linear (Figure \ref{fig:ras-response}) through the entire range of standards (0-25 $\mu$M phosphate). 
-Absorption of the phosphomolybdate/malachite green colored complex was measured via a BioTek Synergy H4 plate reader at 640 nm using path length correction functionality to account for small differences in volume due to pipetting error.
-
-\begin{figure}
-    \center
-    \includegraphics[width=\single]{figures-ras/optical_response.png}
-    \caption{
-        Calibration curve of the malachite green colorimetric assay collected from phosphate standards of 0.00, 0.39, 0.78, 1.56, 3.13, 6.25, 12.5, and 25 $\mu$M. 
-        The response is linear over the range of phosphate concentration measured in our experiments.
-    }
-    \label{fig:ras-response}
-
-\end{figure}
+%\subsection{Mutagenesis}
+%
+%The gene for hexahistidine-tagged WT H-Ras, residues 1-166, was a gift of the Kuriyan laboratory \cite{Boriack-Sjodin1998}. 
+%A plasmid containing hexahistidine-tagged Tobacco Etch Virus Protease (His-TEV) with the S219V mutation in \emph{E. coli} Bl21(DE3)-RIL cells was a gift from David Waugh (Addgene plasmid 8827) \cite{Kapust2001}. 
+%The 97-residue Ras Binding Domain of \RalB{} was taken from residues 790-886 of RalGDS and numbered according to the pdb entry 1lfd \cite{Huang1998}. 
+%The gene was cloned and mutated as described previously \cite{Stafford2012, Stafford2010}.
+%Mutations to Q61 of Ras were made using the Quikchange Lightning site-directed mutagenesis kit (Agilent).
+%
+%\subsection{Purification}
+%
+%Plasmids encoding the WT and mutant Ras constructs were transformed into BL21(DE3) cells for expression. 
+%All proteins were expressed and purified as previously described \cite{Stafford2012, Kapust2001, Stafford2010}, with the exception of the buffers used for Ras, which were altered to minimize phosphate background in the kinetics experiments. 
+%All reagents were purchased from Sigma-Aldrich and used without further purification unless stated otherwise. 
+%Briefly, cells were collected and resuspended in loading buffer (50 mM Tris-HCl, 250 mM NaCl, 40 mM imidazole, 10\% glycerol, pH 7.5) for lysis via probe sonication followed by centrifugation to remove cell debris. 
+%The supernatant was loaded onto a nickel immobilized metal affinity column (Ni-IMAC, Fisher). 
+%His-tagged Ras proteins were eluted with an elution buffer (50 mM Tris-HCl, 250 mM NaCl, 500 mM imidazole, 10\% glycerol, pH 7.5). 
+%Protein was exchanged into a cleavage buffer (50 mM Tris, 50 mM KCl, 10\% glycerol, pH 8) with a PD-10 column (GE Healthcare) and cleaved with His-TEV at a ratio of approximately 1 mg His-TEV to 100 mg of His-Ras overnight at 4 \si{\celsius}. His-TEV and uncleaved Ras were removed by passing the solution through another Ni-IMAC column, and the cleaved protein was exchanged into final buffer (50 mM Tris, 100 mM NaCl, 10\% glycerol, pH 7.5) and either used immediately or flash frozen and stored at -80 \si{\celsius} for later use. 
+%To ensure that the active site of Ras contained GDP (OFF state) in preparation for kinetics experiments, the purified Ras was incubated with 5 mM dithiothreitol (DTT), 5 mM ethylenediamine tetraacetic acid (EDTA), and GDP in 100-fold excess of the protein concentration for 90 min on ice, and then 10 mM \ce{MgCl2} was added and the solution incubated for a further 30 min on ice. 
+%The GDP-containing protein was then buffer exchanged into kinetics buffer (50 mM Tris-HCl, 50 mM NaCl, 20 mM EDTA, 5 mM \ce{MgCl2}, 0.01\% Triton X-100, pH 7.5) for the kinetics experiments. 
+%The RasQ61C and RasQ61P mutations could not be expressed for reasons we have not investigated and are thus not presented here. 
+%The nitrile functional group on \RalB{} was introduced as previously described \cite{Stafford2010}.
+%
+%\subsection{Kinetics}
+%
+%The initial rates of hydrolysis of GTP by RasQ61X constructs were measured using the malachite green assay\cite{Quan2005, Hohenwallner1973, Lanzetta1979} to detect the production of inorganic phosphate. 
+%The hydrolysis product, \ce{Pi}, was detected through the formation of a colorless phosphomolybdate complex under acidic conditions, which reacted with malachite green indicator to form a colored product that was quantified by UV-vis absorption at 640 nm. 
+%The assay has a broad dynamic range (typically 1-200 $\mu$M) that was tailored to the reaction conditions based on the ratio of assay volume to malachite green detection reagent volume. 
+%The assay has the advantage of using GTP as the substrate instead of fluorescently labeled GTP, which introduces kinetic artifacts, or radiolabeled GTP, which has associated handling hazards and expenses.
+%
+%The malachite green reagent contained ammonium molybdate and malachite green oxalate dissolved in 1 N HCl (all purchased from Sigma-Aldrich) and was made as described previously \cite{Quan2005}.
+%A 1 mM phosphate standard stock solution was made by drying the highest available purity \ce{K3PO4} in an oven at 110 \si{\celsius} overnight before dissolving in high purity water. 
+%Lower concentration standard solutions of \ce{K3PO4} for the calibration curve were serially diluted from the stock solution in kinetics buffer at the time of the experiment. 
+%The GTP substrate solution contained 40 $\mu$M GTP and 1 mM DTT in kinetics buffer. 
+%To minimize contamination that increased the phosphate background, we used the highest purity GTP available. 
+%Each reaction was initiated by mixing 20 $\mu$L of 8 mM RasQ61X with 20 $\mu$L of GTP substrate solution for a final assay reaction solution of 4 $\mu$M RasQ61X and 20 $\mu$M GTP. 
+%Reactions were incubated at 37 \si{\celsius} from 0 to 8 h by initiating the 8 h reaction first and then adding subsequent reactions to the incubator at each time point. 
+%All reactions were then transferred to a black, optical-bottom 384-well plate (Thermo Scientific) and all stopped at the same time through the addition of the malachite green reagent. 
+%Reactions were done at least in triplicate, and each reaction vial had enough volume for three wells, resulting in at least 9 measurements for each time point. 
+%Each well contained 10 $\mu$L of assay reaction and 30 $\mu$L of malachite reagent, and the optical response was linear (Figure \ref{fig:ras-response}) through the entire range of standards (0-25 $\mu$M phosphate). 
+%Absorption of the phosphomolybdate/malachite green colored complex was measured via a BioTek Synergy H4 plate reader at 640 nm using path length correction functionality to account for small differences in volume due to pipetting error.
+%
+%\begin{figure}
+%    \center
+%    \includegraphics[width=\single]{figures-ras/optical_response.png}
+%    \caption[Calibration curve of the malachite green colorimetric assay]{
+%        Calibration curve of the malachite green colorimetric assay collected from phosphate standards of 0.00, 0.39, 0.78, 1.56, 3.13, 6.25, 12.5, and 25 $\mu$M. 
+%        The response is linear over the range of phosphate concentration measured in our experiments.
+%    }
+%    \label{fig:ras-response}
+%
+%\end{figure}
 
 \subsection{MD and SASA Calculations} 
 
@@ -244,8 +249,8 @@ However, it should be noted that only the Q61V construct visibly precipitated af
 \begin{figure} 
     \center
     \includegraphics[width=\double]{figures-ras/all_fits.png}
-    \caption{
-        The production of inorganic phosphate, \ce{Pi}, as a function of reaction time for all viable RasQ61X constructs. 
+    \caption[Phosphate production in each RasQ61X mutant]{
+        The production of inorganic phosphate, P$_\text{i}$, as a function of reaction time for all viable RasQ61X constructs. 
         The identity of the amino acid at position 61 is shown in the upper left corner of each plot. 
         The first five points were fit with linear regression. 
         The slope and standard error of the fit are displayed in the bottom-right corner of each window. 
@@ -304,7 +309,7 @@ However, it should be noted that only the Q61V construct visibly precipitated af
 \begin{figure}
     \center
     \includegraphics[width=\single]{figures-ras/modelCurvesFigure.png}
-    \caption{
+    \caption[Representative kinetic measurements of RasQ61X constructs]{
         Representative kinetic measurements of 4 $\mu$M RasQ61X constructs reacted with 20 $\mu$M GTP over 8 h, WT (blue), Q61G (black), and Q61K (red). 
         The dashed lines represent the linear fit to the first five time points. 
         The slope of the linear fit is the initial rate of the intrinsic hydrolysis reaction. 
@@ -343,7 +348,7 @@ To confirm this, and in order to compare our rate results with the published VSE
 \begin{figure}
     \center
     \includegraphics[width=\single]{figures-ras/Figure3.png}
-    \caption{
+    \caption[Comparison of the intrinsic Ras rate to the intrinsic Ras\RalBSCN{} rate]{
         Concentration of the phosphate product of the intrinsic hydrolysis reaction for both WT Ras (blue) and WT Ras docked to \RalBSCN{} (green) over 8 h. 
         Linear regression fits are shown to the first five time points of each data set, and the slopes are displayed in the corresponding color. 
         The intrinsic hydrolysis rate of WT Ras/\RalBSCN{} is within error of the intrinsic hydrolysis rate of WT Ras alone ($5.9 \pm 1.1 \times 10^{-2}$ $\mu$M min$^{-1}$ and $7.0 \pm 0.5 \times 10^{-2}$ $\mu$M min$^{-1}$, respectively).
@@ -396,7 +401,7 @@ For these data, residues that caused the nitrile absorption frequency to red-shi
 \begin{figure}
     \center
     \includegraphics[width=\single]{figures-ras/Figure4.png}
-    \caption{
+    \caption[Vibrational frequencies compared to the measured intrinsic rate of hydrolysis]{
         Vibrational frequencies of the nitrile on \RalBSCN{} against the log of the measured intrinsic rate of GTP hydrolysis. 
         Blue: polar and negatively charged side chains. Black: all nonpolar side chains. 
         Red: the two positively charged side chains. Blue line: normal distribution fit to the polar and the negatively charged side chains. 
@@ -455,7 +460,7 @@ We therefore interpret the shifts in absorption frequency as a measure of change
 \begin{figure}
     \center
     \includegraphics[width=\single]{figures-ras/Figure_S4.pdf}
-    \caption{
+    \caption[Geometric criteria for the hydrogen bonding calculations]{
         Geometric criteria and property definitions for the hydrogen bonding calculations. 
         $\theta_1$ is the C--N$\cdots$H angle, $\theta_2$ is the N$\cdots$H--R$_{\text{donor}}$ angle, where R$_{\text{donor}}$ represents a water hydrogen bond donor, and $d_{\text{NH}}$ is the distance between the hydrogen and the acceptor nitrogen. 
         To be considered a hydrogen bond, $\theta_1$ must be greater than \ang{99}, $\theta_2$ must be greater than \ang{120}, and $d_{\text{NH}}$ must be less than 2.45 \si{\angstrom}. 
@@ -486,7 +491,7 @@ This prompted us to calculate how many water molecules were actually present in 
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-ras/Figure5.png}
-    \caption{
+    \caption[Bolztmann-weighte SASA calculations against experimentally measured frequencies and rates]{
         Boltzmann-weighted polar atom and side chain SASAs compared to experimentally measured values of nitrile absorption frequency and initial rate of intrinsic hydrolysis in RasQ61X mutants. 
         (A) The absorption frequency of the nitrile on \RalBSCN{} against the polar atom SASA of Q61X. 
         (B) The initial rate of intrinsic hydrolysis against the polar atom SASA of Q61X. 
@@ -513,7 +518,7 @@ We interpret the observation of this strong correlation to mean that the ability
 \begin{figure}
     \center
     \includegraphics[width=\single]{figures-ras/Figure6.png}
-    \caption{
+    \caption[Number of waters in the active site against the measured intrinsic rate]{
         Boltzmann-weighted average number of waters in the active site per frame against the measured intrinsic rate. 
         To be considered in the active site, each water needed to be within 5 \si{\angstrom} of the Q61X side chain and within 5 \si{\angstrom} of the terminal phosphate oxygen of GTP (atom name O1G). 
         Blue: all polar or negatively charged side chains. 

@@ -1,18 +1,18 @@
 \chapter{Agreement Between Experimental and Simulated Circular Dichroic Spectra of a Positively Charged Peptide in Aqueous Solution and on Self-Assembled Monolayers}\label{helix-folding}
 
-\newcommand{\tbawat}{{2:1 \emph{t}-BuOH:\ce{H2O}}}
+\newcommand{\tbawat}{{2:1 \emph{t}-BuOH/\ce{H2O}}}
 \newcommand{\tba}{{\emph{t}-BuOH}}
 \newcommand{\pep}{{\textalpha{}11LK(CH)}}
 
-Successfully mobilizing functional proteins on inorganic surfaces has long been a challenge to the biophysics and bioengineering communities. 
-This is due in part to a lack of understanding of the effect of non-aqueous environments on protein structure from both experimental and computational perspectives. 
-Because most experimental information about protein structure comes from the protein data bank (PDB) and is collected from an aqueous solvent environment, modern force fields for molecular dynamics (MD) simulations are parameterized against these data. 
-Therefore, the applicability of such force fields to biomolecules in different environments, including when in contact with surfaces and substrates, must be validated. 
-Here, we present MD folding simulations of a highly charged peptide solvated in water, solvated in a solution of \tbawat{}, and bound to the surface of a methyl-terminated self-assembled monolayer (SAM) and compare the structures predicted by these simulations to previously reported circular dichroism (CD) spectra. 
-We show quantitative agreement between experiment and simulation of a solvent- and surface-induced conformational change of a positively charged peptide in these three environments. 
-We show further that that the surface-bound peptide must fold before chemically reacting with the surface. 
-Finally, we demonstrate that a well-ordered SAM is critical to the folding process. 
-These results will guide further simulations of peptides and proteins in diverse and complex environments. 
+%Successfully immobilizing functional proteins on inorganic surfaces has long been a challenge to the biophysics and bioengineering communities. 
+%This is due in part to a lack of understanding of the effect of non-aqueous environments on protein structure from both experimental and computational perspectives. 
+%Because most experimental information about protein structure comes from the protein data bank (PDB) and is collected from an aqueous solvent environment, modern force fields for molecular dynamics (MD) simulations are parameterized against these data. 
+%Therefore, the applicability of such force fields to biomolecules in different environments, including when in contact with surfaces and substrates, must be validated. 
+%Here, we present MD folding simulations of a highly charged peptide solvated in water, solvated in a solution of \tbawat{}, and bound to the surface of a methyl-terminated self-assembled monolayer (SAM) and compare the structures predicted by these simulations to previously reported circular dichroism (CD) spectra. 
+%We show quantitative agreement between experiment and simulation of solvent- and surface-induced conformational changes of a positively charged peptide in these three environments. 
+%We show further that that the surface-bound peptide must fold before chemically reacting with the surface. 
+%Finally, we demonstrate that a well-ordered SAM is critical to the folding process. 
+%These results will guide further simulations of peptides and proteins in diverse and complex environments. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -31,9 +31,9 @@ Portions of this chapter are adapted from the following publication:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Quantitatively reliable computer simulations of biomolecular properties such as structure, ligand binding, dynamics, and function are now a ubiquitous aspect of biomolecular research. 
-Much of this success is aided by recent dramatic increases in 1) computational resources, 2) computational efficiency, and 3) accuracy of computational methodologies. 
+Much of this success is aided by recent dramatic increases in computational resources, computational efficiency, and accuracy of computational methodologies. 
 While these methodologies vary in scale and level of physical description, every method must be validated against experimental data. 
-Molecular dynamics (MD) simulations rely on a potential energy function (referred to as a force field) that can accurately reproduce structural data in the protein database (PDB). 
+Molecular dynamics (MD) simulations rely on a potential energy function (referred to as a force field) that can accurately reproduce structural data in a protein database (PDB). 
 In some cases, this has been extremely successful \cite{Duan1998, Lindorff-Larsen2011, Bowman2011, Voelz2012, Shaw2010, Lane2013, Koukos2014a}.
 To date, however, over 90\% of structures deposited in the PDB come from X-ray crystallography experiments \cite{Berman2000}. 
 This inherently biases the database to systems for which a crystal can be obtained: often compact, globular proteins crystallized from dilute solutions. 
@@ -77,7 +77,7 @@ When chemically bound to a SAM on a gold surface, the observed CD spectrum conta
 \begin{figure}  
     \center
     \includegraphics[width=\single]{figures-helix/nachos_cd_spectra.png}
-    \caption{
+    \caption[Circular dichroism spectra of \pep{} in three different solvent environments]{
         Circular dichroism spectra of \pep{} in three different solvent environments. 
         Black: \pep{} dissolved in aqueous Tris buffer. 
         Blue: \pep{} dissolved in \tbawat{}. 
@@ -114,11 +114,14 @@ After demonstrating the validity of our simulations, we present an additional se
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+All code and starting files used for the simulation, analysis, processing of data, and figure generation can be accessed at: 
+\url{https://github.com/jeremyfirst22/GMX_Helix_oplsaa}. 
+
 \subsection{System preparation and force field parameters}
 
 A template of \pep{} was created in a \textalpha{}-helical conformation using the Avogadro molecular editing package\cite{Hanwell2012}.
 The propargylglycines, which provided the alkyne group for the ``click'' reaction in the experiment, were replaced with glycine residues. 
-Because of the short length of the peptide, the N and C termini were neutralized with an amide group and acetyl group, respectively. 
+Because of the short length of the peptide, the N and C termini were neutralized with an acetyl group and amide group, respectively. 
 Parameters for the united atom model of \tba{} (Figure \ref{fig:helix-tba}) were adapted for Gromacs from Di Pierro et al \cite{DiPierro2015}.
 To validate our implementation of the \tba{} parameters, we calculated the solvent pair correlation functions of a 0.2 mol fraction \tba{} in \ce{H2O} mixture and found that our calculated pair correlation functions matched those reported in Di Pierro et al. (Figure \ref{fig:helix-rdfs}, compare to Figure 6 of ref \citenum{DiPierro2015}). 
 Generally, it is best to avoid combining all-atom models with united-atom models; 
@@ -132,9 +135,9 @@ All subsequent calculations used the Gromacs 2016.3 molecular dynamics simulatio
 \begin{figure}
     \center
     \includegraphics[width=\single]{figures-helix/tba.png}
-    \caption{
+    \caption[United atom representation of \emph{tert}-butanol]{
         A united atom model of \emph{tert}-butanol used in these simulations. 
-        The white sphere represents a hydrogen, the red sphere represents an oxygen, the cyan sphere represents the central carbon, and the gray spheres represent united-atom representations of the three methyl groups.
+        The white sphere represents a hydrogen, the red sphere represents an oxygen, the cyan sphere represents the central carbon, and the gray spheres are united-atom representations of the three methyl groups.
     }
     \label{fig:helix-tba}
 \end{figure}
@@ -142,7 +145,7 @@ All subsequent calculations used the Gromacs 2016.3 molecular dynamics simulatio
 \begin{figure}
     \center
     \includegraphics[width=\single]{figures-helix/rdfs.png}
-    \caption{
+    \caption[Pair correlation functions between solvent molecules in a binary mixture]{
         Pair correlation functions matched those reported in ref \citenum{DiPierro2015} indicating that the \tba{} parameters were implemented correctly for Gromacs. 
         Red: Pair correlation function between the oxygen atoms of water molecules and the oxygen atoms of other water molecules. 
         Green: Pair correlation function between the central carbon of \tba{} and the oxygen atoms of water molecules. 
@@ -154,7 +157,7 @@ All subsequent calculations used the Gromacs 2016.3 molecular dynamics simulatio
 \begin{figure}
     \center
     \includegraphics[width=\single]{figures-helix/charge_figure.png}
-    \caption{
+    \caption[Derived partial charges of decanethiol]{
         Derived partial charges for the decanethiol molecule used in the SAM. 
         The atoms are colored by charge, where red represents a more negatively charged atom, and blue represents a more positively charged atom. 
         The heavy atoms are indexed and the partial charges can be found in the table. 
@@ -166,7 +169,7 @@ All subsequent calculations used the Gromacs 2016.3 molecular dynamics simulatio
 \subsection{Water simulation}
 
 The peptide was minimized in vacuum using the steepest descent algorithm and solvated in a 7.6 nm cubic box of TIP3P water \cite{Jorgensen1983}. 
-The solvated system was then minimized using the steepest decent algorithm, heated to 300 K under the NVT ensemble for 50 ps, and equilibrated under the NPT ensemble at 1 atm for 100 ps, each with heavy atom restraints on the peptide atoms. 
+The solvated system was then minimized using the steepest descent algorithm, heated to 300 K under the NVT ensemble for 50 ps, and equilibrated under the NPT ensemble at 1 atm for 100 ps, each with heavy atom restraints on the peptide atoms. 
 This equilibrated system was used to begin the simulation of the folded peptide in water. 
 
 \subsection{Binary mixture simulation}
@@ -185,10 +188,10 @@ The SAM was energy minimized using the steepest descent algorithm, and then heat
 Separately, the starting peptide was energy minimized using the steepest descent algorithm and solvated in a 6.0 nm $\times$ 7.0 nm $\times$ 6.0 nm box of TIP3P water. 
 The $x$, $y$ dimensions were matched to the dimensions of the decanethiol layer. 
 The $z$ dimension was chosen to ensure that the peptide cannot interact with the bottom of the decanethiol layer across the periodic boundary. 
-The solvated system was then energy minimized using the steepest decent algorithm, headed to 300 K under the NVT ensemble for 50 ps, and equilibrated under a semi-isotropic NPT ensemble at 1 atm for 100 ps with volumetric fluctuations restricted to the $z$ dimension, each with heavy atom restraints on the peptide atoms. 
+The solvated system was then energy minimized using the steepest decent algorithm, headed to 300 K under the NVT ensemble for 50 ps, and equilibrated under a semi-isotropic NPT ensemble at 1 atm for 100 ps with volumetric fluctuations restricted to the $z$ dimension, each with heavy atom restraints on the peptide. 
 
 The solvated system and the SAM were then combined so that the peptide was 6.822 \si{\angstrom} away from the top of the SAM. 
-Again, in order to mitigate the effect of the sulfur layer of the SAM across the $z$-dimension of the periodic boundary conditions, the size of the water layer in between the peptide and the neighboring sulfur layer was chosen to be much larger than the electrostatic cutoff of the simulations. 
+Again, in order to mitigate the effect of the sulfur layer of the SAM across the $z$-dimension of the periodic boundary, the size of the water layer in between the peptide and the neighboring sulfur layer was chosen to be much larger than the electrostatic cutoff of the simulations. 
 An illustration of this system is shown in Figure \ref{fig:helix-system}. 
 The azido linker group, which covalently bonds the peptide to the SAM surface in experiment, was approximated with a harmonic restraint of 103 kJ mol$^{-1}$ nm$^{-2}$ and equilibrium bond length of 6.822 \si{\angstrom} between the Gly C\textalpha{} atoms and the C10 of the nearest decanethiol molecule. 
 This distance, which is illustrated in Figure \ref{fig:helix-linker}, was chosen based on a DFT energy minimized structure at the wB97X-D/6-311$+$G** level using the Spartan QM software suite\cite{Shao2006}.   
@@ -198,14 +201,20 @@ The harmonic restraints binding the peptide to the SAM were removed for the prod
 \begin{figure}
     \center
     \includegraphics[width=\single]{figures-helix/system3.png}
-    \caption{A snapshot of the starting configuration for \pep{} on the surface of a decanethiol SAM. The peptide (cyan ribbon) is shown in the folded starting configuration, with lysine residues (red) facing up away from the SAM and leucine residues (gray) facing down toward the SAM. The yellow, cyan, and white spheres are the sulfur, carbon, and hydrogen atoms, respectively, of the decanethiol molecules. The small red and white sticks represent water molecules. The green spheres in solution represent chloride ions. }
+    \caption[Starting configuration of \pep{} on the surface of a SAM]{
+        A snapshot of the starting configuration for \pep{} on the surface of a decanethiol SAM. 
+        The peptide (cyan ribbon) is shown in the folded starting configuration, with lysine residues (red) facing up away from the SAM and leucine residues (gray) facing down toward the SAM. 
+        The yellow, cyan, and white spheres are the sulfur, carbon, and hydrogen atoms, respectively, of the decanethiol molecules. 
+        The small red and white sticks represent water molecules. 
+        The green spheres in solution represent chloride ions. 
+    }
     \label{fig:helix-system}
 \end{figure}
 
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-helix/Linker_figure.png}
-    \caption{
+    \caption[The product of the Huisgen cycloaddition]{
         The product of the Huisgen cycloaddition. 
         The long alkane chain sits in a SAM of decanethiols, and the sulfur atom is covalently attached to a Au(111) surface. 
         The C\textalpha{} is from one of the two propargylglycine residues of \pep{}. 
@@ -217,19 +226,19 @@ The harmonic restraints binding the peptide to the SAM were removed for the prod
 
 \subsection{Simulated Annealing}\label{helix-anneal}
 
-In order to prepare the unfolded structure in each of the solvent environments, the heavy atom restraints on the protein were removed. 
+In order to prepare the unfolded structure in each of the solvent environments, the heavy atom restraints on the peptide were removed. 
 Using the Berendsen thermostat, the systems were coupled to a heat bath that increased by 12 K every 10 ps for 500 ps. 
 The systems were equilibrated at 900 K for 100 ps, and then coupled to a heat bath that decreased by 12 K every 10 ps for 500 ps. 
 A representative temperature curve from this annealing process is shown in Figure \ref{fig:helix-anneal}A. 
 For the simulations that included a SAM layer, harmonic restraints of 107 kJ mol$^{-1}$ nm$^{-2}$ were applied during the annealing process to the heavy atoms of the SAM to keep the layer intact. 
 Each system was visually inspected to confirm the peptide had unfolded during the annealing process. 
 The DSSP structural assignments (see below) showed complete unfolding for each peptide; 
-these are shown in Figures \ref{fig:helix-anneal}, \ref{fig:helix-anneal}C, and \ref{fig:helix-anneal}D for the peptide in water, \tbawat{}, and on the SAM surface respectively.
+these are shown in Figures \ref{fig:helix-anneal}B,C,D for the peptide in water, in \tbawat{}, and on the SAM surface respectively.
 
 \begin{figure}
     \center
     \includegraphics[width=2.75in]{figures-helix/unfolding.png}
-    \caption{
+    \caption[Annealing procedure used to unfold \pep{}]{
         A: Temperature curve for the simulated annealing process used to generate the unfolded structures. 
         The dashed lines separate the stages of the annealing process. 
         B, C, and D: DSSP structural assignments for \pep{} in water, in \tbawat{} and on the SAM, respectively, during the annealing process. 
@@ -260,7 +269,7 @@ The line spectra were then convoluted with Gaussian functions to produce continu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In order to successfully and reliably integrate proteins onto inorganic materials, it is necessary to attach them reproducibly to surfaces and substrates with the appropriate structure, orientation, and chemical environment for function. 
-Understanding any conformational changes that are imparted by the surface material is critical to this goal but is a longstanding challenge \cite{Hlady1996, Castner2002, Latour2005biomaterials}.
+Understanding any conformational changes that are imparted by the surface material is critical to this goal but remains a longstanding challenge \cite{Hlady1996, Castner2002, Latour2005biomaterials}.
 In order to test if the generally applicable force field (OPLS-AA) is reliable at a surface for the \pep{} peptide and can capture conformational changes that are potentially critical to its ability to noncovalently immobilize proteins at a surface in a biomimetic fashion, we used MD simulations to investigate the known solvent-induced and surface-induced structural changes of the peptide.
 
 \subsection{Conformational differences and sampling}
@@ -268,7 +277,7 @@ In order to test if the generally applicable force field (OPLS-AA) is reliable a
 Previously, CD spectra (Figure \ref{fig:helix-cd_spectra}) had indicated that \pep{} was unfolded in aqueous solution, partially helical in \tbawat{}, and significantly helical on the surface of a decanethiol SAM \cite{Gallardo2012}. 
 To avoid biasing the simulations by starting structure, we ran two separate trajectories for each of the three solvent environments: one from a folded \textalpha{}-helix and one from an unfolded, disordered structure. 
 We then ran MD simulations on each of the six systems for 1.25 \textmu{}s. 
-At each frame of the trajectories we then calculated the peptide secondary structure using the DSSP algorithm\cite{Kabsch1983, Joosten2011}, which categorizes residues into eight classifications based on estimated hydrogen bonding energies: \textalpha{}-helix, $3_{10}$-helix, \textpi{}-helix, turn, \textbeta{}-sheet, \textbeta{}-bridge, bend, and coil. 
+At each frame of the trajectories we calculated the peptide secondary structure using the DSSP algorithm\cite{Kabsch1983, Joosten2011}, which categorizes residues into eight classifications based on estimated hydrogen bonding energies: \textalpha{}-helix, $3_{10}$-helix, \textpi{}-helix, turn, \textbeta{}-sheet, \textbeta{}-bridge, bend, and coil. 
 The total breakdown of secondary structure by residue is plotted against simulation time for each of the six trajectories in Figure \ref{fig:helix-dssp}. 
 Since we are interested in a more broadly defined structural change, we grouped each of these secondary structures into four larger categories: 1) helical (\textalpha{}-helix, $3_{10}$-helix, or \textpi{}-helix); 2) turn; 3) strand (\textbeta{}-sheet, \textbeta{}-bridge, or bend); and 4) unfolded (coil). 
 The fraction of residues in each of these categories was calculated, binned to smooth the data, and plotted in Figure \ref{fig:helix-conf_fracs}, where dark blue represents the fraction of residues in a helical conformation, light blue represents the fraction of residues in a turn, green represents the fraction of residues in a strand, and red represents the fraction of residues in an unfolded conformation. 
@@ -277,7 +286,7 @@ Each category is offset on the $y$-axis to avoid overlap and will be referred to
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-helix/dssp.png}
-    \caption{
+    \caption[DSSP structural assignments by residue for \pep{}]{
         DSSP structural assignments by residue for simulations of \pep{}. 
         A, C, E: \pep{} began the simulation in an \textalpha{}-helical conformation. 
         B, D, F: \pep{} began the simulation unfolded.
@@ -291,12 +300,12 @@ Each category is offset on the $y$-axis to avoid overlap and will be referred to
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-helix/combined_helicity.png}
-    \caption{
+    \caption[Stacked conformational fractions of \pep{} in three different solvent environments]{
         Stacked conformational fractions of \pep{} in three different solvent environments. 
         Blue: fraction of residues assigned to a helical secondary structure. 
         Light blue: fraction of residues assigned to a turn secondary structure. 
         Green: fraction of residues assigned to a strand secondary structure. 
-        Red: fraction of residues assigned to unfolded secondary structure (see main text). 
+        Red: fraction of residues assigned to unfolded secondary structure. 
         A, C, E: \pep{} began the simulation in a \textalpha{}-helical conformation. 
         B, D, F: \pep{} began the simulation unfolded. 
         A, B: the peptide was dissolved in water. 
@@ -310,7 +319,7 @@ Each category is offset on the $y$-axis to avoid overlap and will be referred to
 
 When the simulation of \pep{} in water was initiated from a folded helical conformation (Figure \ref{fig:helix-conf_fracs}A), the peptide began the simulation with high helical character (0.70 helical and 0.15 turn). 
 For the first 600 ns, the helical character of the peptide slowly decreased, resulting in an unfolded peptide. 
-After this time, the peptide adopted significant strand character (average of 0.36 strand), which was retained through the duration of the simulations. 
+After this time, the peptide adopted significant strand character (average of 0.36 strand), which was retained through the duration of the simulation. 
 Figure \ref{fig:helix-dssp}A shows that the strand character mostly occurred at the N-terminal region (residues 2-11), and the rest of the peptide was unstructured. 
 Starting from an unfolded conformation in water (Figure \ref{fig:helix-conf_fracs}B), the peptide began with little helical or turn character. 
 For the first 600 ns, the peptide sampled conformations with some helical character and some strand character, but eventually adopted a conformation with no helical character and high strand character (average of 0.50 strand). 
@@ -328,12 +337,12 @@ Figure \ref{fig:helix-dssp}D shows that the helical character was again in the m
 Again, despite starting from very different conformations, both simulations of \pep{} in \tbawat{} displayed similar secondary structure. 
 Because 150 ns elapsed before the peptide attained this secondary structure, 150 ns was taken to be the equilibration time for both of these simulations, and the first 150 ns of these trajectories was not included in the analyses that follow for \pep{} in \tbawat{}. 
 
-Finally, when the simulation of \pep{} on the surface of a SAM was started from a folded helical conformation (Figure \ref{fig:helix-conf_fracs}E), the peptide retrained its helical and turn structure throughout the entire 1.25 \textmu{}s simulation. 
-Figure \ref{fig:helix-dssp}E shows that the helicity was again seen to occur in the middle region of the peptide (residues 6-14), and that the two terminal regions (residues 1-5 and 15-20) were mostly classified as ``turn.'' 
+Finally, when the simulation of \pep{} on the surface of a SAM was started from a folded helical conformation (Figure \ref{fig:helix-conf_fracs}E), the peptide retained its helical and turn structure throughout the entire 1.25 \textmu{}s simulation. 
+Figure \ref{fig:helix-dssp}E shows that the helicity again occured in the middle region of the peptide (residues 6-14), and that the two terminal regions (residues 1-5 and 15-20) were mostly classified as ``turn.'' 
 Starting from an unfolded structure on the surface of the SAM (Figure \ref{fig:helix-conf_fracs}F), the peptide acquired significant helical and turn character within 50 ns that persisted for the duration of the simulation. 
 Figure \ref{fig:helix-dssp}F shows that the helical structure was again attributed to the middle region of the peptide (residues 6-14), and that the two termini regions contained mostly turn character. 
 As for the simulations of \pep{} in solution, despite starting from very different conformations, both simulations of \pep{} on the surface of a SAM displayed similar secondary structure, demonstrating the strong bias towards helical conformations for \pep{} on the SAM surface. 
-Because the equilibration time was not as visually clear from Figures \ref{fig:helix-conf_fracs}E and \ref{fig:helix-conf_fracs}F as for the solvated peptides, 150 ns was taken to be the equilibration time to be consistent with the simulations in \tba{}; 
+Because the equilibration time was not as visually clear from Figures \ref{fig:helix-conf_fracs}E,F as for the solvated peptides, 150 ns was taken to be the equilibration time to be consistent with the simulations in \tba{}; 
 the first 150 ns of these trajectories was not included in the analyses that follow for \pep{} on the surface of the SAM.
 
 As with any biomolecular simulation, the convergence of the trajectories to a consistent result must be carefully considered. 
@@ -345,13 +354,13 @@ Figure \ref{fig:helix-rgyr_v_rmsd} shows the movement of each peptide along this
 In water, both trajectories heavily sampled the configuration space with a $R_g$ of 9-11 \si{\angstrom} and a backbone RMSD of 8-9 \si{\angstrom} away from the perfectly folded \textalpha{}-helix. 
 In \tbawat{}, both trajectories sampled a configuration space with a $R_g$ of 11-12 \si{\angstrom} and were closer to a perfectly folded \textalpha{}-helix with a backbone RMSD of 4-6 \si{\angstrom}. 
 Finally, on the surface of the SAM, both trajectories sampled a configuration space with a $R_g$ of 8-11 \si{\angstrom} and were only 1.5–5 \si{\angstrom} backbone RMSD from the perfectly folded \textalpha{}-helix. 
-The RMSD data demonstrated that the helical character of \pep{} increased from water to \tbawat{}, and then further increased when interacting with the surface of the SAM, consistent our expectation from the experimental CD spectra in Figure \ref{fig:helix-cd_spectra}. 
+The RMSD data demonstrated that the helical character of \pep{} increased from water to \tbawat{}, and then further increased when interacting with the surface of the SAM, consistent with our expectation from the experimental CD spectra in Figure \ref{fig:helix-cd_spectra}. 
 Further, each of these sets of simulations reached similar configuration space despite beginning from different starting structures, indicating that we have mitigated the bias of our starting structure towards our results.
 
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-helix/combined_rgyr_v_rmsd.png}
-    \caption{
+    \caption[Conformational space sampled by \pep{} in three different solvents]{
         Conformational space sampled by \pep{} in six simulations. 
         On the $x$-axis is the radius of gyration of the protein. 
         On the $y$-axis is the backbone RMSD away from a perfectly folded \textalpha{}-helix. 
@@ -384,9 +393,9 @@ Together, these results demonstrate that water stabilizes compact, non-helical c
 
 \begin{figure}
     \center
-    \includegraphics[width=5.50in]{figures-helix/clusters_revisions.png}
-    \caption{
-        A, B, C: Free energy surface of the combined ensemble of structures on \pep{} in the three solvent environments. 
+    \includegraphics[width=5.50in]{figures-helix/clusters_proofs.png}
+    \caption[Free energy surfaces and most populated clusters of \pep{} in each solvent environments]{
+        A, B, C: Free energy surfaces of the combined ensemble of structures on \pep{} in the three solvent environments. 
         On the $x$-axis is the radius of gyration of the protein. 
         On the $y$-axis is the backbone RMSD away from a perfectly folded \textalpha{}-helix. 
         The intersection of the dashed lines is the global minimum for each surface. 
@@ -420,14 +429,14 @@ All five contained 2-3 helical turns in the middle region of the peptide.
 In contrast to the structures in water, the leucine residues (gray) appeared to be on the opposite side of the helical axis than the hydrophilic lysine residues (red). 
 The two terminal regions did not have defined secondary structure. 
 They were typically extended, and the residues were classified as ``coil'' by DSSP (Figure \ref{fig:helix-dssp}C and \ref{fig:helix-dssp}D). 
-The top five clusters only accounted for 17.2\% of the total ensemble of structures, which implies a large amount of intrinsic disorder for the peptide in \tbawat{} and is consistent with the more diffuse free energy surface. 
-Nevertheless, the stacked conformational fractions in Figures \ref{fig:helix-conf_fracs}C and \ref{fig:helix-conf_fracs}D and the DSSP assignments in Figures \ref{fig:helix-dssp}C and \ref{fig:helix-dssp}D demonstrate that the majority of the less populated clusters not shown in Figure \ref{fig:helix-free_cluster}E had similar secondary structure in the middle region of the peptide.
+The top five clusters only accounted for 17.2\% of the total ensemble of structures, which implies a large amount of intrinsic disorder for the peptide in \tbawat{} and is consistent with the more diffuse free energy surface (Figure \ref{fig:helix-free_cluster}B. 
+Nevertheless, the stacked conformational fractions in Figures \ref{fig:helix-conf_fracs}C,D and the DSSP assignments in Figures \ref{fig:helix-dssp}C,D demonstrate that the majority of the less populated clusters not shown in Figure \ref{fig:helix-free_cluster}E had similar secondary structure in the middle region of the peptide.
 
 Finally, Figure \ref{fig:helix-free_cluster}F illustrates the central structure of the five most populated conformational clusters of \pep{} on the surface of the SAM, and the corresponding $R_g$ and RMSD of these structures are labeled on the free energy surface in Figure \ref{fig:helix-free_cluster}C. 
 Again, all five of the clusters displayed 2-3 helical turns in the middle region of the peptide, and the leucine (gray) and lysine (red) residues were clearly separated from each other. 
 For reference, these structures were oriented such that the SAM surface (not shown) was below the peptide, adjacent to the leucine residues. 
 In contrast to the peptide in \tbawat{}, the terminal regions of the peptide at the SAM surface had high curvature. 
-The residues in this region were classified as ``turn'' by the DSSP algorithm because they lacked the repeating hydrogen bonds to be classified as helical (Figures \ref{fig:helix-dssp}E and \ref{fig:helix-dssp}F). 
+The residues in this region were classified as ``turn'' by the DSSP algorithm because they lacked the repeating hydrogen bonds to be classified as helical (Figures \ref{fig:helix-dssp}E,F). 
 Furthermore, the five clusters shown in Figure \ref{fig:helix-free_cluster}F accounted for 84.0\% of the total ensemble of structures, which implies that the peptide on the surface was significantly more structured than in either of the two solutions.
 
 A comparison of the coverage of the total ensemble of structures against the number of clusters is shown in Figure \ref{fig:helix-coverage}. 
@@ -440,7 +449,7 @@ Only the average structure may be observed in the bulk experimental CD spectra b
 \begin{figure}
     \center
     \includegraphics[width=\single]{figures-helix/clust-size.png}
-    \caption{
+    \caption[Ensemble converage by conformational clusters]{
         The percentage of coverage of the total ensemble of structures against the number of clusters for the peptide in water (black), in \tbawat{} (blue), and on the surface of a SAM (green).
     }
     \label{fig:helix-coverage}
@@ -450,15 +459,15 @@ Only the average structure may be observed in the bulk experimental CD spectra b
 
 While the central structures in Figure \ref{fig:helix-free_cluster} are consistent with our expectations from the experimental CD spectra in Figure \ref{fig:helix-cd_spectra}, it is not clear if the structural differences observed are enough to account for the change in the spectra. 
 This is further complicated by the fact that conformations with large amounts of disorder, such as those of \pep{} in these three systems, do not always result in well-defined secondary structures that are apparent from CD spectroscopy. 
-More advanced techniques, such as chiral sum frequency generation, can more quantitively determine the degree of each secondary structure exhibited by the peptide on biological surfaces\cite{Fu2011}. 
+More advanced techniques, such as chiral sum frequency generation, can more quantitively determine the degree of each secondary structure exhibited by the peptide on surfaces\cite{Fu2011}. 
 However, because of the wide spread use of CD as a measurement of secondary structure, we: 
 1) compared the secondary structure calculated from the experimental spectra to the secondary structures from simulation; 
-and 2) compared the calculated CD spectra from the MD trajectories to the experimental CD spectra. 
+and 2) compared calculated CD spectra from the MD trajectories to the experimental CD spectra. 
 Although these comparisons have the same goal, each relies on different spectral analysis tools, and are thus two orthogonal ways to compare the experimental CD data to the calculated MD structures. 
 In order to accomplish the first comparison strategy, we deconvoluted the experimental spectra into conformational fractions using the online deconvolution server BeStSel\cite{Micsonai2015, Micsonai2018}. 
 This routine uses a basis set of CD spectra of proteins with known structure to estimate the fraction of secondary structures that would reconstitute the given CD spectrum. 
 The spectra of the peptide in water and in \tbawat{} were input as is from Figure \ref{fig:helix-cd_spectra}, and good fits, with normalized RMSDs (NRMSDs) of less than 0.02, were obtained. 
-However, for the spectrum of the peptide on the SAM surface (green spectrum in Figure \ref{fig:helix-cd_spectra}), we did not obtain an acceptable fit with the spectrum as shown. 
+However, for the spectrum of the peptide on the SAM surface (green spectrum in Figure \ref{fig:helix-cd_spectra}), we did not obtain an acceptable fit with the experimental data.
 There were three reasons for this failure. 
 First, the baseline of the spectrum was not consistent with the two spectra collected in solution. 
 This created a significant amount of error since all of the BeStSel basis spectra have zero ellipticity at 250 nm. 
@@ -474,11 +483,11 @@ A good fit for this corrected spectrum was obtained with NRMSD of less than 0.02
 
 The average conformational fractions from the simulations (excluding the equilibration times discussed above) and the conformational fractions determined by BeStSel are shown in Table \ref{tbl:helix-frac_bestsel}. 
 Fractions that differ by less than 0.05 are shown in bold. 
-For \pep{} in water, the conformational fraction in simulation and from the BeStSel deconvolution were in strong agreement for the fraction of the peptide that was either in a helical (0.001 and 0.017, for simulation conformational fraction and BeStSel estimation respectively) or unfolded structure (0.527 and 0.550). 
-However, the MD trajectories underestimated the fraction of strand character (0.042 and 0.188) and overestimated the fraction of turn character (0.430 and 0.245). 
+For \pep{} in water, the conformational fraction in simulation and from the BeStSel deconvolution were in strong agreement for the fraction of the peptide that was either in a helical (0.001 and 0.017, for simulation conformational fraction and BeStSel estimation respectively) or an unfolded structure (0.527 and 0.550). 
+However, the MD trajectories underestimated the fraction of turn character (0.042 and 0.188) and overestimated the fraction of strand character (0.430 and 0.245). 
 This is consistent with investigations that demonstrated that OPLS can be biased toward extended and \textbeta{}-turn conformations\cite{Best2011, Smith2015}. 
 For \pep{} in \tbawat{}, the conformational fractions were in good agreement for all four categories: helical (0.276 and 0.261), turn (0.130 and 0.150), strand (0.173 and 0.184), and unfolded (0.421 and 0.405). 
-Finally, for \pep{} on the surface of the SAM, the conformational fractions in simulation and from the BeStSel deconvolution were in good agreement for the helical (0.318 and 0.278) and unfolded fractions (0.278 and 0.221). 
+Finally, for \pep{} on the surface of the SAM, the conformational fractions in simulation and from the BeStSel deconvolution were in good agreement for the helical (0.318 and 0.278) and unfolded fractions (0.223 and 0.221). 
 However, the simulations yielded a slightly higher turn fraction (0.296 and 0.197) and a slightly lower strand fraction (0.163 and 0.304) than the BeStSel estimates. 
 There are two possible sources for this disagreement for the peptide at the SAM: 
 1) there is a large amount of noise in the experimental data of the peak at 200 nm, which is due to the difficulty of taking such spectra on a surface; and 
@@ -490,13 +499,13 @@ We are investigating this in ongoing simulations using the CHARMM36m force field
 Nevertheless, the agreement between the fractions from the deconvolution and the simulations is striking and gives us confidence in the accuracy of the simulations.
 
 \begin{table}
-    \caption{Average conformational fraction from simulation and conformational fractions from BeStSel\cite{Micsonai2015, Micsonai2018} CD spectra deconvolution.}
+    \caption[Conformational fractions from simulation and conformational fractions from CD spectra]{Average conformational fraction from simulation and conformational fractions from BeStSel\cite{Micsonai2015, Micsonai2018} CD spectra deconvolution.}
     \begin{center}
-        \resizebox{6.0in}{!}{
+        \resizebox{\double}{!}{
     \begin{tabular}{c|cccc|cccc}
     \toprule
         Solvent        & \multicolumn{4}{c}{Calculated} & \multicolumn{4}{c}{BeStSel deconvolution from experiment} \\
-        & Helix & Turn & Strand & Unfolded & Helix & Turn & $\beta$-sheet & Others \\
+        & Helix & Turn & Strand & Unfolded & Helix & Turn & \textbeta{}-sheet & Others \\
     \midrule
         \ce{H2O} & \textbf{0.001} & 0.042 & 0.430 & \textbf{0.527} & \textbf{0.017} & 0.188 & 0.245 & \textbf{0.550} \\
         2:1 \ce{H2O}:\emph{t}-BuOH & \textbf{0.276} & \textbf{0.130} & \textbf{0.173} & \textbf{0.421} & \textbf{0.261} & \textbf{0.150} & \textbf{0.184} & \textbf{0.405} \\
@@ -517,7 +526,7 @@ Each line spectrum was convoluted with a Gaussian band shape using an in-house P
 We explored a range of bandwidths from 9 nm to 14 nm, but found that this did not change the observations and conclusions reported below (data not shown). 
 Here, we show the spectra calculated with a bandwidth of 10 nm. 
 The spectra were averaged across 125 ns time windows and are shown in Figure \ref{fig:helix-calc_cd}. 
-For each simulation that started from a folded conformation (Figures \ref{fig:helix-calc_cd}A, \ref{fig:helix-calc_cd}C, and \ref{fig:helix-calc_cd}E), the first 125 ns averaged CD spectrum (dark blue trace) had a distinct minimum around 208 nm and 222 nm, a distinctive characteristic of the CD spectra of \textalpha{}-helices\cite{Holzwarth1965, Woody1967, Johnson1988, Berova2000circular, Kelly2005}.
+For each simulation that started from a folded conformation (Figures \ref{fig:helix-calc_cd}A,C,E), the first 125 ns averaged CD spectrum (dark blue trace) had a distinct minimum around 208 nm and 222 nm, a distinctive characteristic of the CD spectra of \textalpha{}-helices\cite{Holzwarth1965, Woody1967, Johnson1988, Berova2000circular, Kelly2005}.
 For the simulation in water starting from a folded state (Figure \ref{fig:helix-calc_cd}A), these two minima disappeared as the peptide unfolded in solution, and then a positive peak appeared around 200 nm (green to yellow traces). 
 This transition is associated with anti-parallel \textbeta{}-sheets\cite{Greenfield1969, Manning1988} and coincided with the appearance of strand character in the stacked conformational fraction (Figure \ref{fig:helix-conf_fracs}A). 
 For the simulation in water starting from an unfolded state (Figure \ref{fig:helix-calc_cd}B), the two minima at 208 nm and 222 nm were present only weakly in the first few averaged spectra, when the peptide sampled some weakly helical configurations (Figure \ref{fig:helix-calc_cd}B). 
@@ -537,7 +546,7 @@ In subsequent windows, the strength of the minima tended to increase, again grea
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-helix/cd_spectra_hirst_time_resolved.png}
-    \caption{
+    \caption[Computed CD spectra of \pep{} in three solvent environments]{
         Computed CD spectra calculated from the MD trajectories using the DichroCalc portal and the Hirst basis set \cite{Hirst1998, Besley1999}.
         Each spectrum was convoluted with a Gaussian function with bandwidth of 10 nm. 
         Spectra were calculated every 100 ps, and each line represents a 125 ns average and is colored by its time. 
@@ -569,7 +578,7 @@ Taken together, however, the calculated CD spectra were in qualitative agreement
 \begin{figure}
     \center
     \includegraphics[width=\single]{figures-helix/combined_cd_spectra.png}
-    \caption{
+    \caption[Average computed CD spectra of \pep{}]{
         Ensemble averaged CD spectra computed from MD simulations of \pep{} in water (black), \tbawat{} (blue), and on the surface of a SAM (green). 
         Spectra were computed using the DichroCalc web portal and either the Hirst basis set\cite{Hirst1998, Besley1999} (A) or the Woody basis set\cite{Woody1999} (B).
     }
@@ -605,23 +614,23 @@ Further, the SAMs in these simulations were nearly perfectly ordered but by rela
 Below, we introduce two additional sets of simulations that test these experimental questions: 
 1) the influence of the number of binding sites holding the peptide near the SAM surface on the folding process; and 
 2) the effect of structural order of the SAM on the equilibrium structure of the peptide. 
-Using these two additional sets of simulations, we identify two hypotheses regarding the mechanistic details of the peptide folding on the surface that can be specifically tested by experiment. 
+Using these two additional sets of simulations, we identify two hypotheses regarding the mechanistic details of the peptide folding on the surface that can be specifically tested by further experiments. 
 
 In order to test the effect of the number of binding sites holding the peptide to the SAM surface, we ran four additional 1.25 \textmu{}s simulations where one or both of the harmonic restraints that bind the glycine residues to the SAM (see Section \ref{helix-anneal}) were kept for the production phase, instead of removing them as in the simulations reported above. 
 The stacked conformational fractions for these additional simulations are shown in Figure \ref{fig:helix-bounds}, and the quantitative results (not including values before the 150 ns equilibration time) are shown in Table \ref{tbl:helix-bounds}. 
 With both glycine residues bound, starting from a folded state (Figure \ref{fig:helix-bounds}A), the peptide remained folded through the entire simulation with average conformational fractions consistent with the unrestrained simulations shown in Table \ref{tbl:helix-frac_bestsel} (helix: 0.272, turn: 0.290, strand: 0.205, and unfolded: 0.233). 
 However, starting from an unfolded conformation (Figure \ref{fig:helix-bounds}B), the peptide did not fold to the same extent, resulting in very different conformational fractions (helix: 0.083, turn: 0.083, strand: 0.350, and unfolded: 0.484). 
-In contrast, with only one glycine bound (Figures \ref{fig:helix-bounds}C and \ref{fig:helix-bounds}D), the peptide reached similar conformational fractions from the folded state (helix: 0.278, turn: 0.264, strand: 0.179, and unfolded: 0.280) as from the unfolded state (helix: 0.275, turn: 0.315, strand: 0.162, and unfolded: 0.248). 
+In contrast, with only one glycine bound (Figures \ref{fig:helix-bounds}C,D), the peptide reached similar conformational fractions from the folded state (helix: 0.278, turn: 0.264, strand: 0.179, and unfolded: 0.280) as from the unfolded state (helix: 0.275, turn: 0.315, strand: 0.162, and unfolded: 0.248). 
 In both of these simulations, the average conformational fraction was consistent with the conformational fractions of the simulations with no restraints (Table \ref{tbl:helix-frac_bestsel}). 
 Indeed, in every simulation of \pep{} on the SAM surface, the average conformational fractions were consistent \emph{except} when the peptide was unfolded and restrained at both glycine residues. 
-These results imply that the two restraints prevent the peptide from folding. 
+These results imply that the two restraints prevented the peptide from folding. 
 This in turn suggests the hypothesis that the peptide must be folded before the second covalent attachment occurs. 
 We are currently testing this hypothesis experimentally. 
 
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-helix/bounds_helicity.png}
-    \caption{
+    \caption[Stacked conformational fractions of \pep{} with one or both glycines bound]{
         Stacked conformational fractions of \pep{} on the surface of SAM from additional simulations in which either one or both glycine residues were harmonically restrained to the SAM. 
         A, C: \pep{} began the simulation in an \textalpha{}-helical conformation. 
         B, D: \pep{} began the simulation unfolded. 
@@ -634,9 +643,9 @@ We are currently testing this hypothesis experimentally.
 \end{figure}
 
 \begin{table}
-    \caption{Average conformational fractions from simulations of \pep{} on the surface of a SAM in which either one or both of the glycine residues in the peptide are harmonically restrained to the SAM.}
+    \caption[Conformational fractions of \pep{} with one or both glycines bound]{Average conformational fractions from simulations of \pep{} on the surface of a SAM in which either one or both of the glycine residues in the peptide are harmonically restrained to the SAM.}
     \begin{center}
-     \resizebox{6.0in}{!}{
+     \resizebox{\double}{!}{
      \begin{tabular}{c|cccc|cccc}
     \toprule
     Number of  & \multicolumn{4}{c}{From folded} & \multicolumn{4}{c}{From unfolded} \\
@@ -652,8 +661,8 @@ We are currently testing this hypothesis experimentally.
 \end{table}
 
 In order to investigate the effect of greater structural disorder within the SAM on the equilibrium structure of the surface-bound peptide, we loosened the harmonic restraints on the decanethiol molecules to $10^3$ kJ mol$^{-1}$ nm$^{-2}$ during the annealing stage of the system preparation (as opposed to $10^7$ kJ mol$^{-1}$ nm$^{-2}$ used for the preparation of the simulations above). 
-This allowed molecules within the SAM to shift during the annealing and resulted in a slightly more disordered SAM surface. 
-An illustration of the ``ordered'' and ``disordered'' SAMs are shown in Figure \ref{fig:helix-disordered_sam}A and \ref{fig:helix-disordered_sam}B, respectively, along with a density profile of the two surfaces in Figure \ref{fig:helix-disordered_sam}C. 
+This allowed molecules within the SAM to shift during the annealing process and resulted in a slightly more disordered SAM surface. 
+An illustration of the ``ordered'' and ``disordered'' SAMs are shown in Figure \ref{fig:helix-disordered_sam}A and \ref{fig:helix-disordered_sam}B along with a density profile of the two surfaces in Figure \ref{fig:helix-disordered_sam}C. 
 For the ordered SAM, sharp peaks in the density profile indicate the repetitive pattern of the sulfur and each carbon atom in the decanethiol over the entire SAM structure. 
 When the restraints were loosened, the atoms of the SAM shifted during the annealing stages, resulting in a less well defined density profile, and indicating a more disordered SAM. 
 In order to determine the effect of this disordered structure on the resulting fold of the surface-bound peptide, the simulations using this disordered SAM were run with harmonic restraints between the SAM and both, one, or none of the peptide's glycine residues for 1.25 \textmu{}s each. 
@@ -666,8 +675,8 @@ The lack of agreement between these two simulations from simulation times that p
 \begin{figure}
     \center
     \includegraphics[width=\single]{figures-helix/order_figures.png}
-    \caption{
-        Surface filling representations of the more ordered SAM (A) used for the simulations with data presented in Figures \ref{fig:helix-conf_fracs}-\ref{fig:helix-bounds} and Tables \ref{tbl:helix-frac_bestsel}-\ref{tbl:helix-bounds} and of the more disordered SAM (B) used for the simulations with data presented in Figure \ref{fig:helix-disorder} and Table \ref{tbl:helix-disorder}. 
+    \caption[Comparison of the ordered and disordered SAM]{
+        Surface filling representations of the more ordered SAM (A) used for the simulations with data presented in Figures \ref{fig:helix-conf_fracs}-\ref{fig:helix-bounds},\ref{fig:helix-free_order}A and Tables \ref{tbl:helix-frac_bestsel}-\ref{tbl:helix-bounds} and of the more disordered SAM (B) used for the simulations with data presented in Figures \ref{fig:helix-disorder},\ref{fig:helix-free_order}B and Table \ref{tbl:helix-disorder}. 
         Note that in the disordered SAM there is greater variation of height, leading to troughs that were observed to ``pull'' leucine residues, breaking the hydrogen bonding of the peptide backbone and destabilizing the helix. 
         (C) Density profiles in the $z$-dimension of the two different SAMs. 
         Note that the ordered SAM (black) has one tall peak corresponding to the position of the sulfur atoms, followed by ten distinct peaks that correspond to the positions of the ten carbon atoms. 
@@ -679,22 +688,23 @@ The lack of agreement between these two simulations from simulation times that p
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-helix/disordered_helicity.png}
-    \caption{
+    \caption[Stacked conformational fractions of \pep{} on a disordered SAM]{
         Stacked conformational fractions of \pep{} on the surface of a \emph{disordered} SAM, with none, one, or two harmonic restraints between \pep{} and the SAM. 
         A, C, E: \pep{} began the simulation in an \textalpha{}-helical conformation. 
         B, D, F: \pep{} began the simulation unfolded. 
         A, B: \pep{} was harmonically restrained to the SAM at both glycine residues. 
         C, D: \pep{} was harmonically restrained to the SAM at only one of the glycine residues. 
         E, F: \pep{} was unrestrained on the SAM. 
+        The black dashed lines represent the equilibration time. 
         The data after this mark was averaged and is presented in Table \ref{tbl:helix-disorder}. 
     }
     \label{fig:helix-disorder}
 \end{figure}
 
 \begin{table}
-    \caption{Average conformational fractions from simulations of \pep{} on the surface of a \emph{disordered} SAM in which either none, one, or both of the glycine residues in the peptide are harmonically restrained to the SAM.}
+    \caption[Conformational fractions on the peptide on a disordered SAM]{Average conformational fractions from simulations of \pep{} on the surface of a \emph{disordered} SAM in which either none, one, or both of the glycine residues in the peptide are harmonically restrained to the SAM.}
     \begin{center}
-     \resizebox{6.0in}{!}{
+     \resizebox{\double}{!}{
      \begin{tabular}{c|cccc|cccc}
      \toprule
          Number of  & \multicolumn{4}{c}{From folded} & \multicolumn{4}{c}{From unfolded} \\
@@ -710,10 +720,10 @@ The lack of agreement between these two simulations from simulation times that p
     \label{tbl:helix-disorder}
 \end{table}
 
-For the case of the simulations that started from a folded conformation where the peptide was bound by a single restraint or not bound to the SAM, the peptide rapidly unfolded on the disordered SAM (Figures \ref{fig:helix-disorder}C and \ref{fig:helix-disorder}E). 
+For the case of the simulations that started from a folded conformation where the peptide was bound by a single restraint or not bound to the SAM, the peptide rapidly unfolded on the disordered SAM (Figures \ref{fig:helix-disorder}C,E). 
 In both cases, leucine residues were observed to move to divots in the disordered SAM surface (see Figure \ref{fig:helix-disordered_sam}B), presumably to maximize hydrophobic interactions with the decanethiol molecules. 
 This movement often broke hydrogen bonds in the peptide backbone, destabilizing the helix. 
-When these simulations were started from an unfolded configuration, the peptide did not fold over the course of the simulation (Figures \ref{fig:helix-disorder}D and \ref{fig:helix-disorder}F). 
+When these simulations were started from an unfolded configuration, the peptide did not fold over the course of the simulation (Figures \ref{fig:helix-disorder}D,F). 
 None of the simulations on the disordered SAM had average conformational fractions consistent with the simulations of \pep{} on an ordered SAM, with exception of the simulation that started with a folded conformation and both glycine residues bound. 
 All had significantly lower helix (0.140 or less) and turn character (0.188 or less), and higher unfolded character (0.388 or greater) than the simulations on the ordered SAM. 
 In order to investigate the underlying reasons for these conformational differences, we calculated the free energy surfaces of \pep{} on the ordered SAM and \pep{} on the disordered SAM from the combined ensembles of structures. 
@@ -727,14 +737,14 @@ From these results, we hypothesize that the molecular-level order of the SAM sur
 Our hypothesis is consistent with recent work by Dallin et al. that demonstrated that the apparent hydrophobicity of a SAM surface decreases with more disorder \cite{Dallin2019}.   
 Since \pep{} was designed to fold at a polar/apolar interface\cite{DeGrado1985} and hydrophobic surfaces can stabilize helices\cite{Levine2016}, a decrease in hydrophobicity of the SAM surface likely decreases the entropic gain of the hydrophobic interactions of the leucine residues with the SAM surface. 
 The peptide must therefore distort from a stable helical secondary structure to achieve strong hydrophobic interactions between the leucines and the SAM decanethiol. 
-This thereby increases the free energy of the folding process, resulting in the larger $\Delta G$ of the folded conformation observed in Figure \ref{fig:helix-free_order}. 
+This thereby increases the free energy of the folding process, resulting in the larger $\Delta G$ of the folded conformation observed in Figure \ref{fig:helix-free_order}B. 
 Similar results have been reported for a shorter version of this peptide by Sprenger and Pfaendtner\cite{Sprenger2016}. 
 We are currently investigating the dependence of the helical character of \pep{} on the extent of disorder of the SAM surface with additional simulations and experiments.  
 
 \begin{figure}
     \center
     \includegraphics[width=\single]{figures-helix/comparison_free_energy_plots.png}
-    \caption{
+    \caption[Comparison of the free energy surfaces of \pep{} on an ordered SAM and on a disordered SAM]{
         Free energy surfaces of the combined ensembles of structures of \pep{} on the ordered SAM (A) and of \pep{} on the disordered SAM (B). 
         The combined ensembles exclude the trajectories with two restraints and structures prior to the equilibration time, as discussed in the main text. 
         On the $x$-axis is the radius of gyration of the protein. 

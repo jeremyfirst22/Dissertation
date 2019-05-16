@@ -1,13 +1,13 @@
 \chapter{Orthogonal Electric Field Measurements near the Green Fluorescent Protein Fluorophore through Stark Effect Spectroscopy and \pKa{} Shifts Provide a Unique Benchmark for Electrostatics Models} \label{gfp-pKa}
 
-Measurement of the magnitude, direction, and functional importance of electric fields in biomolecules has been a longstanding experimental challenge. 
-\pKa{} shifts of titratable residues have been the most widely implemented measurements of the local electrostatic environment around the labile proton, and experimental data sets of \pKa{} shifts in a variety of systems have been used to test and refine computational prediction capabilities of protein electrostatic fields. 
-A more direct and increasingly popular technique to measure electric fields in proteins is Stark effect spectroscopy, where the change in absorption energy of a chromophore relative to a reference state is related to the change in electric field felt by the chromophore. While there are merits to both of these methods and they are both reporters of local electrostatic environment, they are fundamentally different measurements, and to our knowledge there has been no direct comparison of these two approaches in a single protein. 
-We have recently demonstrated that green fluorescent protein (GFP) is an ideal model system for measuring changes in electric fields in a protein interior caused by amino acid mutations using both electronic and vibrational Stark effect chromophores. 
-Here we report the changes in \pKa{} of the GFP fluorophore in response to the same mutations and show that they are in excellent agreement with Stark effect measurements. 
-This agreement in the results of orthogonal experiments reinforces our confidence in the experimental results of both Stark effect and \pKa{} measurements, and provides an excellent target dataset to benchmark diverse protein electrostatics calculations. 
-We used this experimental dataset to test the \pKa{} prediction ability of the Adaptive Poisson-Boltzmann Solver (APBS) and found that a simple continuum dielectric model of the GFP interior is insufficient to accurately capture the measured \pKa{} and Stark effect shifts . 
-We discuss some of the limitations of this continuum-based model in this system and offer this experimentally self-consistent dataset as a target benchmark for electrostatics models, which could allow for a more rigorous test of \pKa{} prediction techniques due to the unique environment of the water-filled GFP barrel compared to traditional globular proteins.
+%Measurement of the magnitude, direction, and functional importance of electric fields in biomolecules has been a longstanding experimental challenge. 
+%\pKa{} shifts of titratable residues have been the most widely implemented measurements of the local electrostatic environment around the labile proton, and experimental data sets of \pKa{} shifts in a variety of systems have been used to test and refine computational prediction capabilities of protein electrostatic fields. 
+%A more direct and increasingly popular technique to measure electric fields in proteins is Stark effect spectroscopy, where the change in absorption energy of a chromophore relative to a reference state is related to the change in electric field felt by the chromophore. While there are merits to both of these methods and they are both reporters of local electrostatic environment, they are fundamentally different measurements, and to our knowledge there has been no direct comparison of these two approaches in a single protein. 
+%We have recently demonstrated that green fluorescent protein (GFP) is an ideal model system for measuring changes in electric fields in a protein interior caused by amino acid mutations using both electronic and vibrational Stark effect chromophores. 
+%Here we report the changes in \pKa{} of the GFP fluorophore in response to the same mutations and show that they are in excellent agreement with Stark effect measurements. 
+%This agreement in the results of orthogonal experiments reinforces our confidence in the experimental results of both Stark effect and \pKa{} measurements, and provides an excellent target dataset to benchmark diverse protein electrostatics calculations. 
+%We used this experimental dataset to test the \pKa{} prediction ability of the Adaptive Poisson-Boltzmann Solver (APBS) and found that a simple continuum dielectric model of the GFP interior is insufficient to accurately capture the measured \pKa{} and Stark effect shifts . 
+%We discuss some of the limitations of this continuum-based model in this system and offer this experimentally self-consistent dataset as a target benchmark for electrostatics models, which could allow for a more rigorous test of \pKa{} prediction techniques due to the unique environment of the water-filled GFP barrel compared to traditional globular proteins.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -19,9 +19,10 @@ Portions of this chapter are adapted from the following publication:
 
 \noindent Joshua D. Slocum, Jeremy T. First, Lauren J. Webb; Orthogonal Electric Field Measurements near the Green Fluorescent Protein Fluorophore through Stark Effect Spectroscopy and \pKa{} Shifts Provide a Unique Benchmark for Electrostatics Models. emph{Journal of Physical Chemistry B}. \textbf{2017}, \emph{121}, 6799-6812.
 
-
-%\bibentry{Slocum2017}
-
+JTF performed all calculations. 
+All code, force field parameters, structures, and other starting files used for the simulation, analysis, processing of data, and figure generation can be accessed at:
+\url{https://github.com/jeremyfirst22/GFP_pKa}. 
+JDS performed all experiments. The experimental methods are ommited from this Chapter, but they may be found in the publication. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -102,7 +103,7 @@ This agreement provides confidence that Stark effect shifts and \pKa{} shifts re
 This trend was not observed when histidine or cysteine were at position 203, which we hypothesize was due to (1) differences in the hydrogen bonding network around the fluorophore caused by histidine and cysteine at position 203; or (2) the interference of the fluorophore titration by the simultaneous titration of histidine or cysteine at position 203. 
 Because of the potential for this experimentally self-consistent model system to be a benchmark for electrostatics models, we also attempted to calculate the \pKa{} values using APBS and MD simulations.
 However, even when we included 50 \si{\ns} of protein dynamics, APBS was unable to accurately reproduce the experimental \pKa{} values. 
-We predict that a more advanced calculation than one based on a continuum electrostatic treatment of the interior of GFP is likely necessary to accurately predict \pKa{} values inside the unique $\beta$-barrel protein. 
+We predict that a more advanced calculation than one based on a continuum electrostatic treatment of the interior of GFP is likely necessary to accurately predict \pKa{} values inside the unique \textbeta{}-barrel protein. 
 All together, this model system contains a VSE probe, an electronic Stark effect probe, and a \pKa{} probe that all respond similarly to perturbations at position 203. 
 In addition to providing confidence in our ability to measure electrostatic effects experimentally, we also believe that these experimental data are an excellent target data set for benchmarking a variety of computational electrostatics models.
 
@@ -112,38 +113,38 @@ In addition to providing confidence in our ability to measure electrostatic effe
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Protein Expression and Purification}
-
-A pBAD vector containing the gene for His6-tagged super folder GFP and a pDULE vector coding for an orthogonal tRNA/synthetase pair optimized for \pCNF{} were a generous gift from the Mehl lab \cite{Miyake-Stoner2010}.
-Mutations to the pBAD vector at amino acid positions 145, 165, or 203 were made using a Quik-Change II site directed mutagenisis kit from Agilent.
-To make each nitrile-containing GFP mutant, DH10$\beta$ cells were co-transformed with both the pBAD vector (containing the \emph{amber} stop codon at amino acid position 145 or 165, and the proper codon for amino acid 203) and the pDULE vector. 
-These co-transformed cells were grown in an autoinduction media as described elsewhere \cite{Hammill2007}.
-Mutants without a nitrile probe were purified from DH10$\beta$ cells expressing only the pBAD vector. 
-In both cases, the His$_6$-tagged mutants were purified as outlined previously by immobilized metal affinity chromatography, the tags cleaved and separated, and the purified protein used immediately or stored at $-80$ \si{\celsius} \cite{Slocum2016}. 
-
-\subsection{pH Titrations}
-
-Purified GFP mutants were buffer exchanged into a master buffer containing 50 \si{mM} phosphate, 50 mM citrate, and 100 mM NaCl at pH 7.5, and the buffer-exchanged protein was concentrated to $\sim$1 mM using centrifugal filters. 
-UV-Vis absorption spectra of the GFP mutants were recorded from pH 5 to 10 on a Biotek Epoch 2 microplate reader between 250-600 nm. 
-The plates were prepared by mixing 2 $\mu$L of the concentrated protein with 300 $\mu$L of the master buffer (adjusted to the desired pH with acid or base) into the wells of a UV-transparent 96-well plate. 
-For each mutant, at least three pH titrations were carried out.
-
-\subsection{UV-Vis and FTIR Spectroscopy}
-
-For all absorption spectroscopy measurement besides the pH titrations, purified GFP mutants were buffer exchanged into PBS at pH 7.4. 
-UV-Vis absorption spectra were collected in a 1 cm quartz cuvette using a Cary 5000 spectrometer with 0.1 nm resolution. 
-FTIR absorption spectra of the nitrile-labeled mutants were collected using a Bruker Vertex 70. 
-Protein samples concentrated to 1-2 mM were injected between two sapphire windows separated by 125 $\mu$m Teflon spacers. 
-Spectra were collected by averaging 250 scans with 0.5 \si{\wn} resolution. 
-After subtracting a background spectrum of PBS, the spectra were baseline-corrected and fit to Gaussian functions using an in-house program that has been described previously \cite{Ragain2012}.
-All spectra were measured at least three times.   
+%\subsection{Protein Expression and Purification}
+%
+%A pBAD vector containing the gene for His6-tagged super folder GFP and a pDULE vector coding for an orthogonal tRNA/synthetase pair optimized for \pCNF{} were a generous gift from the Mehl lab \cite{Miyake-Stoner2010}.
+%Mutations to the pBAD vector at amino acid positions 145, 165, or 203 were made using a Quik-Change II site directed mutagenisis kit from Agilent.
+%To make each nitrile-containing GFP mutant, DH10\textbeta{} cells were co-transformed with both the pBAD vector (containing the \emph{amber} stop codon at amino acid position 145 or 165, and the proper codon for amino acid 203) and the pDULE vector. 
+%These co-transformed cells were grown in an autoinduction media as described elsewhere \cite{Hammill2007}.
+%Mutants without a nitrile probe were purified from DH10\textbeta{} cells expressing only the pBAD vector. 
+%In both cases, the His$_6$-tagged mutants were purified as outlined previously by immobilized metal affinity chromatography, the tags cleaved and separated, and the purified protein used immediately or stored at $-80$ \si{\celsius} \cite{Slocum2016}. 
+%
+%\subsection{pH Titrations}
+%
+%Purified GFP mutants were buffer exchanged into a master buffer containing 50 \si{mM} phosphate, 50 mM citrate, and 100 mM NaCl at pH 7.5, and the buffer-exchanged protein was concentrated to $\sim$1 mM using centrifugal filters. 
+%UV-Vis absorption spectra of the GFP mutants were recorded from pH 5 to 10 on a Biotek Epoch 2 microplate reader between 250-600 nm. 
+%The plates were prepared by mixing 2 $\mu$L of the concentrated protein with 300 $\mu$L of the master buffer (adjusted to the desired pH with acid or base) into the wells of a UV-transparent 96-well plate. 
+%For each mutant, at least three pH titrations were carried out.
+%
+%\subsection{UV-Vis and FTIR Spectroscopy}
+%
+%For all absorption spectroscopy measurement besides the pH titrations, purified GFP mutants were buffer exchanged into PBS at pH 7.4. 
+%UV-Vis absorption spectra were collected in a 1 cm quartz cuvette using a Cary 5000 spectrometer with 0.1 nm resolution. 
+%FTIR absorption spectra of the nitrile-labeled mutants were collected using a Bruker Vertex 70. 
+%Protein samples concentrated to 1-2 mM were injected between two sapphire windows separated by 125 $\mu$m Teflon spacers. 
+%Spectra were collected by averaging 250 scans with 0.5 \si{\wn} resolution. 
+%After subtracting a background spectrum of PBS, the spectra were baseline-corrected and fit to Gaussian functions using an in-house program that has been described previously \cite{Ragain2012}.
+%All spectra were measured at least three times.   
 
 \subsection{Molecular Dynamics Simulations}
 
 A template protein structure was modeled by homology from the 2b3p crystal structure\cite{Pedelacq2006} using the MODELLER software package \cite{Marti-Renom2000}.
 From this template, the 6 different mutations were made to position 203 using the mutagenesis wizard tool in PyMol \cite{DeLano2002}.
 For each of these 7 protein systems, the residue at position 145 or 165 was independently mutated to \pCNF{} and minimized using the Avogadro molecular editing package \cite{Hanwell2012}. 
-Special care was taken with the titration state of Glu222, which was assigned a neutral state based on indirect crystallographic evidence of the fluorophore hydrogen bonding environment from Remington et al \cite{Elsliger1999}. 
+Special care was taken with the titration state of Glu222, which was assigned a neutral state based on indirect crystallographic evidence of the fluorophore hydrogen bonding environment from Elsliger et al \cite{Elsliger1999}. 
 Histidine residues at positions 25, 148 181, 199 and 217 were protonated at the N$_{\delta}$, and histidine residues at positions 77, 81, 139 and 169 was protonated at the N$_{\varepsilon}$, following the simulation protocol by Nifos\'i et al \cite{Nifosi2003}.
 The histidine at position 231 is not present in either of the two studies cited, and was protonated at the N$_{\varepsilon}$ as determined to be most favorable by pdb2gmx. 
 Finally, each of these 21 structures was edited to reflect the two different protonation states of the internal GFP chromophore, resulting in 42 different protein systems for the start of molecular dynamics (MD) simulations. 
@@ -193,15 +194,14 @@ The curve fitting application of Matlab R2016a was used to fit all titration cur
 \end{equation}
 where Abs(pH) is the maximum absorbance of either the A or B state at a given pH, $a$ is the maximum value of Abs, $b$ defines the offset of the function from pH = 0, $c$ defines the pitch of the sigmoid, and $d$ is the minimum value of Abs \cite{Matlab2016}.
 The inflection point of the resulting fit was taken to be the \pKa{} for that mutant.
-The titration curves for each of the 21 mutant constructs is shown in Supplemental Information, Figure S1.
-With the exception of the few cases where the A state titration could not be fit (Y203, H203, and H203 with \pCNF{} 165) in Figure S1, titrations of both the A and B states gave \pKa{} values that were within experimental error of each other, < 0.08 \pKa{} units.
+With the exception of the few cases where the A state titration could not be fit (Y203, H203, and H203 with \pCNF{} 165), titrations of both the A and B states gave \pKa{} values that were within experimental error of each other, < 0.08 \pKa{} units.
 In the cases where only one titration could be fit to a sigmoidal curve, the \pKa{} was estimated directly from that titration.
-The fact that 39 of the 42 titrations in Figure S1 could be well described by a single site titration model suggests that any coupling of the fluorophore titration to other nearby titratable residues was negligible. 
+The fact that 39 of the 42 titrations could be well described by a single site titration model suggests that any coupling of the fluorophore titration to other nearby titratable residues was negligible. 
 
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-gfp-pKa/absorption_titrations.png}
-    \caption{
+    \caption[Representative titration of the GFP fluorophore]{
         A representative titration of the GFP fluorophore. 
         Panel A shows the visible absorption spectra of the fluorophore of S203 over a range of pH values given by the color code. 
         Panel B shows the maximum absorption of the A state (blue) and the B state (red) of the S203 spectra from panel A, plotted against the solution pH. 
@@ -217,7 +217,7 @@ Here, the measured \pKa{} values tended to increase as we placed aromatic residu
 This suggests that aromatic interactions between the fluorophore and Y and F at position 203 are responsible for the elevated \pKa{} values we have measured here, and that the hydrogen bonding environment around the fluorophore might play a larger role in the \pKa{} values for the other position 203 mutants. 
 
 \begin{table}
-    \caption[Measure \pKa{} values of the GFP chromophore]{
+    \caption[Experimental \pKa{} values of the GFP chromophore]{
         A Summary of the Measured \pKa{} Values for All GFP Mutants$^a$
     }
     \begin{center}
@@ -249,7 +249,7 @@ This suggests that aromatic interactions between the fluorophore and Y and F at 
 To further investigate these interactions and their importance in determining fluorophore \pKa{}, we compared measured \pKa{} changes to the orthogonal site-specific electric field measurements obtained through spectroscopic Stark effect measurements using both the GFP fluorophore and the biosynthetically incorporated \pCNF{} residues.
 We measured the absorption spectra of the GFP fluorophore and the inserted \pCNF{} probes at pH 7.4.
 Figure \ref{fig:abs_spectra} shows representative spectra of all variants investigated.
-Figures \ref{fig:abs_spectra}A, \ref{fig:abs_spectra}B, and \ref{fig:abs_spectra}C show the fluorophore absorption as a function of the position 203 mutations when there is no \pCNF{}, \pCNF{} at position 145, and \pCNF{} at position 165, respectively.
+Figures \ref{fig:abs_spectra}A,B,C show the fluorophore absorption as a function of the position 203 mutations when there is no \pCNF{}, \pCNF{} at position 145, and \pCNF{} at position 165, respectively.
 All visible spectra showed the same general shape, with two major features which have been well characterized as being due to the neutral (A state: $\sim$400 \si{\nm}) and ionized (B state: $\sim$500 \si{\nm}) forms of the fluorophore.
 There were two distinct types of changes in these spectra that resulted from the position 203 mutations.
 First, changes in the relative intensities of the two major peaks indicated that the equilibrium between neutral and ionized fluorophore changed (for example, Y and T in Figure \ref{fig:abs_spectra}A, which show different ratios of absorbance between the A and B states).
@@ -266,7 +266,7 @@ This is likely a reflection of the environmental complexity of the interior of G
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-gfp-pKa/abs_spectra.png}
-    \caption{
+    \caption[Representative absorption spectra for all GFP mutants]{
         Representative absorption spectra for all GFP mutants recorded at pH 7.4. 
         Panels A, B, and C show the visible absorption of the GFP fluorophore normalized to the absorbance at 280 nm for proteins that have no nitrile probe (A), \pCNF{} at position 145 (B), and \pCNF{} at position 165 (C). 
         Different colors represent the different amino acid side chains at position 203 based on the one-letter code in panel A. 
@@ -296,8 +296,8 @@ The observation that the Stark effect shifts and \pKa{} shifts of the fluorophor
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-gfp-pKa/pKa_vs_elec_stark.png}
-    \caption{
-        Changes in the measured fluorophore pKa plotted against changes in the electric field experienced by the B state of the fluorophore for GFP mutants with (A) no nitrile probe present, (B) \pCNF{} at position 145, and (C) \pCNF{} at position 165. 
+    \caption[Fluorophore \pKa{} compared to the field reported by the electronic transition of the fluorophore]{
+        Changes in the measured fluorophore \pKa{} plotted against changes in the electric field experienced by the B state of the fluorophore for GFP mutants with (A) no nitrile probe present, (B) \pCNF{} at position 145, and (C) \pCNF{} at position 165. 
         Different colors represent the type of mutation that was made to position 203 based on the key in panel A. 
         Gray squares represent position 203 mutations that involved changes to or from histidine or cysteine and are omitted from the best fit lines and correlation constants. 
         Error bars on the $x$-axis represent uncertainty in the published Stark tuning rate of the deprotonated GFP fluorophore. 
@@ -309,7 +309,7 @@ The observation that the Stark effect shifts and \pKa{} shifts of the fluorophor
 In Figure \ref{fig:pKa_vs_stark}, however, there are clear deviations from this linear correlation.
 In displaying the data in this manner, it is apparent that, with the exception of the proteins with no \pCNF{} probe (4A), mutations to or from histidine or cysteine (gray squares in Figure \ref{fig:pKa_vs_stark}) caused \pKa{} changes that were in poor agreement with the corresponding Stark effect shifts of the GFP fluorophore.
 Of the seven side chains we placed at position 203, H and C are clearly different from the rest because they can be titrated near physiological pH (the \pKa{} values of H and C side chains in water are 6.0 and 8.1, respectively).
-It is reasonable to suspect that the presence of a second titration site (H or C at position 203) might complicate the straightforward analysis of the GFP fluorophore equilibrium and contribute to the weakening of the correlations shown in Figures \ref{fig:pKa_vs_stark}B and \ref{fig:pKa_vs_stark}C.
+It is reasonable to suspect that the presence of a second titration site (H or C at position 203) might complicate the straightforward analysis of the GFP fluorophore equilibrium and contribute to the weakening of the correlations shown in Figures \ref{fig:pKa_vs_stark}B,C.
 However, the fact that the disagreement between electronic Stark effects and \pKa{} shifts for these mutations is only apparent when either nitrile probe is present suggests that the presence of \pCNF{} is the cause of the disagreement.
 Because of the likely role of hydrogen bonding to the fluorophore in determining its \pKa{}, and the ability of the nitrile group to accept a hydrogen bond, we think it is likely that \pCNF{} at either of these locations could potentially disrupt the hydrogen bonding network in the interior of GFP, which could in turn perturb the native \pKa{} values.
 Further studies are underway to investigate changes in the hydrogen bonding network near the GFP fluorophore induced by the insertion of \pCNF{} residues at positions 145 and 165 to test this hypothesis.
@@ -322,14 +322,14 @@ The observation discussed above, that mutations to C or H deviate from the other
 To investigate this, we examined the ability of the nitrile probes to perturb the fluorophore \pKa{} values, relative to the values with no nitrile probe present.
 This is shown in Figure \ref{fig:pKa_sidechain}, where the change in fluorophore \pKa{} of all position 203 mutants (indicated by the one letter code on the $x$-axis) is plotted as a function of a nitrile located at either position 145 (black) or 165 (red).
 For most of the mutants, we saw that the insertion of a \pCNF{} residue at either position induced a \pKa{} change of at least $\pm$ 0.2 pH units, which represents a significant electrostatic perturbation due to the nitrile probe.
-Because the nitrile moiety can accept a hydrogen bond from either water or a nearby amino acid residue, inserting \pCNF{} into the $\beta$-barrel of GFP has the potential to disrupt the hydrogen bonding network around the fluorophore, which could explain the significant \pKa{} changes in Figure \ref{fig:pKa_sidechain}.
+Because the nitrile moiety can accept a hydrogen bond from either water or a nearby amino acid residue, inserting \pCNF{} into the \textbeta{}-barrel of GFP has the potential to disrupt the hydrogen bonding network around the fluorophore, which could explain the significant \pKa{} changes in Figure \ref{fig:pKa_sidechain}.
 C203 mutants with either nitrile probe clearly exhibit the largest observed \pKa{} shifts, up to 1 pH unit, which further supports our decision to remove C203 from the trends in Figure \ref{fig:pKa_vs_stark}.
 This highlights the care that should be taken when using nitriles as electrostatic probes.
 
 \begin{figure}
     \center
     \includegraphics[width=\single]{figures-gfp-pKa/pKa_by_side_chain.png}
-    \caption{
+    \caption[\pKa{} shifts due to the insertion of \pCNF{}]{
         \pKa{} shift of the GFP fluorophore caused by the insertion of \pCNF{} at position 145 (black) or 165 (red) for each amino acid at position 203 (one letter code on the $x$-axis). 
         Error bars represent the standard deviation of at least three titrations.
     }
@@ -361,7 +361,7 @@ Because \pCNF{} 145 and 165 are spatially removed from each other and oriented i
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-gfp-pKa/pKa_vs_cnf.png}
-    \caption{
+    \caption[Fluorophore \pKa{} compared to the field reported by \pCNF{} nitrile frequencies]{
         Changes in the fluorophore \pKa{} plotted against the electric field changes measured from \pCNF{} 145 (A) and 165 (B) for all unique pairs of the seven position 203 mutants. 
         Colors represent the type of mutation made to position 203 based on the key in panel B. 
         Gray squares represent position 203 mutations that involved changes to or from histidine or cysteine and are omitted from the best fit lines and correlation constants. 
@@ -383,19 +383,42 @@ In this case, the frequency shifts that we measured might be dominated by the A 
 However, it seems unlikely that the \pCNF{} 145 probes are sensitive to the mixed populations of A and B states given their extremely narrow linewidths ($\sim$5-6 \si{\wn}, except for C203; Figure \ref{fig:abs_spectra}A).
 On the other hand, the \pCNF{} 165 probes were somewhat more broad ($\sim$8-9 \si{\wn}) and could conceivably contain contributions from both the A and B state fields.
 To test whether the \pCNF{} 165 spectra was convolved with overlapping A and B state contributions, we measured the pH dependence of the \pCNF{} 165 absorption for the mutant containing T203.
-Figure S2 shows the resulting spectra over the range of pH 7-9.
+Figure \ref{fig:cnf_vs_pH} shows the resulting spectra over the range of pH 7-9.
 We measured no detectable change in the center frequency, which we interpret to mean that the \pCNF{} 165 was insensitive to the mixed population of A and B states.
 Thus, we believe that differences in the measured nitrile frequencies are dominated by the electrostatic perturbation of the position 203 mutations. 
+
+\begin{figure}
+    \center
+    \includegraphics[width=\single]{figures-gfp-pKa/cnf_vs_pH.png}
+    \caption[Nitrile absorption spectra at various pH levels]{
+        Nitrile absorption spectra as a function of pH for the mutant containing threonine at position 203 and \pCNF{} at position 165. 
+        No detectable change in the center frequency was measured between pH 7-9.
+    }
+    \label{fig:cnf_vs_pH}
+\end{figure}
 
 One additional concern with comparing the nitrile VSE shifts to the \pKa{} shifts of the \pCNF{}-containing GFP mutants is the difference in protein concentration with which both experiments were performed.
 Because of the low absorption cross section of the nitrile stretch, the protein was concentrated to $\sim$1 mM to achieve adequate signal of the nitrile VSE probe for FTIR measurements. 
 In contrast, the \pKa{} measurements were carried out at much lower concentrations ($\sim$10-100 $\mu$M) to ensure that the visible absorption of the GFP fluorophore did not fall outside of the linear range of Beer's law absorption.
 This is potentially problematic because of the known propensity of GFP to dimerize at high concentrations and the fact that dimerization affects the GFP fluorophore equilibrium \cite{Tsien1998}.
 To test whether the measured \pKa{} values of the variants of GFP used here exhibited a strong dependence on protein concentration, we measured the \pKa{} values of two mutants at concentrations of $\sim$1 mM to mimic the high concentration of the FTIR measurements.
-As seen in Figure S3, the ratio of A to B state absorption can change drastically as a function of concentration.
+As seen in Figure \ref{fig:conc_depend}, the ratio of A to B state absorption can change drastically as a function of concentration.
 However, the pH dependence of the fluorophore absorption at high concentrations still yields \pKa{} values (estimated from Equation \ref{eq:sigmoid}) that are within experimental error of those measured for the same protein at lower concentrations.
 This result suggests that, while dimerization can affect the relative amount of A versus B state in the interior of the protein, the midpoint of the equilibrium used in these Stark-\pKa{} comparisons remains unchanged.
 All together, these observations suggest that the Stark effect shifts and \pKa{} shifts in GFP responded similarly to the same electrostatic perturbations in an orthogonal fashion.
+
+\begin{figure}
+    \center
+    \includegraphics[width=\double]{figures-gfp-pKa/concentration_dependence.png}
+    \caption[Effect of protein concentration on GFP fluorophore equilibrium]{
+        The effect of protein concentration on GFP fluorophore equilibrium. 
+        (A) The percentage change in the ratio of A to B state absorption as a function of protein concentration. 
+        The colors represent a different amino acid at position 203 based on the key. 
+        (B) The A state titration of wild type superfolder GFP (red data points from (A)) at low (circles) and high (squares) concentrations. 
+        Both titrations give inflection points that are within experimental error of each other (\pKa{} = 6.7).
+    }
+    \label{fig:conc_depend}
+\end{figure}
 
 In summary, we observed that similar types of mutations at position 203 caused similar changes in (1) the vibrational absorption energies of inserted nitrile probes; (2) the visible absorption energies of the GFP fluorophore; and (3) the fluorophore \pKa{} values.
 The self-consistency in these three orthogonal experimental measurements of electrostatic perturbation from the position 203 mutations makes this experimental dataset an ideal benchmark for computational models that predict electrostatic fields in proteins.
@@ -433,7 +456,7 @@ In Equation \ref{eq:PB}, $\epsilon(\vec{r})$ is the dielectric constant as a fun
 \begin{figure}
     \center
     \includegraphics[width=\single]{figures-gfp-pKa/thermocycle.png}
-    \caption{
+    \caption[Schematic of the themodynaic cycle used for \pKa{} calculuations]{
         Cartoon representation of the thermodynamic cycle used for \pKa{} calculations. 
         The A and B states of the fluorophore are shown in blue and red, respectively. 
         The GFP structure is shown as a cyan cartoon.
@@ -444,7 +467,7 @@ In Equation \ref{eq:PB}, $\epsilon(\vec{r})$ is the dielectric constant as a fun
 Specifically, we wanted to evaluate the performance of APBS to reproduce the fluorophore \pKa{} values using minimal optimization to the commercially-available software package. 
 We first performed the free energy calculations on the static starting structures that were modelled by homology from crystal structure 2b3p. 
 The solvent was treated implicitly with a dielectric constant of 78.54 and the crystallized atoms were treated with a dielectric constant of 20, which is thought to be an effective protein dielectric in static structure calculations \cite{Mehler1999}.
-While removing all explicit water molecules and replacing them with a continuum dielectric has been shown to be an accurate approximation in the continuum treatment of compact globular proteins \cite{Kukic2013, Simonson1996}, it may not necessarily hold for the $\beta$-barrel of GFP, which contains many confined water molecules that form intricate hydrogen bonded networks with other waters and protein residue side chains. These confined waters near the fluorophore likely play a large role in determining the \pKa{} through both structural and electrostatic effects.
+While removing all explicit water molecules and replacing them with a continuum dielectric has been shown to be an accurate approximation in the continuum treatment of compact globular proteins \cite{Kukic2013, Simonson1996}, it may not necessarily hold for the \textbeta{}-barrel of GFP, which contains many confined water molecules that form intricate hydrogen bonded networks with other waters and protein residue side chains. These confined waters near the fluorophore likely play a large role in determining the \pKa{} through both structural and electrostatic effects.
 Therefore, any crystallized waters within a 5 \si{\angstrom} sphere around the fluorophore phenol (or phenolate) oxygen were treated explicitly.
 The results from these calculations are shown in Figure \ref{fig:calc_pKas}A, where we observed a poor correlation between the calculated and experimental \pKa{} values ($r = 0.27$).
 We hypothesized that this was due to insufficient protein relaxation around the residue of mutation.
@@ -455,7 +478,7 @@ Additionally, we wanted to model protein fluctuations because PB-based calculati
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-gfp-pKa/calc_pKas.png}
-    \caption{
+    \caption[Calculated \pKa{} values compared to experimental \pKa{} values]{
         Correlations between experimentally measured \pKa{} values and those calculated in APBS. 
         In both cases, the calculated \pKa{} is shown on the $y$-axis and the experimental \pKa{} is on the $x$-axis. 
         Data points shown as circles represent the mutant constructs with no nitrile probe, squares are the mutants with \pCNF{} at position 145, and diamonds are the mutants with \pCNF{} at position 165. 
@@ -469,7 +492,7 @@ Additionally, we wanted to model protein fluctuations because PB-based calculati
 To account for the sensitivity of the calculation to the protein configuration, we performed MD simulations on the protein structures (including explicit solvation with TIP3P water) to generate an ensemble of reasonable structures that might exist during the course of a room temperature steady-state experiment.
 We first wanted to validate our parameters for the GFP fluorophore and the surrounding titratable residues (namely E222 and H148) to ensure that the MD simulations gave a reasonable ensemble of protein configurations.
 Specifically, for GFP mutants containing the TYG fluorophore (used in the present study), there is detailed crystallographic evidence of the complex hydrogen bonding network around the fluorophore, which we used as a basis for comparison for our ensemble of protein configurations \cite{Elsliger1999}.
-Table SXX in the Supplementary Information lists 17 different hydrogen bonding interactions that were observed in the crystal structure of an analogous GFP mutant near the embedded fluorophore, as well as the corresponding interactions from our 50 \si{\ns} of MD simulation of wild type superfolder GFP.
+Table \ref{tbl:crystal} lists 17 different hydrogen bonding interactions that were observed in the crystal structure of an analogous GFP mutant near the embedded fluorophore, as well as the corresponding interactions from our 50 \si{\ns} of MD simulation of wild type superfolder GFP.
 We observed all 17 hydrogen bonding interactions in our simulations.
 While most interactions were captured by the simulations to within < 1 \si{\angstrom} of the distances measured from the crystal structure, there were a few notable differences.
 In our simulations, Q69 and Q94 were both further away from the fluorophore, which gave rise to interaction distances to the atoms in those residues that were greater than the distances predicted by the crystal structure.
@@ -477,6 +500,48 @@ This is likely due to the difference in amino acid sequence between the present 
 Interestingly, simulations with negatively charged E222 and H148 protonated at the N$_{\varepsilon}$ were not able to accurately reproduce these 17 hydrogen bonding interactions (data not shown).
 Overall, the fact that our MD simulations were able to accurately capture most of the experimentally observed hydrogen bonding interactions around the fluorophore suggests that we used reasonable parameters for the GFP fluorophore and supports our decision to protonate E222 and the N$_\delta$ of H148.
 However, there is no structural data available for any of the position 203 mutants or the mutants with \pCNF{} 145 or 165.
+
+\begin{table}
+    \caption[Observed hydrogen bonding interactions in MD simulation compared to in crystal structure]{
+        Hydrogen bonds around the GFP fluorophore in the A and B states. 
+        Donor and acceptor columns designate the hydrogen bond donor and acceptor. 
+        Distances from crystallographic evidence are shown for each interaction and taken from ref \citenum{Elsliger1999}. 
+        The MD column represents the same interaction distances over the course of 50 ns of MD simulation. 
+        Error bars represent the standard deviation of the distance throughout the simulation. 
+        For interactions involving water, the minimum distance to the oxygen of water is presented.
+    }
+    \begin{center}
+        \resizebox{\double}{!}{
+    \begin{tabular}{cc|cc|cc|cc}
+    \toprule
+    \multicolumn{4}{c}{A State}                                         & \multicolumn{4}{c}{B State}\\
+    \toprule
+    
+    Donor                  & Acceptor              & Crystal (\AA) & MD (\AA) & Donor             & Acceptor                  & Crystal (\AA) & MD (\AA) \\
+    \midrule{}
+     Chro OH               & T203 O                & 3.0 & $4.2 \pm 0.6$ & T203 O$_\gamma$         & Chro \ce{O-}             & 2.6 & $ 3.4  \pm 0.9  $ \\
+    \ce{H2O}               & Chro OH               & 2.5 & $2.8 \pm 0.2$ & H148 N$_\delta$         & Chro \ce{O-}             & 2.9 & $ 3.0  \pm 0.2  $ \\
+    R168 N                 & H148 N$_\varepsilon$  & 3.2 & $3.2 \pm 0.2$ & R168 N                  & H148 N$_\varepsilon$     & 3.2 & $ 3.1  \pm 0.2  $ \\
+    H148 N$_\delta$        & N146 O                & 2.6 & $2.9 \pm 0.2$ & \ce{H2O}                & Chro \ce{O-}             & 2.6 & $ 2.8  \pm 0.2  $ \\
+    \ce{H2O}               &  N146 O               & 3.2 & $3.0 \pm 0.3$ & \ce{H2O}                & N146 O                   & 2.9 & $ 2.8  \pm 0.2  $ \\
+    S205 OG                & \ce{H2O}              & 2.6 & $2.8 \pm 0.2$ & S205 O$_\gamma$         & \ce{H2O}                 & 2.7 & $ 2.8  \pm 0.2  $ \\
+    E222 O$_{\varepsilon 2}$  & Chro O$_{\rm{T}64\gamma}$  & 2.8 & $2.8 \pm 0.2$ & E222 O$_{\varepsilon2}$ & Chro O$_{\rm{T}64\gamma} $    & 2.8 & $ 3.0  \pm 0.7  $ \\
+    \ce{H2O}               & E222$_{\varepsilon 1}$ & 2.4 & $2.9 \pm 0.2$ & Chro O$_{\rm{T}64\gamma} $   & V61 O                    & 3.0 & $ 3.1  \pm 0.2  $ \\
+    Chro O$_{\rm{T}64\gamma} $  & V61 O                 & 3.0 & $3.0 \pm 0.2$ & \ce{H2O}           &  E222 O$_{\varepsilon1}$ & 2.4 & $ 2.8  \pm 0.2  $ \\
+    Q69 N$_\varepsilon$    & \ce{H2O}              & 2.7 & $3.0 \pm 0.2$ & Q69 N$_\varepsilon$     & \ce{H2O}                 & 2.8 & $ 3.0  \pm 0.2  $ \\
+    Q183 N$_\varepsilon$   & Q69 O$_\varepsilon$  & 3.1 & $6.7 \pm 1.1$ & Q183 N$_\varepsilon$     & Q69 O$_\varepsilon$       & 3.2 & $ 6.2  \pm 0.7  $ \\
+    Q94 N$_\varepsilon$    & Chro O$_\text{ima}$   & 3.0 & $4.9 \pm 0.7$ & R96 N$_\varepsilon$     & Q183 O$_\varepsilon$     & 3.0 & $ 4.0  \pm 1.3  $ \\
+    R96 N$_{\eta 1}$       & Chro O$_\text{ima}$   & 3.0 & $3.0 \pm 0.3$ & R96 N$_{\eta 1}$        & Q183 O$_\varepsilon$     & 2.9 & $ 4.0  \pm 1.3  $ \\
+    R96 N$_{\eta 1}$       & Q183 O$_\varepsilon$  & 2.9 & $3.9 \pm 0.3$ & Q94 N$_\varepsilon$     & Chro O$_\text{ima}$      & 3.0 & $ 5.1  \pm 0.4  $ \\
+    R96 N$_\varepsilon$    & Q183 O$_\varepsilon$  & 2.9 & $2.9 \pm 0.2$ & R96 N$_{\eta 1}$        & Chro O$_\text{ima}$      & 2.7 & $ 2.8  \pm 0.1  $ \\
+    R96 N$_{\eta 2}$       & T62 O                 & 2.6 & $3.0 \pm 0.3$ & R96 N$_{\eta 2}$        & T62 O                    & 2.7 & $ 3.0  \pm 0.2  $ \\
+    R96 N$_{\eta 2}$       & \ce{H2O}              & 2.9 & $2.9 \pm 0.2$ & R96 N$_{\eta 2}$        & \ce{H2O}                 & 2.8 & $ 3.0  \pm 0.1  $ \\
+    \bottomrule
+    \end{tabular}
+}
+    \end{center}
+    \label{tbl:crystal}
+\end{table}
 
 To further validate our model parameters for the fluorophore and positions 145, 165, and 203, we followed the RMS deviations of each mutant protein relative to its minimized starting structure over the course of a 50 \si{\ns} trajectory of MD simulation.
 These results are shown in Figure \ref{fig:rmsd} in the Supporting Information, where we observed that the backbone RMS deviations remained low (< 2.7 \si{\angstrom}) throughout the protein trajectory for all 42 simulations.
@@ -488,7 +553,7 @@ Although none of this implies these simulations have given a ``correct'' ensembl
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-gfp-pKa/combined_rmsd.png}
-    \caption{
+    \caption[RMS deviations of each GFP construct]{
        RMS deviations as a function of MD simulation time relative to the initial minimized starting structure of the 21 GFP mutants containing the fluorophore in the A state (blue) and B state (green).
    }
     \label{fig:rmsd}
@@ -502,7 +567,7 @@ We therefore determined that additional simulation time would not result in chan
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-gfp-pKa/dG_firstDerivative.pdf}
-    \caption{
+    \caption[Convergence of $\Delta G$ calculations]{
         First derivative of the calculated $\Delta G$ for the A (blue) and B (green) states over 50 ns of MD simulation for all 21 GFP mutants. 
         Labels CN145 and CN165 designate the mutants with \pCNF{} at positions 145 and 165, respectively.
     }
@@ -528,7 +593,7 @@ Despite the inability of APBS to accurately reproduce these experimentally measu
 Here, we have made systematic mutations at a single site (position 203) near the same titration event (GFP fluorophore) that result in \pKa{} changes of nearly 2 pH units.
 This is in contrast to traditional data sets of \pKa{} values measured at various sites throughout the entirety of globular proteins like \emph{Staphylococcal} nuclease or lysozyme \cite{Nielsen2011, Castaneda2009, Merz1991}.
 While these traditional data sets allow for rigorous tests of \pKa{} prediction models, they are comprised of titratable residues that exist in environments that are drastically different in both solvent and protein environment, making it difficult to identify the causes of success and failure in \pKa{} predictions.
-The systematic nature of these \pKa{} shifts in the unique, water-filled $\beta$-barrel of GFP could offer a convenient alternative benchmark. 
+The systematic nature of these \pKa{} shifts in the unique, water-filled \textbeta{}-barrel of GFP could offer a convenient alternative benchmark. 
 
 \subsection{Calculating Nitrile Electric Fields}
 
@@ -540,8 +605,8 @@ In accordance with the RF method, the protein was treated with a dielectric cons
 Additionally, because we simulated the A and B states separately for each mutant, and the experimental frequencies were measured for proteins that exist in an equilibrium of A and B states, it was necessary to weight the trajectories in order to calculate fields which were consistent with our VSE measurements.
 For all of the simulations, the average field converged to a single value during the course of the simulation (Figure \ref{fig:force_1stD}).
 Here, we report a weighted average of the A and B state fields at the midpoint of the nitrile bond, where the weights were assigned based on the experimental \pKa{} values and the Henderson-Hasselbalch equation.
-The individual fields for the A and B state of each mutant are shown in Figure S7, where we generally observed small differences in fields between the A and B state simulations compared to the size of electric field fluctuations.
-The results of these field calculations are plotted against the experimental vibrational frequencies (determined from Figure \ref{fig:abs_spectra}D) in Figures \ref{fig:calc_forces}A and \ref{fig:calc_forces}B.
+The individual fields for the A and B state of each mutant are shown in Table \ref{tbl:ind_forces}, where we generally observed small differences in fields between the A and B state simulations compared to the size of electric field fluctuations.
+The results of these field calculations are plotted against the experimental vibrational frequencies (determined from Figure \ref{fig:abs_spectra}D) in Figures \ref{fig:calc_forces}A,B.
 In both the case of the \pCNF{} 145 and 165 probes, the continuum based model again failed to describe the complex interior of GFP, with correlations to experiment of -0.05 and 0.41, respectively.
 To test the sensitivity of these calculations to the salt concentration within the simulation box, we performed calculations with 12 and 24 additional sodium and chloride ions.
 However, even at high salt concentrations, the calculated fields at the nitrile bond did not significantly change (data not shown).
@@ -551,17 +616,50 @@ We are currently expanding our studies of these nitrile probes to locations othe
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-gfp-pKa/force_APBS_firstDerivative.pdf}
-    \caption{
+    \caption[Convergence of force calculations]{
         First derivative of the calculated force at the midpoint of the nitrile for the A (blue) and B (green) states over 50 ns of MD simulation for all 14 nitrile-containing GFP mutants. 
         Labels CN145 and CN165 designate the mutants with \pCNF{} at positions 145 and 165, respectively.
     }
     \label{fig:force_1stD}
 \end{figure}
 
+\begin{table}
+    \caption[Calculated fields experienced by the nitrile in each fluorophore state]{
+        Ensemble averaged electric fields (in MV/cm) experienced by the nitrile probes with the GFP fluorophore in either the A or B state.
+    }
+    \begin{center}
+    \begin{tabular}{ll| cccc}
+    \toprule
+    Nitrile & 203 Mutation & $\left < \vec{F} \right >_A $ & $\left < \vec{F} \right >_B $ & Weighted & STD \\
+    \toprule
+    \multirow{6}{*}{CN145}
+     & T203C  & -18.0 & -27.2 & -20.3 & 20.5 \\
+     & T203F  & -31.5 & -33.8 & -32.9 & 20.7 \\
+     & T203H  & -34.0 & -26.6 & -27.1 & 56.8 \\
+     & T203N  & -25.0 & -38.3 & -33.0 & 22.4 \\
+     & T203S  & -26.7 & -26.7 & -26.7 & 23.5 \\
+     & T203Y  & -26.8 & -32.7 & -28.1 & 22.2 \\
+     & WT     & -29.9 & -29.6 & -29.6 & 30.0 \\
+    \midrule
+    \multirow{6}{*}{CN165}
+     & T203C  & -7.5  & -6.9  & -7.3  & 19.9 \\
+     & T203F  & -7.0  & -3.2  & -5.3  & 20.2 \\
+     & T203H  & -2.7  & -9.0  & -7.8  & 20.8 \\
+     & T203N  & -2.4  & -11.5 & -6.8  & 16.8 \\
+     & T203S  & -6.4  & -2.9  & -3.5  & 24.0 \\
+     & T203Y  & -6.9  & -7.8  & -7.1  & 25.2 \\
+     & WT     & -11.8 & -3.8  & -6.8  & 18.6 \\
+    \bottomrule
+
+    \end{tabular}
+    \end{center}
+    \label{tbl:ind_forces}
+\end{table}
+
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-gfp-pKa/calc_forces.png}
-    \caption{
+    \caption[Comparison of calculated fields against experimental frequencies]{
         Comparison of the experimentally measured nitrile frequencies to calculated electric fields along the nitrile bond of \pCNF{} 145 and 165. 
         Error bars on the $y$-axis have been omitted for clarity; 
         in general, the distributions of fields calculated for each data point from the ensemble of MD structures are large relative to the shifts in average field ($\pm100\%$). 
