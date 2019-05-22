@@ -54,8 +54,8 @@ Recently, B\l{}asiak et al. developed a highly quantitative model based on combi
 However, these models are computationally expensive and it is therefore useful to develop a nitrile classification system based strictly on geometric parameters of hydrogen bonding interactions that can be determined from MD simulations as a complement to rigorous QM modeling.
 
 
-Using \emph{ab initio} calculations of clusters of water hydrogen bound to both acetonitrile and methyl thiocyanate, Choi et al. observed that in linear $\sigma$-hydrogen bonds the nitrile bond was shortened, leading to an increase in the nitrile stretching frequency.
-However, at the small angles found in $\pi$-hydrogen bonds, the nitrile bond was lengthened leading to a decrease in electron density and a decrease in the nitrile frequency \cite{Choi2008}.
+Using \emph{ab initio} calculations of clusters of water hydrogen bound to both acetonitrile and methyl thiocyanate, Choi et al. observed that in linear \textsigma{}-hydrogen bonds the nitrile bond was shortened, leading to an increase in the nitrile stretching frequency.
+However, at the small angles found in \textpi{}-hydrogen bonds, the nitrile bond was lengthened leading to a decrease in electron density and a decrease in the nitrile frequency \cite{Choi2008}.
 Fafarman et al. showed that vibrational frequencies of nitriles involved in unrestricted hydrogen bonds can be deconvoluted into electrostatic effects and hydrogen bonding effects by comparing nitrile frequencies to an independent $^{13}$C NMR parameter \cite{Fafarman2010}.
 For nitriles that were well exposed to water, the authors observed a constant vibrational absorption shift of 10 \si{\wn} relative to the observed NMR chemical shift, which was in good agreement with the calculated frequencies for linear hydrogen bonds.
 However, in the confined environment of the interior of a protein, steric interactions often enforce non-linear hydrogen bonding geometries.
@@ -369,7 +369,7 @@ Clearly, a Boolean classification of hydrogen bonding is insufficient to describ
     \caption[Representative snapshots of select hydrogen bonding configurations observed in simulation]{
         Representative snapshots of select hydrogen bonding configurations observed in simulation. 
         (A) The nitrile at position 117 was solvent exposed and involved in multiple simultaneous hydrogen bonds that exchanged frequently throughout the simulation. 
-        (B) The nitrile at position 145 was involved with a $\pi$-hydrogen bond with a confined water molecule, where $\theta_1$ was approximately \ang{120}. 
+        (B) The nitrile at position 145 was involved with a \textpi{}-hydrogen bond with a confined water molecule, where $\theta_1$ was approximately \ang{120}. 
         (C) The nitrile at position 218 was involved in a hydrogen bond with a confined water molecule, which is also hydrogen bound to the OH group of Ser205. 
         The Connolly surface computed with gmx sasa is shown in pink lines to emphasize how a small available SASA can still have significant hydrogen bonding. 
         (D) The nitrile at position 92 was involved in a linear hydrogen bond with the amide hydrogen of Gln69, where $\theta_1$ was approximately \ang{180}.
@@ -474,11 +474,11 @@ Accordingly, the MD simulations showed that all four had similar water hydrogen 
 To see whether the nitrile frequency predictions reported by Choi et al. could be used in other cases, we extended this analysis to the CNF probe locations that experienced different hydrogen bonding geometries.
 For example, the mean vibrational frequency of the nitrile at position 145 was the most red-shifted of any of the spectra and had the narrowest fwhm.
 In simulation, CNF 145 was involved frequently in a hydrogen bond to water at $\sim$\ang{120} (Figure \ref{fig:hbond-snapshot}B).
-In agreement with our experimental observations, Choi et al. predicted that these $\pi$-hydrogen bonds to nitriles red-shift the stretching frequency.
+In agreement with our experimental observations, Choi et al. predicted that these \textpi{}-hydrogen bonds to nitriles red-shift the stretching frequency.
 Additionally, hydrogen bonds to CNF 145 were more constrained with a smaller angle distribution than any other probe, corresponding to the narrow fwhm of the measured FTIR spectrum. 
 
-Similarly, we found that the nitrile at position 218 was also involved in $\pi$-hydrogen bonding (Figure \ref{fig:hbond-snapshot}C) but with a larger maximum angle probability than that of CNF 145 by $\sim$\ang{10}.
-Consistent with the predictions from the Cho group for $\pi$-hydrogen bonding, the frequency of the nitrile at position 218 was blue-shifted relative to the nitrile at position 145, but also red-shifted relative to all the other probe locations (Figure \ref{fig:hbond-spectra}).
+Similarly, we found that the nitrile at position 218 was also involved in \textpi{}-hydrogen bonding (Figure \ref{fig:hbond-snapshot}C) but with a larger maximum angle probability than that of CNF 145 by $\sim$\ang{10}.
+Consistent with the predictions from the Cho group for \textpi{}-hydrogen bonding, the frequency of the nitrile at position 218 was blue-shifted relative to the nitrile at position 145, but also red-shifted relative to all the other probe locations (Figure \ref{fig:hbond-spectra}).
 This spectrum was again quite narrow, consistent with the MD simulation information of a constricted hydrogen bond. 
 
 The two nitrile locations (143 and 165) that experienced the fewest hydrogen bonds of any of the locations are more difficult to interpret in this manner.
@@ -490,7 +490,7 @@ Correspondingly, the absorbance frequency of the nitrile at position 165 is red-
 Finally, we found a direct interpretation of the far blue-shifted spectrum of the nitrile at position 92.
 In the absence of any molecular level information, the interpretation of this spectrum would be very difficult, because this location is in the interior of the \textbeta{}-barrel, removed from potential bulk water hydrogen bonds.
 However, the simulations revealed that the nitrile at this location was involved in a strong linear hydrogen bond (Figure \ref{fig:hbond-snapshot}D) to the amide backbone of Gln69.
-Such $\sigma$-hydrogen bonds are predicted by the Choi et al. to blue-shift the spectra by withdrawing electron density from the antibonding molecular orbital of the nitrile, increasing the overall bond order of the group and shortening the bond, leading to higher frequency \cite{Getahun2003, Adhikary2014, Eaton1988}.
+Such \textsigma{}-hydrogen bonds are predicted by the Choi et al. to blue-shift the spectra by withdrawing electron density from the antibonding molecular orbital of the nitrile, increasing the overall bond order of the group and shortening the bond, leading to higher frequency \cite{Getahun2003, Adhikary2014, Eaton1988}.
 Additionally, we found that there were two distinct hydrogen bonding populations for the nitrile at this location.
 While the dominant population was linear ($\sim$160-\ang{180}) and blue-shifting, there was a smaller population at a smaller $\theta_1$ ($\sim$\ang{100}).
 This smaller population caused a lowering of the nitrile frequency relative to the linear hydrogen bonded population and resulted in a broadening of the experimental FTIR spectrum.
