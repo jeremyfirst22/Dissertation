@@ -1,17 +1,20 @@
-Molecular dynamics (MD) simulations have proven to be incredibly useful for understanding the complex and dynamic interactions between atoms in biomolecular systems. 
+Molecular dynamics (MD) simulations have proven to be useful for understanding the complex and dynamic interactions between atoms in biomolecular systems. 
 The dynamic movement of each atom, for up to tens of thousands of atoms, can be calculated in MD simulations on timescales from femtoseconds up to microseconds. 
-While many biological phenomena occur occur in larger systems and on timescales still out of reach of MD simulations, this dynamic range far exceeds those of any experimental technique. 
-However, the major disadvantage is, as a theoretical calculation, the simulations must be benchmarked against experimental information to know if they are accurate. 
-Often this is structural information.
-Emerging relevant biological phenomena, such as biomolecules at surface interfaces or in non-aqueous solvent, are difficult to characterize structurally and are underrepresented in datasets used for benchmarks;
-thus the relibility of MD simulations in these more complex environments is uncertain. 
-In addition, non-structural properties, such as the electric field in a biomolecular system are often overlooked and the datasets are more scarce, making such calculations unreliable until there is a sufficient dataset to properly paramterize the underlying force fields for that property. 
-However, the interpretation of leading experimental electrostatic probes, \pKa{} probes and vibrational Stark effect (VSE) probes, is complicated by their susceptibility to local interactions. 
-While calculating electric fields remains a challenge, the accurate modeling of molecular structure can aid in the interpretation of experiments that report electric field, eventually allowing the development of a dataset of electric field measurements to be used to parameterize electrostatic-centered force fields that accurate calculation and prediction of electric fields. 
+While many biological phenomena occur in larger systems and on timescales still out of reach of MD simulations, this dynamic range far exceeds those of any experimental technique. 
+However as a theoretical calculation, the simulations must be benchmarked against experimental information to know if they are accurate. 
+Simulations designed to predict structure, for example, are often benchmarked against structural information in the protein databank.
+Emerging relevant biological phenomena, such as biomolecules at surfaces, interfaces, or in non-aqueous solvents, are difficult to characterize structurally and thus are underrepresented in the structural datasets used for benchmarks;
+the reliability of MD simulations in these more complex environments is uncertain. 
+%In addition, data other than structure is more scarce and often overlooked, making calculations, for example of electric fields in a biomolecular system, unreliable until the underlying force fields are properly parameterized against an appropriate dataset. 
+%In addition, calculations of properties, such as electric fields, in biomolecular systems can be unreliable since the experimental data is often more scarce and the underlying force fields are not properly parameterized to reproduce this data. 
+%In addition, since the underlying force fields are parameterized against structural data, calculations of more specific properties, such as electric fields in biomolecular structures, are unreliable until a sufficient dataset for that property is made available.
+Similarly, calculations of more specific properties such as electric field are unreliable, since experimental data of electric fields in biomolecules are scarce. 
+This is in part due to the fact that the interpretation of experimental measurements of electric field, such as $\Delta$\pKa{} or vibrational Stark effect (VSE) shifts, are complicated by their susceptibility to local interactions. 
+While calculating electric fields remains a challenge, the accurate modeling of molecular structure can aid in the interpretation of such experiments, eventually allowing for robust electric field measurements to be used to parameterize electrostatic-centered force fields that can accurately calculate and predict electric fields in complex biomolecular structures. 
 
 The work herein investigates the reliability of MD simulations of biomolecules at complex interfaces, demonstrating a protocol to test and validate force fields in complex environments. 
-Additionally, we investigate the effect of local interactions on the ability of nitrile spectra to act as VSE probes. 
+Additionally, we investigate the effect of local interactions on the ability of nitriles to act as VSE probes. 
 We establish specific hydrogen bonding as a dominant factor in nitrile vibrational spectra and provide evidence of a control experiment that may be used to diagnose the hydrogen bonding status of the nitrile probe. 
-Finally, we provide an example of the importance of electric field measurements (and thus the importance of experiments to diagnose hydrogen bonding to nitriles) by providing evidence that electrostatic contributions control the rate of hydrolysis of p$^{21}$H-Ras, where altered electric fields in the active site change the rate of hydrolysis causing tumorigenesis. 
-This work demonstrates the importance of simultaneous investigation \emph{in silico} and \emph{in vitro} into biological phenomena. 
+Finally, we provide an example of the importance of electric field measurements (and thus the importance of experiments to diagnose hydrogen bonding to nitriles) by providing evidence that electrostatic contributions control the rate of intrinsic hydrolysis of GTP in p$^{21}$H-Ras, where altered electric fields in the active site change the rate of hydrolysis causing tumorigenesis. 
+This work demonstrates the importance of simultaneous investigation of biological phenomena \emph{in silico} and \emph{in vitro}. 
 When combined, experiments and calculations compliment each other to provide a mutual feedback loop that increases the molecular level understanding of how the dynamic motion of atoms can cooperatively achieve an observed outcome. 

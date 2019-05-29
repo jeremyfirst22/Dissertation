@@ -15,64 +15,72 @@
 %        \subitem{Outline of models systems} 
 %\end{enumerate}
 
-Modern biophysical research increasingly relies on the use of computational methodologies to gain an accurate and molecular-level understanding of biomolecules. 
+Modern biophysical research increasingly relies on computational methodologies to gain an accurate, molecular-level understanding of biomolecules. 
 Such methods are now routinely used to model proteins, lipids, and small molecules in solution, membranes, and docked complexes. 
-The dramatic increase in computational resources has made possible the modeling of larger complexes, such as chaperone proteins. 
-Experimentally, modern spectroscopic techniques are reaching both faster and longer times scales, providing rich experimental data to benchmark the computational models. 
-These computational models can provide information that is unattainable in experiment, and provide visual and molecular level details of how thousands of atoms interact to perform a biological function. 
+The dramatic increase in computational resources has made it possible to model larger complexes, such as chaperone proteins \cite{Piana2018}, viruses\cite{Zhao2013, Andoh2014}, ribosomes \cite{Bock2013}, and photosynthetic systems \cite{Chandler2014, Perilla2015}.
+%Experimentally, modern spectroscopic techniques are reaching both faster and longer times scales, providing rich experimental data to benchmark the computational models. 
+%Because computational models can directly report forces, energies, velocities, and position of each individual atom in a system, 
+Recent advancements in spectroscopic techniques provide rich experimental data to benchmark computational models \cite{Hirota1997, Hochlaf2017, Srinivasan2017, Wang2014, Case2002}. 
+In turn, these computational models can provide visual, molecular-level information that is often unattainable in experiments, providing the details of how thousands of atoms interact to perform a biological function. 
 
 \section{Molecular dynamics simulations}
 
-Molecular dynamics (MD) simulations, in particular, have become extremely robust, as the arbitrary spatio-temporal resolution is particularly attractive \cite{Karplus2002}. 
+%Molecular dynamics (MD) simulations, in particular, have become extremely robust, as the arbitrary spatio-temporal resolution is particularly attractive \cite{Karplus2002}. 
+Molecular dynamics (MD) simulations have become increasingly popular due to the ability to calculate the position and velocity of atoms to arbitrary spatial and temporal resolution \cite{Frenkel2002Understanding, Leach2001Molecular}. 
 The method relies on the integration of Newton's equation of motion: 
 \begin{equation}
-    F = m a 
+    \sum \vec{F} = m \vec{a} 
 \end{equation}
-where $F$ represents the force acting on a particle, $m$ represents the mass of the particle, and $a$ represents the resulting acceleration of that particle. 
+where $\sum \vec{F}$ is the sum of all forces acting on a particle, $m$ is the mass of the particle, and $\vec{a}$ is the resulting acceleration of that particle. 
 Integrating this equation twice results in the particle's position as a function of time: 
 \begin{equation}
-    x_{k+1} = x_k + v_k \Delta t = \frac{F(x_k)}{2m} \Delta t^2
+    \vec{x}_{k+1} = \vec{x}_k + \vec{v}_k \Delta t + \frac{\vec{F}(x_k)}{2m} \Delta t^2
     \label{eq:intro-verlet}
 \end{equation}
-where $x_k$ and $v_k$ are the position and velocity of a particle at time $k$,  $\Delta t$ represents the time step of the numerical integration, $m$ represents the mass of the particle, and $F(x_k)$ represents the force acting on the particle at time step $k$. 
+where $\vec{x}_k$ and $\vec{v}_k$ are the position and velocity of a particle at time $k$,  $\Delta t$ is the time step of the numerical integration, $m$ is the mass of the particle, and $\vec{F}(x_k)$ is the force acting on the particle at time step $k$. 
 Equation \ref{eq:intro-verlet} represents the central idea of classical MD simulations; 
 however, the equations of motion are more commonly solved as: 
 \begin{equation}
-    x_{k+1} = 2 x_k - x_{k-1} + \frac{1}{m} F(t)\Delta t^2
+    \begin{split}
+    %\vec{x}_{k+1} = 2 x_k - x_{k-1} + \frac{\vec{F}(x_k)}{m} \Delta t^2
+        \vec{x}_{k+1} &= \vec{x}_k + \vec{v}_{k+1/2} \Delta t \\
+        \vec{v}_{k+1/2} &= \vec{v}_{k-1/2}+ \frac{\vec{F}(x_k)}{m}\Delta t 
+    \end{split}
     \label{eq:intro-leapfrog}
 \end{equation}
-where the force is evaluated in between time steps. 
-This algorithm, known as the leap-frog algorithm, significantly reduces the error of integration induced by the finite time step \cite{Hockney1974, Berendsen1986}.
+where the velocities are updated in between updates to the positions. 
+This algorithm, known as the leap-frog algorithm, significantly reduces the error of integration induced by the finite time step and conserves energy \cite{Hockney1974, Berendsen1986}.
+
 In this manner, given a force acting on a particle, the trajectory of the particle along the dimension $x$ can be calculated as a function of time.
 This idea can be easily extended into three (or higher) dimensions and to an arbitrary number of particles. 
-Given an accurate and well-calibrated force calculation, which is not trivial and we will discuss below,
-MD simulations allow us to watch how proteins move, fold, and interact with species in solution or on a surface. 
-Importantly, the method can be extended to any time scale or spatial resolution, with only a variance in the cost of the calculation. 
-Because of this MD simulations can give insight in areas unreachable by experiments. 
-They can show how entire proteins fold \cite{Cavalli2002, Piana2013}, determine the exact location of particular water molecules in a complex hydrogen bonding network \cite{ContiNibali2014, Jong2017}, or reveal dynamic and coordinated movement of protein domains that provide the basis for catalytic activity \cite{Zeng1999, Ma2000}. 
-%Noticed no citations so far. Is this something you have to cite?
+Given an accurate and well-calibrated force calculation, which is not trivial and will be discussed further in Section \ref{intro-ff},
+%MD simulations allow the visualization of how proteins move, fold, and interact with species in solution or on a surface. 
+the position and velocity of each individual atom can be calculated. 
+Importantly, the method can be extended to any time scale or spatial resolution, with only a variance in the computing power and computing time (the so-called ``cost'') of the calculation. 
+Because of this, MD simulations can give insight into the dynamic interactions of a chemical system, at length scales that are unreachable by conventional microscopy.
+While interactions on such scales can be measured spectroscopically, these experiments are often difficult to interpret without a good molecular-level model \cite{Reppert2016, Mukherjee2006, Ghosh2017}. 
+MD simulations allow the visualization of the folding of entire proteins \cite{Cavalli2002, Piana2013}, the exact location of particular water molecules in complex hydrogen bonding networks \cite{ContiNibali2014, Jong2017}, or the dynamic and coordinated movements of protein domains that provide the basis for catalytic activity \cite{Zeng1999, Ma2000}. 
 
-\section{Definition of a force field}
+\section{Definition of a force field}\label{intro-ff}
 
-Often, especially when considering chemical systems, it is more tractable to define a potential energy function for the coordinate space rather than the force acting on a particle. 
+Especially when considering chemical systems, it is often more tractable to define a potential energy function for the coordinate space rather than the force acting on a particle \cite{Frenkel2002Understanding, Leach2001Molecular}. 
 Given a potential energy function, the equivalent force vector can be calculated as the negative gradient of the potential energy function: 
 \begin{equation} 
-    \vec{F_i} \equiv -\frac{\partial U}{\partial x_i}
+    \vec{F_i} = -\frac{\partial U}{\partial x_i}
 \end{equation}
 where $\partial x_i$ denotes that this vector can be calculated along any dimension of $U$. 
-Calculating the time evolution of the system, then, depends only on the accurate depiction of the potential energy of the atoms in the system. 
-In principle, the potential energy of a chemical system can be calculated to arbitrary precision using quantum mechanical frameworks. 
+Calculating the time evolution of the system then depends only on the accurate depiction of the potential energy of the atoms in the system. 
+In principle, the potential energy of a chemical system can be calculated to arbitrary precision using quantum mechanics. 
 However, such frameworks are intractable for biomolecules; the average eukaryotic protein is composed of 300-500 amino acids, resulting in tens of thousands of atoms on average \cite{Kozlowski2017}. 
-Such size makes quantum mechanical calculations for the entire system prohibitively time consuming, although there has been great work using quantum mechanics on a subset of the protein structure and treating the rest of the system classically \cite{Senn2009, Tichauer2018}.
-%CITE HERE, also just more citations in general -- you didn't come up with these equations on your own
+Such size makes quantum mechanical calculations for the entire system prohibitively time consuming, although there has been significant work using quantum mechanics on a subset of the protein structure and treating the rest of the system classically \cite{Senn2009, Tichauer2018}.
 The cost of such a calculation increases dramatically when considering the solvent environment of the protein, resulting in system sizes upwards of hundreds of thousands of atoms. 
 Instead, classical MD simulations fit simple and continuous functions to approximate the quantum mechanical potential energy surfaces. 
 While the functional form of the potential energy function varies between applications, they are typically composed of both bonded and non-bonded terms: 
 \begin{equation}
     U_{\text{total}} = U_{\text{bonded}} + U_{\text{non-bonded}}
 \end{equation}
-where the $U_{\text{bonded}}$ is composed of two-, three-, four-, or higher body interactions of atoms that are connected through covalent bonds, and the $U_{\text{non-bonded}}$ term is composed of forces calculated pair wise for all atoms in the system. 
-For example, $U_{\text{bonded}}$ is often composed of a bond stretching term (typically represented with Hook's law), an angle bending term (also represented with Hook's law), a torsional term, and an out-of-plane torsional term: 
+where the $U_{\text{bonded}}$ is composed of two-, three-, four-, or higher-body interactions of atoms that are connected through covalent bonds, and the $U_{\text{non-bonded}}$ term is composed of interaction energies calculated pair wise for all atoms in the system \cite{Kollman1981, Weiner1981, Weiner1984, Cornell1995, Duan2003, Jorgensen1996, Kaminski2001, Best2012}.
+For example, $U_{\text{bonded}}$ is often composed of a bond stretching term (typically represented with Hooke's law), an angle bending term (also represented with Hooke's law), a torsional term, and an out-of-plane torsional term: 
 \begin{equation}
     \begin{split}
         U_{\text{bonded}} &= \sum_{\text{bonds}} k_b(x-x_0)^2 + \sum_{\text{angles}} k_\theta (\theta - \theta_0)^2 \\
@@ -83,82 +91,85 @@ For example, $U_{\text{bonded}}$ is often composed of a bond stretching term (ty
 where $k_b$, and $k_\theta$, and $V_\text{oop}$ are the force constants of bond stretching, angle bending, and out of plane torsional bending, respectively; 
 $x_0$ and $\theta_0$ are the equilibrium bond and angles, respectively; 
 $V_\text{tors}$ and $\phi_n^0$ are the heights and locations of potential energy maxima on a continuous, periodic torsional profile; 
-and $x$, $\theta$, $\phi$, and $\chi$ are the bond length, bond angle, torsional angle, and out of plane bending angle at any given time. 
+and $x$, $\theta$, $\phi$, and $\chi$ are the bond length, bond angle, torsional angle, and out of plane bending angle at any given time \cite{Kollman1981, Weiner1981, Weiner1984, Cornell1995, Duan2003, Jorgensen1996, Kaminski2001, Best2012}. 
 The non-bonded terms are typically composed of a short-range van der Waals (VDW) interaction term (typically represented by a 12-6 Lennard-Jones potential) and a long-range electrostatics term (typically represented by Coulomb's law): 
 \begin{equation}
     U_\text{non-bonded} = \sum_{i \ne j} 4 \epsilon_{ij} \left ( \left (\frac{\sigma_{ij}}{r_{ij}} \right )^{12} - \left (\frac{\sigma_{ij}}{r_{ij}} \right )^6 \right ) + \sum_{i \ne j} \frac{q_i q_j}{r_{ij}}
     \label{eq:intro-nonbond}
 \end{equation}
-where $q_i$ represent the partial charge on atom $i$, $\sigma_{ij}$ represents the VDW radius (due to Pauli repulsion), $\epsilon$ is the well-depth of the attractive interaction (due to dispersion forces), and $r_{ij}$ is the interaction distance of any pair of particles in the system. 
-Note that both terms in Equation \ref{eq:intro-nonbond} are pairwise calculations, which can take significant calculation time in a system of hundreds of thousands of atoms. 
-While the VDW term decays with $r \propto \frac{1}{r^6}$, the electrostatic term decays with $r \propto \frac{1}{r}$. 
-The VDW term therefore is often truncated to nearby atoms with a certain cutoff (typically $\sim$1 nm), but the electrostatic term cannot be truncated as easily and must be calculated between every pair of atoms in the system, making this term the most computationally intensive part of the leap-frog algorithm in Equation \ref{eq:intro-leapfrog}. 
-Note that the application of Coulomb's law in the electrostatics is already a crude approximation and may not accurately capture the electrostatic forces in a molecular system. 
-We will discuss this in more detail in Section \ref{intro-electrostatic}. 
+where $q_i$ is the partial charge on atom $i$, $\sigma_{ij}$ is the VDW radius (due to Pauli repulsion), $\epsilon$ is the well-depth of the attractive interaction (due to dispersion forces), and $r_{ij}$ is the interaction distance of any pair of particles in the system \cite{Kollman1981, Weiner1981, Weiner1984, Cornell1995, Duan2003, Jorgensen1996, Kaminski2001, Best2012}. 
+Note that both terms in Equation \ref{eq:intro-nonbond} are pairwise calculations, which can take a significant amount of calculation time in a system of hundreds of thousands of atoms. 
+While the VDW term decays with $\frac{1}{r^6}$, the electrostatic term decays with $\frac{1}{r}$. 
+The VDW term therefore is often truncated to nearby atoms with a certain cutoff (typically $\sim$1 nm), but the electrostatic term cannot be truncated as easily and must be calculated between every pair of atoms in the system, making this term the most computationally intensive part of the leap-frog algorithm in Equation \ref{eq:intro-leapfrog} \cite{Pantoliano1988, Schreiber1992, Cheatham1995, Piana2012}. 
+Note that the application of Coulomb's law in the electrostatics is already a crude approximation and may not accurately capture the electrostatic forces in a molecular system, 
+which will be discussed in more detail in Section \ref{intro-electrostatic}. 
 %So much so that often there are approximations used as a shortcut that may or may not properly %capture the electrostatics of the system. 
 %I think there are some bits here that might need to be rearranged.
 
 
-The coefficients in Equations \ref{eq:intro-bond} and \ref{eq:intro-nonbond} are collectively referred to as the parameters of a ``force field'': a potential energy surface that provides a field of forces on particles as a function of the internal coordinates of the particles. 
+The coefficients in Equations \ref{eq:intro-bond} and \ref{eq:intro-nonbond} are collectively referred to as the parameters of a ``force field:'' a potential energy surface that provides a field of forces on particles as a function of the internal coordinates of the particles. 
 Amber \cite{Duan2003}, OPLS \cite{Jorgensen1996, Kaminski2001}, and CHARMM \cite{Best2012} are common force fields based on potential energy functions similar to that of Equations \ref{eq:intro-bond} and \ref{eq:intro-nonbond} and are highly optimized for accurate simulations of protein and nucleic acid structures. 
 The accuracy of any simulation based on a force field is strictly dependent on the accuracy of the parameters in the situation being simulated. 
-Many different force fields exist, with each aimed at correctly reproducing particular aspects of the systems. 
+Many different force fields exist, each with its own potential energy function, an approach for parameterization, and aimed at correctly reproducing a particular aspect of a system \cite{Mayo1990, Rappe1992, Cornell1995, Maple1994, Gao1995, Allinger1996, Lamoureux2003, Oostenbrink2004, Patel2004, Swart2006, Ponder2010}. 
 In any case, the parameters used in the force field must be validated against experimental data. 
 
-Structural data is the primary target for validation of force field parameters, where the ensemble of structure generated with an MD simulation is compared to crystallographic structures or NMR data. 
+Structural data has historically been the primary target for validation of force field parameters, where the ensemble of structures generated with an MD simulation is compared to crystallographic structures or NMR data. 
 This has been extremely useful, and some MD folding simulations have been able to reproduce the exact structure from only the amino acid sequence of the protein \cite{Duan1998, Lindorff-Larsen2011, Bowman2011, Voelz2012, Shaw2010, Lane2013, Koukos2014}. 
-However, this validation strategy is inherently limited to biomolecular structures that are easy to crystallize or analyze with NMR.
+However, this validation strategy is inherently limited to biomolecular structures that are easy to crystallize or analyze with NMR \cite{Berman2000}.
 Often such structures are small, compact, globular proteins. 
-There is little crystallographic data of more complex (and arguably more interesting) biological systems such as membrane bound proteins, docked protein complexes, proteins in non-aqueous environments such as liquid-liquid phase separated organelles, and proteins at a solid interface \cite{Berman2013}. 
+There is little crystallographic data of more complex (and arguably more interesting) biological systems such as membrane bound proteins, docked protein complexes, proteins in non-aqueous environments (i.e., liquid-liquid phase separated organelles), and proteins at a solid interface \cite{Berman2013}. 
 The accuracy of force fields in these cases must be tested and cannot be assumed to reliable, yet there is no robust experimental data set of structural information about such systems. 
-Advances in cryo-electron microscopy may one day alleviate the gap of structures in such environment \cite{Murata2018}, but for now we can use indirect evidence such as adsorption energies\cite{Latour2002, Raut2005, Abramyan2015} or circular dichroic spectra \cite{Holzwarth1965, Woody1967, Johnson1988, Berova2000circular, Kelly2005}.
-We will examine this idea further in Chapter \ref{helix-folding} where we compare folding MD simulations to circular dichroism spectra of a peptide in a binary solvent and on the surface of a self-assembled monolayer. 
+Advances in cryo-electron microscopy may one day alleviate this gap \cite{Murata2018}, but for now we can use indirect evidence such as adsorption energies\cite{Latour2002, Raut2005, Abramyan2015} or circular dichroic spectra \cite{Holzwarth1965, Woody1967, Johnson1988, Berova2000circular, Kelly2005}.
+This idea will be examined further in Chapter \ref{helix-folding} where we compare folding MD simulations to circular dichroism spectra of a peptide in a binary solvent and on the surface of a self-assembled monolayer. 
 
 \section{Electrostatics in biological systems}\label{intro-electrostatic}
 
 Typically for biomolecular simulations, the configurations sampled in a simulation are compared to known structural information.  
-This type of data can be very useful for validating force fields as there is an abundance of structural data in pubic databases, such as the protein data bank (PDB) \cite{Berman2000}. 
-However, since the relevant physics is being oversimplified to an equation such as Equations \ref{eq:intro-bond} and \ref{eq:intro-nonbond}, validating force fields against structural information likely sacrifices the accuracy in other areas.
+This type of data can be very useful for validating force fields as there is an abundance of structural data in public databases, such as the protein data bank (PDB) \cite{Berman2000}. 
+However, since the relevant physics are being oversimplified to equations such as Equations \ref{eq:intro-bond} and \ref{eq:intro-nonbond}, validating force fields against structural information likely sacrifices the accuracy in other areas.
 In particular, structural information is validated using simulations of protein folding, which often requires hundreds of microseconds of simulation time \cite{Duan1998, Lindorff-Larsen2011, Bowman2011, Voelz2012, Shaw2010, Lane2013, Koukos2014}. 
 For this reason, the calculation of the potential energy at each time step must be extremely quick. 
 The electrostatic term in Equation \ref{eq:intro-nonbond} represents the most simple level of description of the electrostatic effect of atoms: a single point-charge interacting with another point-charge through Coulomb's law. 
 Atoms, however, are not point-charges; instead the electrons surrounding each nucleus have a complex probability distribution according to quantum mechanics.
 Further, the electrons interact with the field of other electrons in their surroundings, altering their probability distribution. 
-This induced polarization effect is entirely absent from Equation \ref{eq:intro-nonbond}, but is known to have a large impact on the accuracy of simulations. 
+This induced polarization effect is entirely absent from Equation \ref{eq:intro-nonbond}, but is known to have a large impact on the accuracy of simulations \cite{Halgren2001, Mackerell2004, Baker2015}. 
 Several more advanced force fields are modified to explicitly include these effects. 
-More advanced force fields, such as the AMOEBA force field \cite{Shi2013}, include (among other things) an expanded description of the electrostatic term. 
-The inclusion of permanent dipoles, multipole moments, and an induction term, which solves for the mutual polarizability of each atom to self consistency at each step of the simulation, in AMOEBA allowed for the the accurate prediction of differential binding between proteins and similarly charged cations \cite{Jing2018}.
-However, the increased level of description comes at an increased computational cost, and these simulations can become exceedingly expensive for large proteins, limiting the application scope of polarizable force fields to smaller proteins or shorter timescales, although this situation is rapidly changing as computational speeds increase \cite{Baker2015}. 
+More advanced force fields, such as the AMOEBA force field \cite{Ponder2010, Shi2013}, include (among other things) an expanded description of the electrostatic term. 
+The inclusion of permanent dipoles, quadrupole moments, and an induction term, which solves for the mutual polarizability of each atom to self consistency at each step of the simulation, in AMOEBA allowed for the the accurate prediction of differential binding between proteins and similarly charged cations \cite{Jing2018}.
+However, the increased level of description comes at an increased computational cost.
+These simulations can become exceedingly expensive for large proteins, limiting the application scope of polarizable force fields to smaller proteins or shorter timescales, although this situation is rapidly changing as computational speeds increase \cite{Baker2015}. 
 For that reason, we will focus on classical, fixed-charged force fields (such as that in Equations \ref{eq:intro-bond} and \ref{eq:intro-nonbond} for the remainder of this dissertation. 
 
 It is unfortunate that the most serious approximation occurs on the electrostatic term of the potential energy function in classical fixed-charge force fields. 
 Electric fields are ubiquitous in biology and known to drive important biological phenomena such as protein folding, catalysis, protein-protein docking and signaling cascades, cell signaling, and the specificity of ligand binding to proteins \cite{Hayes1976, Warshel1978, Honig1995, Gunner1996, Warshel1998}. 
-With careful parameterization, the point-charge approximation could perhaps accurately model electric fields, but, as mentioned earlier, much parameterization is based on structural information and not electrostatic information. 
+With careful parameterization, the point-charge approximation could perhaps accurately model electric fields; 
+however as mentioned earlier, much of the parameterization is based on structural, and not electrostatic, information. 
 One practical reason for this is the abundance of experimental structural data and the relative lack of experimental methods to directly measure electric fields in proteins. 
 
-\subsection{\pKa{}}
+\subsection{Measurements of $\Delta$\pKa{}}
 
-The most common method for experimentally measuring the electrostatic environment of a protein is through the use of \pKa{} probes \cite{Bradbury1966, Forsyth2002, Isom2010, Langsetmo1991, Markley1975}. 
+The most common method to experimentally measure the electrostatic environment of a protein is through the use of \pKa{} probes \cite{Bradbury1966, Forsyth2002, Isom2010, Langsetmo1991, Markley1975}. 
 For these measurements, a titratable amino acid (usually a lysine or glutamic acid) is placed site-specifically in a protein. 
-The electrostatic environment surrounding the residue may stabilize or destabilize the charged state, which shifts the free energy of the proton transfer reaction. 
-The change in free energy shifts the equilibrium of the reaction and is measured a change in \pKa{} ($\Delta$\pKa{}).
-Databases of \pKa{} shifts for titratable residues have long been used to validate electrostatic models \cite{Gibas1996, Antosiewicz1996, Fogolari2002, Li2005, Witham2011, Meyer2015, Mehler1999, Nielsen2011}. 
-The advantage of of this method is that the probe is site-specific and reports the net contribution of the overall electrostatic environment, allowing for the estimation of the dielectric constant on the interior of the protein. 
+The electrostatic environment surrounding the residue may stabilize or destabilize the charged state, shifting the free energy of the proton transfer reaction. 
+The change in free energy shifts the equilibrium of the reaction and is measured as a change in \pKa{}.
+Databases of \pKa{} shifts for titratable residues have been hisorically used to validate electrostatic models \cite{Gibas1996, Antosiewicz1996, Fogolari2002, Li2005, Witham2011, Meyer2015, Mehler1999, Nielsen2011}. 
+The advantage of this method is that the probe is site-specific and reports the net contribution of the overall electrostatic environment, allowing for the estimation of the dielectric constant in the interior of the protein. 
 The disadvantage is that there are many convoluting local effects, such as salt-bridge stabilization and hydrogen bonding, that are not necessarily related to the overall electrostatic environment. 
+%%Probably need to cite this here 
 
-\subsection{The Vibrational Stark Effect}
+\subsection{The vibrational Stark effect}
 
 Alternatively, the Stark effect can be used to measure an electric field in a protein environment \cite{Slocum2018, Fried2015, Blasiak2017}. 
 The Stark effect (also known as the electrochromic effect) approximates a change in probe transition energy, $\Delta E$, due to a local electric field, $\Delta \vec{F}$ through a Taylor series expansion:
 \begin{equation}
-    \Delta E = -(\Delta \mu \cdot \vec{F} + \Delta \alpha \cdot \vec{F} \cdot \Delta \alpha + \ldots)
+    \Delta E = -(\Delta \mu \cdot \vec{F} + \vec{F} \cdot \Delta \alpha \cdot \vec{F} + \ldots)
     \label{eq:intro-stark}
 \end{equation}
-where $\Delta \vec{\mu}$ and $\Delta \alpha$ are the difference in the dipole moment and the polarizability, respectively, of the ground and excited states of the chromophore \cite{Stark1913}. 
-Calibrating $\Delta E$ against a known, applied electric field allows for the determination of $\Delta \vec{mu}$ and $\Delta \alpha$ and therefore allows a change in absorption energy to be related to an unknown electric field \cite{Boxer2009,Fried2015}. 
+where $\Delta \vec{\mu}$ and $\Delta \alpha$ are the difference in the dipole moment and the polarizability, respectively, of the ground and excited states of the chromophore \cite{Stark1913, Boxer2009, Slocum2018}. 
+Calibrating $\Delta E$ against a known, applied electric field allows for the determination of $\Delta \vec{\mu}$ and $\Delta \alpha$ and therefore allows a change in absorption energy to be related to an unknown electric field \cite{Boxer2009,Fried2015}. 
 
 Our group primarily uses nitrile vibrational transitions to measure the electric fields at complex biological interfaces. 
-Nitriles carry several advantages in that they are small, can be incorporated virtually anywhere in a protein structure \cite{Fafarman2006, Getahun2003, Kirshenbaum2002}, absorb in a relatively uncluttered region of the infrared (IR) spectrum, and $\Delta \alpha$ is sufficiently small, allowing the reduction of Equation \ref{eq:intro-stark} to the linear Stark equation \cite{Webb2008}: 
+Nitriles carry several advantages in that they are small, can be incorporated virtually anywhere in a protein structure \cite{Fafarman2006, Getahun2003, Kirshenbaum2002}, absorb in a relatively uncluttered region of the infrared spectrum, and $\Delta \alpha$ is sufficiently small, allowing the reduction of Equation \ref{eq:intro-stark} to the linear Stark equation \cite{Webb2008}: 
 \begin{equation} 
     \Delta E = - \Delta \vec{\mu} \cdot \Delta \vec{F}
     \label{eq:intro-vse}
@@ -176,19 +187,19 @@ Nitriles, as vibrational Stark effect probes, have been highly criticized for th
 Hydrogen bonds withdraw electron density from the nitrile bond, changing the vibrational frequency in a way not described by Equation \ref{eq:intro-vse}. 
 This is further complicated by the fact that the exact angle of the interaction varies the hydrogen bonding shift in both magnitude and direction \cite{Choi2008, First2018}.  
 Because of this, it has been suggested that nitriles can only be interpreted according to Equation \ref{eq:intro-vse} in situations void of hydrogen bond donors \cite{Adhikary2014}. 
-This is likely never the case for protein environments or biological systems in protic solvents like water. 
+This is likely never the case for protein environments or biological systems in protic solvents such as water. 
 Because of this, an experimental diagnostic tool for the hydrogen bonding status of nitrile probes is needed in order to interpret changes in nitrile frequencies as a measurement of electric field. 
 In Chapters \ref{gfp-hbond} and \ref{snase}, we present work that used MD simulations to validate such a tool in both GFP and SNase.  
 
-\section{Outline of Dissertation} 
+\section{Outline of dissertation} 
 
-This dissertation presents a body of work centered around the goal of using MD simulations in collaboration with experimental spectroscopic techniques to gain a molecular level understanding of several complex biological systems. 
+This dissertation presents a body of work centered around the goal of using MD simulations in collaboration with experimental spectroscopic techniques to gain a molecular-level understanding of several complex biological systems. 
 First, in Chapter \ref{helix-folding}, we compare folding MD simulations to circular dichroism spectra, which is commonly used to assess protein secondary structure, of a peptide in aqueous solvent, a binary solvent, and on the surface of a self-assembled monolayer. 
 We found that a canonical force field was sufficiently accurate for our peptide in these two complex environments, despite being parameterized for biomolecules in solution. 
 We then turn our focus to whether modern force fields can accurately capture electrostatics in biomolecular structures. 
 Chapter \ref{gfp-pKa} reports on the work we have done in GFP that demonstrates that \pKa{} and nitrile frequencies are responding to the same overall electric field changes. 
 Chapter \ref{gfp-hbond} investigates the hydrogen bond contribution to the nitrile frequency and provides evidence of a experimental tool to diagnose the hydrogen bonding status of a nitrile prob. 
 Chapter \ref{snase} extends the work in GFP to a new model system SNase and examines discrepancies between the electrostatic environment reported by two different \pKa{} probes against that reported by a nitrile probe. 
-Finally, in Chapter \ref{ras} we use a combination of experimental electrostatic measurements and MD simulations to interpret differences kinetic rates of an oncogenic enzyme p$^{21}$H-Ras. 
+Finally, in Chapter \ref{ras} we use a combination of experimental electrostatic measurements and MD simulations to interpret differences in kinetic rates of an oncogenic enzyme p$^{21}$H-Ras. 
 Together, these works demonstrate the need for careful validation of MD simulations against experimental data and, when validated, the power of using a simultaneous experimental and computational investigation into biological phenomena.
 

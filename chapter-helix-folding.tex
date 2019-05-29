@@ -62,7 +62,8 @@ For example, the Latour group developed a specialized dual force field model to 
 However, such methods are not widely available and can require extensive expertise to implement. 
 Extending more canonical force fields such as Amber, OPLS, and CHARMM to such environments requires validation against experimental data such as we have collected for the specific peptide-terminated Au surfaces generated in our laboratory.
 
-We have previously investigated a surface-bound peptide with the sequence LKKLXKKLLKKLLKKXLKKL, where X is the unnatural amino acid propargylglycine. 
+%Non breaking spaces, '~' added to prevent peptide sequence from overflowing into the margins 
+We~ have~ previously~ investigated~ a~ surface-bound~ peptide~ with~ the~ sequence LKKLXKKLLKKLLKKXLKKL, where X is the unnatural amino acid propargylglycine. 
 (Hereafter, we refer to the peptide as ``\pep{}''). 
 This was designed by DeGrado and Lear to adopt a helical conformation at a polar/apolar interface \cite{DeGrado1985}.   
 The spacing of the hydrophilic and hydrophobic residues is such that, when the peptide is perfectly \textalpha{}-helical, the charged lysine residues are one side of the helical axis and the nonpolar leucine residues are on the opposite side of the helical axis. 
@@ -213,7 +214,7 @@ The harmonic restraints binding the peptide to the SAM were removed for the prod
 
 \begin{figure}
     \center
-    \includegraphics[width=\double]{figures-helix/Linker_figure.png}
+    \includegraphics[width=4.5in]{figures-helix/Linker_figure.png}
     \caption[The product of the Huisgen cycloaddition]{
         The product of the Huisgen cycloaddition. 
         The long alkane chain sits in a SAM of decanethiols, and the sulfur atom is covalently attached to a Au(111) surface. 
@@ -224,7 +225,7 @@ The harmonic restraints binding the peptide to the SAM were removed for the prod
     \label{fig:helix-linker}
 \end{figure}
 
-\subsection{Simulated Annealing}\label{helix-anneal}
+\subsection{Simulated annealing}\label{helix-anneal}
 
 In order to prepare the unfolded structure in each of the solvent environments, the heavy atom restraints on the peptide were removed. 
 Using the Berendsen thermostat, the systems were coupled to a heat bath that increased by 12 K every 10 ps for 500 ps. 
@@ -376,7 +377,7 @@ Further, each of these sets of simulations reached similar configuration space d
 
 \subsection{Free energy analysis of folding}
 
-In order to further investigate the preferential folding of \pep{} in \tbawat{} and on the surface of a SAM, we calculated the 2D free energy surface sampled in each environment. 
+In~ order~ to~ further~ investigate~ the~ preferential~ folding~ of~ \pep{}~ in~ \tbawat{} and on the surface of a SAM, we calculated the 2D free energy surface sampled in each environment. 
 From the combined ensemble (the trajectory from the folded conformation and from the unfolded conformation, excluding snapshots prior to the equilibration times), we binned the calculated backbone RMSD from the \textalpha{}-helical conformation and $R_g$ (from Figure \ref{fig:helix-rgyr_v_rmsd}) and inverted the histogram according to eq \ref{eq:helix-boltz} using the gmx sham module:
 \begin{equation}
     \Delta G = -k_B \ln(P)
@@ -394,7 +395,7 @@ Together, these results demonstrate that water stabilizes compact, non-helical c
 \begin{figure}
     \center
     \includegraphics[width=5.50in]{figures-helix/clusters_proofs.png}
-    \caption[Free energy surfaces and most populated clusters of \pep{} in each solvent environments]{
+    \caption[Free energy surfaces and most populated clusters of \pep{} in each solvent environment]{
         A, B, C: Free energy surfaces of the combined ensemble of structures on \pep{} in the three solvent environments. 
         On the $x$-axis is the radius of gyration of the protein. 
         On the $y$-axis is the backbone RMSD away from a perfectly folded \textalpha{}-helix. 

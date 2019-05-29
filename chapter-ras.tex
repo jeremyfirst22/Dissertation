@@ -117,7 +117,7 @@ This kinetic data set is invaluable for understanding the intrinsic mechanism of
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Materials and Methods} \label{ras-methods}
+\section{Materials and methods} \label{ras-methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -173,7 +173,7 @@ This kinetic data set is invaluable for understanding the intrinsic mechanism of
 %
 %\end{figure}
 
-\subsection{MD and SASA Calculations} 
+\subsection{MD and SASA calculations} 
 
 A template Ras/\RalB{}I18C docked complex with GTP and \ce{Mg^2+} in the binding site and all crystallized waters was modeled by homology from the 1lfd crystal structure\cite{Huang1998} using the MODELLER software package \cite{Marti-Renom2000, Sali1993, Fiser2000}, and the E31K mutation on Ras in the published structure was reverted to the wild-type glutamate. 
 From this structure, I18C of \RalB{} was further modified to cyanocysteine and independently minimized using the Avogadro molecular editing package \cite{Hanwell2012}. 
@@ -229,7 +229,7 @@ Snapshots were recorded every 4 ps during simulations.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Measurement of the Intrinsic Hydrolysis Rate}
+\subsection{Measurement of the intrinsic hydrolysis rate}
 
 A hypothesized mechanism for intrinsic GTP hydrolysis by Ras (Figure \ref{fig:ras-mech}A) proposes that the electric field created by the arrangement of amino acids at the Ras surface is critically important for enzyme function. 
 To determine the effect that each Q61X mutation caused to the local electric field, it was necessary to determine the extent to which each mutation changed the rate of enzyme hydrolysis, which was not possible to construct from the literature. 
@@ -356,7 +356,7 @@ To confirm this, and in order to compare our rate results with the published VSE
     \label{fig:ras-ral}
 \end{figure}
 
-\subsection{SASA Calculations}
+\subsection{SASA calculations}
 
 Because the proposed mechanism in Figure \ref{fig:ras-mech}A is based on a favorable interaction of Q61 with water, we attempted to quantify the likelihood of this interaction by calculating the SASA for each mutant of several subsets of atoms of the Q61X residue using the gmx sasa tool \cite{Eisenhaber1995}.
 While SASA is often an oversimplification of solvent interactions, it is nevertheless a good starting point because it is efficient and convenient to calculate from a protein structure or MD trajectory. 
@@ -491,7 +491,7 @@ This prompted us to calculate how many water molecules were actually present in 
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-ras/Figure5.png}
-    \caption[Bolztmann-weighte SASA calculations against experimentally measured frequencies and rates]{
+    \caption[Boltzmann-weighted SASA calculations against experimentally measured frequencies and rates]{
         Boltzmann-weighted polar atom and side chain SASAs compared to experimentally measured values of nitrile absorption frequency and initial rate of intrinsic hydrolysis in RasQ61X mutants. 
         (A) The absorption frequency of the nitrile on \RalBSCN{} against the polar atom SASA of Q61X. 
         (B) The initial rate of intrinsic hydrolysis against the polar atom SASA of Q61X. 

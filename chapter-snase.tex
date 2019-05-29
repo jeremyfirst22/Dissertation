@@ -1,4 +1,4 @@
-\chapter{INSERT FINAL SNASE TITLE HERE}\label{snase}
+\chapter{Disagreement Between \pKa{} and Nitrile Vibrational Probes of Electrostatics: Experiments and Simulations in Staphylococcal Nuclease Demonstrate the Importance of Local interactions}\label{snase}
 
 \newcommand{\dpKa}{{\textDelta\pKa{}}}
 
@@ -55,14 +55,14 @@ This electrostatic effect changes the free energy of the proton transfer process
 where $\Delta \Delta G$ is the change in the free energy of the proton transfer reaction, $R$ is the ideal gas constant, and $T$ is the temperature. 
 Experimentally, \dpKa{} values can be measured in a variety of ways, such as with NMR chemical shifts and pH dependent thermodynamic stability experiments \cite{Bradbury1966, Markley1975, Isom2008}. 
 A large number of \pKa{} shifts of ionizable residues in  many proteins have been collected and reported \cite{Grimsley2009}. 
-In particular, Garcia-Moreno and coworkers systematically mutated several ionizable residues into 25 buried locations of a highly stable engineered variant of staphylococcal nuclease (SNase $\Delta+$PHS, hereafter referred to simply as ``SNase''). 
+In particular, Garc\'ia-Moreno and coworkers systematically mutated several ionizable residues into 25 buried locations of a highly stable engineered variant of staphylococcal nuclease (SNase $\Delta+$PHS, hereafter referred to simply as ``SNase''). 
 Using these \pKa{} probes, the authors measured shifts of up to $\sim$6 pH units towards the neutral state that reflected the solvent accessibility of the probe in the protein environment \cite{Isom2010, Isom2008, Harms2009, Isom2011}. 
 
 This dataset has since been used as a common target to validate different computational electrostatic models \cite{Liu2018, Nielsen2011}. 
-A notable coordinated effort towards this goal, known as the \pKa{} Cooperative, compared predicted \pKa{} shifts to the experimental \pKa{} shifts measured in SNase by the Garcia-Moreno group. 
+A notable coordinated effort towards this goal, known as the \pKa{} Cooperative, compared predicted \pKa{} shifts to the experimental \pKa{} shifts measured in SNase by the Garc\'ia-Moreno group. 
 Because of the complexity of the electrostatic environment in proteins, accurately modeling the effects of the electric fields require either a prohibitively expensive calculation or a significant oversimplification of the physical properties of the system. 
 Consequently, the inability of many of these models to accurately reproduce the measured \pKa{} shifts demonstrated the challenge for current computational strategies to adequately model electrostatic interactions in proteins. 
-The computational results produced by the \pKa{} Cooperative were typically able to predict the direction of the \pKa{} shift but not the magnitude, and in some cases were off by several pH units, indicating substantial uncertainty in the equilibrium protonation state of the titratable residue \cite{Alexov2011, Brooks2011}. 
+The computational results produced by the \pKa{} Cooperative were typically able to predict the direction of the \pKa{} shift but not the magnitude, and in some cases were off by several pH units, indicating substantial uncertainty in the equilibrium protonation state of the titratable residue \cite{Alexov2011, Arthur2011}. 
 While efforts to benchmark computational strategies against a common experimental database are promising, the measurement of a \pKa{} shift in itself is an oversimplification of the diverse interactions in a protein interior. 
 One of the most significant issues is that shifts in \pKa{} are not direct measurements of electric field. 
 Instead, they represent a change in stability that is dependent on a variety of factors other than electrostatic stabilization, such as hydrogen bonding or salt-bridge stabilization of a charged state. 
@@ -148,9 +148,9 @@ These data can be used to benchmark electrostatic models and improve the predict
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\subsection{Mutagenesis, Expression, and Purification}
+%\subsection{Mutagenesis, expression, and purification}
 %
-%Five pET42a plasmids containing the $\Delta+$PHS variant of SNase and a mutation, either V23C, L38C, T62C, V66C, or I92C, were generous gifts of Bertrand Garcia-Moreno. 
+%Five pET42a plasmids containing the $\Delta+$PHS variant of SNase and a mutation, either V23C, L38C, T62C, V66C, or I92C, were generous gifts of Bertrand Garc\'ia-Moreno. 
 %The $\Delta+$PHS variant denotes a deletion of residues 44-49, and the mutations P117G, H124L, S128A, G50F, and V51N, as previously described \cite{Garcia-Moreno1997}. 
 %Additional mutations were made by reverting the I92C mutant-containing plasmid to the wild type Ile, and then making five additional mutated constructs: L25C, A58C, A90C, A109C, and N118C. 
 %All site-directed mutagenesis was carried out via the QuikChange Lightning kit (Agilent).
@@ -167,7 +167,7 @@ These data can be used to benchmark electrostatic models and improve the predict
 %Prior to use, the protein samples were exchanged into 10 mM \ce{CaCl2}. 
 %Protein refolding was confirmed by circular dichroism (CD) spectroscopy, and the incorporation of the nitrile label, which results in a 26 Da increase in protein mass, was confirmed with mass spectrometry.
 %
-%\subsection{Fourier Transform Infrared Spectroscopy}
+%\subsection{Fourier transform infrared spectroscopy}
 %
 %All FTIR spectra were collected on a Bruker Vertex 70 instrument with an InSb detector at a resolution of 0.5 \si{\wn}. 
 %Room temperature experiments were measured in a liquid cell with sapphire windows (Meller Optics) separated by 125 $\mu$M teflon spacers. 
@@ -184,19 +184,20 @@ In all cases, reported values are the average of at least three measurements.
 
 \subsection{Molecular dynamics simulations}
 
-A template SNase protein structure bound to \ce{Ca^2+} was modeled by homology from the pdb:3bdc crystal structure using the MODELLER software package \cite{Castaneda2009, Mari-Renom2000}. 
+A template SNase protein structure bound to \ce{Ca^2+} was modeled by homology from the pdb:3bdc crystal structure using the MODELLER software package \cite{Castaneda2009, Marti-Renom2000}. 
 From this structure, 10 separate mutations from the WT residue to cysteine were made using the mutagenesis tool in PyMol at each of the selected probe locations \cite{DeLano2002}. 
 Using the Avogadro molecular editing package, the mutated cysteine was further modified to cyanocysteine (CNC) and independently minimized \cite{Hanwell2012}. 
 Parameters for the CNC residue have been described previously \cite{Stafford2010, Ensign2011}. 
-All further minimizations and MD simulations were performed using the Gromacs 2016.3 molecular dynamics simulation package\cite{Abraham2015, Berendsen1995, Hess2008, Lindahl2001, Pall2015, Pronk2013, VanDerSpoel20015} and the Amber03 force field \cite{Duan2003, Sorin2005}.
+All further minimizations and MD simulations were performed using the Gromacs 2016.3 molecular dynamics simulation package\cite{Abraham2015, Berendsen1995, Hess2008, Lindahl2001, Pall2015, Pronk2013, VanDerSpoel2005} and the Amber03 force field \cite{Duan2003, Sorin2005}.
 
-Each of the 10 protein systems was energy minimized in a vacuum using the steepest descent algorithm and then solvated in a dodecahedron box of TIP3P water, with a minimum distance of protein to the edge of the box of 1.5 nm \cite{Jorgenson1983}. 
+Each of the 10 protein systems was energy minimized in a vacuum using the steepest descent algorithm and then solvated in a dodecahedron box of TIP3P water, with a minimum distance of protein to the edge of the box of 1.5 nm \cite{Jorgensen1983}. 
 The solvated systems were then energy minimized using a steepest descent approach, heated under the NVT ensemble at 300 K, and then equilibrated under the NPT ensemble at 1 atm. 
 Production MD was run on each equilibrated system for 100 ns, using the same simulation parameters as described previously \cite{First2018}, and a snapshot was saved every 4 ps.
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Results and Discussion} \label{snase-results}
+\section{Results and discussion} \label{snase-results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -205,7 +206,7 @@ Production MD was run on each equilibrated system for 100 ns, using the same sim
 Measuring the \pKa{} shifts of either WT or mutated ionizable residues has long been a strategy for estimating the effect of electrostatic forces, such as charge separation and apparent dielectric, in proteins. 
 More recently, vibrational spectroscopy of nitriles placed site-specifically in proteins has been an alternative method for quantifying electrostatic effects in protein systems. 
 In order to compare the merits of the two strategies, we incorporated CNC nitrile probes into 10 separate locations in SNase (illustrated in Figure \ref{fig:snase-system}) for which there are already reported values of \dpKa{} \cite{Isom2010, Isom2011}. 
-These 10 positions were chosen to represent the full range of \pKa{} shifts measured by Garcia-Moreno and coworkers, as well as to sample the spatial diversity in the interior of SNase.
+These 10 positions were chosen to represent the full range of \pKa{} shifts measured by Garc\'ia-Moreno and coworkers, as well as to sample the spatial diversity in the interior of SNase.
 
 For each of the ten nitrile-containing protein systems, FTIR spectra were collected; 
 average spectra are shown in Figure \ref{fig:snase-ftir}. 
@@ -278,7 +279,7 @@ MeSCN in Water &$2162.60  \pm   0.03  $&$  9.00  \pm   0.11  $&$ -0.043    \pm  
     \label{tbl:snase-ftir}
 \end{table}
 
-Because \pKa{} shifts are often used as a proxy for electrostatics to benchmark computational methods, we compared the \dpKa{} of buried lysine and glutamate residues published by Garcia-Moreno and coworkers against the measured nitrile frequencies at those same locations shown in Figure \ref{fig:snase-ftir} \cite{Isom2010, Isom2011}. 
+Because \pKa{} shifts are often used as a proxy for electrostatics to benchmark computational methods, we compared the \dpKa{} of buried lysine and glutamate residues published by Garc\'ia-Moreno and coworkers against the measured nitrile frequencies at those same locations shown in Figure \ref{fig:snase-ftir} \cite{Isom2010, Isom2011}. 
 Figure \ref{fig:snase-pKas_vs_peak} shows the comparison of our measured nitrile frequencies to the reported \pKa{} of lysine (Figure \ref{fig:snase-pKas_vs_peak}A) and glutamate (Figure \ref{fig:snase-pKas_vs_peak}B) incorporated at the same locations. 
 In both plots, the horizontal dashed line represents the \pKa{} of the isolated amino acid in water, and the vertical dashed line represents the nitrile frequency of MeSCN in water. 
 Therefore, the distance from the dashed line on both axes represents the deviation of the two different types of probes from their values in water. 
@@ -289,7 +290,7 @@ Together, these trends suggest that the \pKa{} probes and the nitrile probe resp
 This is further supported by the fact that lysine and glutamate, though both \pKa{} probes, experienced different \dpKa{}s in the same locations, as shown in Figure \ref{fig:snase-pKas_vs_peak}C. 
 For four of the probe locations, the measured \pKa{} shift of lysine did not agree with the measured \pKa{} shift of glutamate in the same position. 
 This is not unique to the 10 nitrile locations investigated here; 
-the remainder of the 25 locations measured by Garcia-Moreno and coworkers also do not correlate well (black diamonds in Figure \ref{fig:snase-pKas_vs_peak}C, $r = -0.69$). 
+the remainder of the 25 locations measured by Garc\'ia-Moreno and coworkers also do not correlate well (black diamonds in Figure \ref{fig:snase-pKas_vs_peak}C, $r = -0.69$). 
 Because lysine and glutamate differ in charge, size, flexibility, polarity, and hydration, it is likely that while in the same protein location, the two different \pKa{} probes interacted differently with the surrounding protein structure \cite{Harms2009, Isom2011}, and thus knowing a \dpKa{} value for a particular location in a protein is not useful for determining the electrostatic environment. 
 Furthermore, lysine and glutamate can participate in different hydrogen bonding interactions. 
 The amine group on the side chain of lysine can donate up to three hydrogen bonds, while the carboxylate group of the glutamate side chain can accept multiple hydrogen bonds. 
@@ -305,7 +306,7 @@ We will return to this observation later in the text.
         (B) Reported values of \pKa{} of a glutamate residue compared to the measured vibrational frequency of a CNC probe at the same position. 
         (C) Comparison of the reported values of \pKa{} as measured by lysine and glutamate \pKa{} probes. 
         Colored circles: the 10 constructs investigated in this work; 
-        black diamonds: the remainder of positions reported by Garcia-Moreno and coworkers. 
+        black diamonds: the remainder of positions reported by Garc\'ia-Moreno and coworkers. 
         \pKa{} data reproduced from ref \citenum{Isom2010} and ref \citenum{Isom2011}. 
         Dashed lines: the vibrational frequency of MeSCN in water or the \pKa{} of either lysine or glutamate isolated in water. 
         Solid lines: Linear regression fits of the data.
@@ -323,7 +324,7 @@ The backbone RMSD of the nitrile containing systems were all similar to that of 
 \begin{figure}
     \center
     \includegraphics[width=\single]{figures-snase/rmsd.png}
-    \caption[Backbobe RMSDs of nitrile containing SNase constructs]{
+    \caption[Backbone RMSDs of nitrile containing SNase constructs]{
         Backbone RMSDs of the crystalized residues (residues 7-141) of each nitrile containing SNase constructs (color traces) and the WT SNase (black).
     }
     \label{fig:snase-rmsd}
@@ -372,7 +373,7 @@ The residence time of the water molecules in this interaction with T62X was sign
 \begin{figure}
     \center
     \includegraphics[width=\single]{figures-snase/Lifetimes.png}
-    \caption[]{
+    \caption[Obvserved hydrogen bond residence times]{
         Calculation of the observed hydrogen bond residence times for the nitrile at each location. 
         The $y$-axis is the number of hydrogen bonds observed that lasted at least as long as the simulation time shown on the $x$-axis. 
         The dashed line represents a fit of a single, double, or triple exponential decay where the number of decay function is indicated by the number of asterisks in the top right corner of each plot. 
@@ -445,7 +446,7 @@ For reference, we also plotted the temperature dependent frequency shift of MeSC
 \begin{figure}
     \center
     \includegraphics[width=\single]{figures-snase/ftls.png}
-    \caption[]{
+    \caption[FTLS of the nitrile in each location]{
         Average of peak nitrile frequencies of the 10 nitrile probes from 5 \si{\celsius} to 35 \si{\celsius}. 
         The points for each mutant were fit to a linear regression. 
         The slopes and the standard error of the fits are given in Table \ref{tbl:snase-ftir}.  
@@ -538,7 +539,7 @@ Indeed, when plotted against each other, the FTLS and FWHM are well-correlated (
 FWHM of vibrational spectra have been previously used to assess local environment in terms of polarity with a different molecular probe \cite{Manor2012}. 
 Our results suggest that, using routine FTIR instrumentation, the FTLS and FWHM of nitrile spectra generally report on specific local interactions beyond macroscopic polarity.
 
-The apparent lack of correlation between the \dpKa{} values reported by Garcia-Moreno and coworkers and the nitrile frequencies in the same positions measured in this work (Figure \ref{fig:snase-pKas_vs_peak}), suggests that these two types of probes did not respond equally to the same interactions. 
+The apparent lack of correlation between the \dpKa{} values reported by Garc\'ia-Moreno and coworkers and the nitrile frequencies in the same positions measured in this work (Figure \ref{fig:snase-pKas_vs_peak}), suggests that these two types of probes did not respond equally to the same interactions. 
 Given that the lysine and glutamate \pKa{} shifts were also not correlated to each other for several of the locations studied here (Figure \ref{fig:snase-pKas_vs_peak}C), local interactions appear to play a significant and varied role in how the response of all three probes should be interpreted in each experiment. 
 We can now revisit Figure \ref{fig:snase-pKas_vs_peak} in light of the specific observations of hydrogen bonding from our MD simulations. 
 In particular, the two different \pKa{} probes were only in good agreement for locations in which a nitrile experienced bulk-like solvent hydrogen bonding (N118X) or very little hydrogen bonding (A90X, V66X, V23X, L25X, and I92X) in simulations. 
@@ -550,11 +551,11 @@ Again, this is supported by the correlation between the measured FWHM of the spe
 Coupled with MD simulations, the FWHM and FTLS measurements provide information-rich controls for understanding the contributions of hydrogen bonding to the nitrile spectra in ways that do not rely purely on the absolute absorption energy of the nitrile. 
 By contrast, there is not an equivalent experimental measure of hydrogen bonding for \pKa{} probes, and it is therefore difficult to distinguish between hydrogen bonding contributions and Coulombic contributions to \dpKa{} measurements.
 
-\subsection{Electric fields contribute vibrational line shape}
+\subsection{Electric fields contribute to vibrational line shape}
 
 Xu et al. recently demonstrated that the distribution of Coulombic fields is a major contributor to spectral line shape and must be considered in conjunction with the effects of hydrogen bonding \cite{Xu2018}. 
 We therefore calculated the electric field at the midpoint of the nitrile in each MD trajectory. 
-Due to the inherent limitations of calculations based on a fixed-charge force field \cite{Slocum2017, Ritchie2013, Ricthie2014, Ensign2011}, we did not expect the simulations to be able to capture the absolute frequency shifts, but we hypothesized that the  accurate modeling of the local interactions could still yield the correct distributions of the fields that could be compared against spectral line shapes. 
+Due to the inherent limitations of calculations based on a fixed-charge force field \cite{Slocum2017, Ritchie2013, Ritchie2014, Ensign2011}, we did not expect the simulations to be able to capture the absolute frequency shifts, but we hypothesized that the  accurate modeling of the local interactions could still yield the correct distributions of the fields that could be compared against spectral line shapes. 
 In order to calculate the field distributions from the MD simulations, a dummy atom with a +1 charge was placed in the center of the nitrile bond; 
 the electrostatic force on the dummy atom was calculated and projected along the nitrile bond vector. 
 The partial charges on the carbon and nitrogen atoms of the nitrile group itself were neutralized and not considered because we have previously demonstrated that they result in a consistent and large field that overwhelms the contributions from the surrounding environment \cite{Stafford2010, Ritchie2013}. 
@@ -762,7 +763,7 @@ We are currently exploring this idea further with temperature dependent MD.
 \begin{figure}
     \center
     \includegraphics[width=\double]{figures-snase/ftls_all_spectra.png}
-    \caption[]{
+    \caption[Temperature dependent FTIR of CNC at each location]{
         FTIR absorption spectra of CNC incorporated at each of the ten locations from 5 \si{\celsius} to 35 \si{\celsius}. 
         The maximum absorbance of each spectrum was normalized to 1. 
         Colored lines: averaged absorption spectra; 
